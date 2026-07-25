@@ -9,7 +9,7 @@
   justify-content: center;
   padding-block: clamp(3.5rem, 8vh, 6rem);
   padding-inline: var(--gutter-mobile);
-  overflow: hidden;
+  overflow-x: clip;
 }
 
 @media (min-width: 768px) {
@@ -235,6 +235,7 @@
 
 .ato__intro {
   width: 100%;
+  max-width: var(--container);
   margin-inline: 0;
   margin-bottom: 0;
 }

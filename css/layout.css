@@ -12,6 +12,7 @@
 .container--largo {
   width: min(100%, var(--container-largo));
   margin-inline: auto;
+  min-width: 0;
 }
 
 .fluxo > * + * {
