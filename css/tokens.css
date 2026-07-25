@@ -63,7 +63,7 @@
 @media (min-width: 900px) {
   :root {
     /* Espaço para o trilho + rótulos curtos à esquerda */
-    --rail-left: 8.5rem;
+    --rail-left: 9.5rem;
   }
 }
 

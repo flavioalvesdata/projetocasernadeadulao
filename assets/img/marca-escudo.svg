@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" role="img" aria-labelledby="escudo-titulo escudo-desc">
+  <title id="escudo-titulo">Escudo do Projeto Caserna de Adulão</title>
+  <desc id="escudo-desc">Escudo anatomizado com as peças da Armadura de Deus  placeholder até a arte oficial.</desc>
+
+  <!-- Contorno do escudo -->
+  <path
+    id="escudo-contorno"
+    fill="#101D33"
+    stroke="#C9A86A"
+    stroke-width="3"
+    d="M100 12
+       C70 12 36 28 36 28
+       V120
+       C36 175 68 215 100 248
+       C132 215 164 175 164 120
+       V28
+       S130 12 100 12 Z"
+  />
+
+  <!-- Capacete (acima) -->
+  <g id="marca-capacete" class="escudo__peca">
+    <ellipse cx="100" cy="38" rx="28" ry="14" fill="none" stroke="#C9A86A" stroke-width="2"/>
+    <path d="M72 38 Q100 18 128 38" fill="none" stroke="#8C6A45" stroke-width="2"/>
+  </g>
+
+  <!-- Campo 1  Cinto (superior esquerdo) -->
+  <g id="marca-cinto" class="escudo__peca">
+    <rect x="48" y="58" width="48" height="48" fill="#1A2A44" stroke="#8C6A45" stroke-width="1.5"/>
+    <path d="M56 82 H88 M72 70 V94" stroke="#C9A86A" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Campo 2  Couraça (superior direito) -->
+  <g id="marca-couraca" class="escudo__peca">
+    <rect x="104" y="58" width="48" height="48" fill="#1A2A44" stroke="#8C6A45" stroke-width="1.5"/>
+    <path d="M116 70 H140 V98 H116 Z" fill="none" stroke="#C9A86A" stroke-width="2"/>
+  </g>
+
+  <!-- Campo 3  Calçados (inferior esquerdo) -->
+  <g id="marca-calcados" class="escudo__peca">
+    <rect x="48" y="114" width="48" height="48" fill="#1A2A44" stroke="#8C6A45" stroke-width="1.5"/>
+    <path d="M60 148 Q72 128 84 148" fill="none" stroke="#C9A86A" stroke-width="2"/>
+  </g>
+
+  <!-- Campo 4  Escudo (inferior direito) -->
+  <g id="marca-escudo-fe" class="escudo__peca">
+    <rect x="104" y="114" width="48" height="48" fill="#1A2A44" stroke="#8C6A45" stroke-width="1.5"/>
+    <path d="M128 122 V150 M116 134 H140" stroke="#C9A86A" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Espada (atravessa) -->
+  <g id="marca-espada" class="escudo__peca">
+    <line x1="100" y1="52" x2="100" y2="210" stroke="#C9A86A" stroke-width="3"/>
+    <line x1="88" y1="72" x2="112" y2="72" stroke="#8C6A45" stroke-width="3"/>
+    <polygon points="100,48 96,58 104,58" fill="#C9A86A"/>
+  </g>
+</svg>

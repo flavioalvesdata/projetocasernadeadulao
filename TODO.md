@@ -1,19 +1,22 @@
 # Pendências
 
-Registrar o que não entra no lote atual. Não implementar adiantado.
+## Próximos lotes (Partes II e IV)
 
-## Conteúdo e atos
-
-- [x] Atos 4 a 6 (anatomia, edições, encontro) — entregues na v0.2
-- [ ] Atos 7 a 9 da narrativa de apresentação
-- [ ] Usar `SITE_CONFIG.cargo` e `SITE_CONFIG.nomeFormal` no Ato 8 / bloco de assinatura (`Pr. Glaydston Gama Lopes`, Pastor-presidente)
-- [ ] Folheador completo de lições (amostra navegável além da página 2)
+- [ ] Seção 7 — Anatomia de uma lição
+- [ ] Seção 8 — O encontro
+- [ ] Seção 9 — As duas edições
+- [ ] Seção 13 — O que está pronto
+- [ ] Seção 14 — O que depende do senhor
+- [ ] Seção 15 — Encerramento
+- [ ] Usar `SITE_CONFIG.cargo` e `SITE_CONFIG.nomeFormal` no encerramento / assinatura
 
 ## Arte e marca
 
-- [ ] Substituir `assets/img/brasao.svg` (placeholder) pela arte oficial do brasão
+- [ ] Substituir `assets/img/marca-escudo.svg` e `assets/img/brasao.svg` pela arte oficial da logomarca
+- [ ] Artes das quatro insígnias, se existirem como peças separadas
+- [ ] Confirmar versões monocromática e reduzida no Caderno de Identidade Visual
 
-## Distribuição (PRs futuros)
+## Distribuição
 
 - [ ] Downloads de PDF (quando houver autorização pastoral)
 - [ ] Área restrita, se necessária

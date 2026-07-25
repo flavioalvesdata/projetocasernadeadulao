@@ -1,5 +1,5 @@
 /**
- * Ponto de entrada — orquestra os comportamentos sem acoplá-los.
+ * Ponto de entrada do prospecto.
  */
 (function () {
   document.documentElement.classList.add("js");
@@ -13,14 +13,12 @@
 
   function iniciar() {
     aplicarSaudacao();
-    if (window.Caserna) {
-      if (window.Caserna.initNavegacao) window.Caserna.initNavegacao();
-      if (window.Caserna.initRevelar) window.Caserna.initRevelar();
-      if (window.Caserna.initMarcha) window.Caserna.initMarcha();
-      if (window.Caserna.initAnatomia) window.Caserna.initAnatomia();
-      if (window.Caserna.initEdicoes) window.Caserna.initEdicoes();
-      if (window.Caserna.initEncontro) window.Caserna.initEncontro();
-    }
+    if (!window.Caserna) return;
+    if (window.Caserna.initNavegacao) window.Caserna.initNavegacao();
+    if (window.Caserna.initRevelar) window.Caserna.initRevelar();
+    if (window.Caserna.initMarcha) window.Caserna.initMarcha();
+    if (window.Caserna.initMarca) window.Caserna.initMarca();
+    if (window.Caserna.initMatriz) window.Caserna.initMatriz();
   }
 
   if (document.readyState === "loading") {
