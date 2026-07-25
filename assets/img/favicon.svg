@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 80" role="img">
+  <title>Projeto Caserna de Adulão</title>
+  <path
+    fill="#101D33"
+    stroke="#C9A86A"
+    stroke-width="3"
+    stroke-linejoin="round"
+    d="M32 4 C22 4 12 8 12 8 V36 C12 52 22 64 32 76 C42 64 52 52 52 36 V8 S42 4 32 4 Z"
+  />
+  <path fill="none" stroke="#C9A86A" stroke-width="2" d="M32 16 V52 M22 28 H42" />
+</svg>

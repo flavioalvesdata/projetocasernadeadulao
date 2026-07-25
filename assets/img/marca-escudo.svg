@@ -1,8 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" role="img" aria-labelledby="escudo-titulo escudo-desc">
-  <title id="escudo-titulo">Escudo do Projeto Caserna de Adul„o</title>
-  <desc id="escudo-desc">Escudo anatomizado com as peÁas da Armadura de Deus  placeholder atÈ a arte oficial.</desc>
+  <title id="escudo-titulo">Estudo visual do escudo do Projeto Caserna de Adul√£o</title>
+  <desc id="escudo-desc">Estudo visual do escudo anatomizado com as pe√ßas da Armadura de Deus, at√© a arte oficial.</desc>
 
-  <!-- Contorno do escudo -->
   <path
     id="escudo-contorno"
     fill="#101D33"
@@ -17,37 +16,31 @@
        S130 12 100 12 Z"
   />
 
-  <!-- Capacete (acima) -->
   <g id="marca-capacete" class="escudo__peca">
     <ellipse cx="100" cy="38" rx="28" ry="14" fill="none" stroke="#C9A86A" stroke-width="2"/>
     <path d="M72 38 Q100 18 128 38" fill="none" stroke="#8C6A45" stroke-width="2"/>
   </g>
 
-  <!-- Campo 1  Cinto (superior esquerdo) -->
   <g id="marca-cinto" class="escudo__peca">
     <rect x="48" y="58" width="48" height="48" fill="#1A2A44" stroke="#8C6A45" stroke-width="1.5"/>
     <path d="M56 82 H88 M72 70 V94" stroke="#C9A86A" stroke-width="2" fill="none"/>
   </g>
 
-  <!-- Campo 2  CouraÁa (superior direito) -->
   <g id="marca-couraca" class="escudo__peca">
     <rect x="104" y="58" width="48" height="48" fill="#1A2A44" stroke="#8C6A45" stroke-width="1.5"/>
     <path d="M116 70 H140 V98 H116 Z" fill="none" stroke="#C9A86A" stroke-width="2"/>
   </g>
 
-  <!-- Campo 3  CalÁados (inferior esquerdo) -->
   <g id="marca-calcados" class="escudo__peca">
     <rect x="48" y="114" width="48" height="48" fill="#1A2A44" stroke="#8C6A45" stroke-width="1.5"/>
     <path d="M60 148 Q72 128 84 148" fill="none" stroke="#C9A86A" stroke-width="2"/>
   </g>
 
-  <!-- Campo 4  Escudo (inferior direito) -->
   <g id="marca-escudo-fe" class="escudo__peca">
     <rect x="104" y="114" width="48" height="48" fill="#1A2A44" stroke="#8C6A45" stroke-width="1.5"/>
     <path d="M128 122 V150 M116 134 H140" stroke="#C9A86A" stroke-width="2" fill="none"/>
   </g>
 
-  <!-- Espada (atravessa) -->
   <g id="marca-espada" class="escudo__peca">
     <line x1="100" y1="52" x2="100" y2="210" stroke="#C9A86A" stroke-width="3"/>
     <line x1="88" y1="72" x2="112" y2="72" stroke="#8C6A45" stroke-width="3"/>

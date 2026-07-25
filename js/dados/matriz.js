@@ -1,17 +1,17 @@
-﻿/**
+/**
  * Gerado a partir de conteudo/matriz-curricular.json.
- * Nao edite a mao — altere o JSON e rode: node ferramentas/gerar-dados.js
+ * Não edite à mão — altere o JSON e rode: node ferramentas/gerar-dados.js
  */
 window.DADOS_MATRIZ = {
-  "fonte": "Guia Mestre v1.0-RC â€” Quadro 1 (Matriz Curricular)",
+  "fonte": "Guia Mestre v1.0-RC — Quadro 1 (Matriz Curricular)",
   "total": 48,
   "licoes": [
     {
       "numero": 1,
       "modulo": 1,
-      "titulo": "Bem-vindo a AdulÃ£o: o quartel dos feridos",
+      "titulo": "Bem-vindo a Adulão: o quartel dos feridos",
       "textoBase": "2Tm 2.3",
-      "objetivo": "Acolher o ferido antes de qualquer exigÃªncia: AdulÃ£o Ã© abrigo, nÃ£o vitrine de herÃ³is.",
+      "objetivo": "Acolher o ferido antes de qualquer exigência: Adulão é abrigo, não vitrine de heróis.",
       "produzida": true
     },
     {
@@ -25,15 +25,15 @@ window.DADOS_MATRIZ = {
     {
       "numero": 3,
       "modulo": 1,
-      "titulo": "ContemplaÃ§Ã£o: resposta de gratidÃ£o ao resgate",
+      "titulo": "Contemplação: resposta de gratidão ao resgate",
       "textoBase": "2Co 3.18",
-      "objetivo": "Ensinar a contemplaÃ§Ã£o como resposta ao resgate, nÃ£o tÃ©cnica para merecer.",
+      "objetivo": "Ensinar a contemplação como resposta ao resgate, não técnica para merecer.",
       "produzida": true
     },
     {
       "numero": 4,
       "modulo": 1,
-      "titulo": "A BÃ­blia: o Manual do Guerreiro",
+      "titulo": "A Bíblia: o Manual do Guerreiro",
       "textoBase": "Sl 119.105",
       "objetivo": "Firmar a autoridade da Escritura como manual que orienta a marcha.",
       "produzida": true
@@ -41,33 +41,33 @@ window.DADOS_MATRIZ = {
     {
       "numero": 5,
       "modulo": 1,
-      "titulo": "InsubordinaÃ§Ã£o: a quebra de lealdade que custa a honra",
+      "titulo": "Insubordinação: a quebra de lealdade que custa a honra",
       "textoBase": "Rm 3.23",
-      "objetivo": "Apresentar o pecado como quebra de lealdade, com diagnÃ³stico que cura.",
+      "objetivo": "Apresentar o pecado como quebra de lealdade, com diagnóstico que cura.",
       "produzida": true
     },
     {
       "numero": 6,
       "modulo": 1,
-      "titulo": "Ordem de reintegraÃ§Ã£o: a graÃ§a que devolve a patente",
+      "titulo": "Ordem de reintegração: a graça que devolve a patente",
       "textoBase": "Ef 2.8-9",
-      "objetivo": "Anunciar a graÃ§a que reintegra: dom de Cristo, nÃ£o salÃ¡rio do esforÃ§o.",
+      "objetivo": "Anunciar a graça que reintegra: dom de Cristo, não salário do esforço.",
       "produzida": true
     },
     {
       "numero": 7,
       "modulo": 1,
-      "titulo": "A FÃ©: ConfianÃ§a e ObediÃªncia",
+      "titulo": "A Fé: Confiança e Obediência",
       "textoBase": "Hb 11.6",
-      "objetivo": "Ensinar a fÃ© como confianÃ§a que se traduz em obediÃªncia.",
+      "objetivo": "Ensinar a fé como confiança que se traduz em obediência.",
       "produzida": true
     },
     {
       "numero": 8,
       "modulo": 1,
-      "titulo": "Apresentando-se para o serviÃ§o: a rendiÃ§Ã£o que restaura a confianÃ§a",
+      "titulo": "Apresentando-se para o serviço: a rendição que restaura a confiança",
       "textoBase": "At 3.19",
-      "objetivo": "Demonstrar que o arrependimento Ã© reapresentar-se ao Quartel-General para servir sob novas ordens.",
+      "objetivo": "Demonstrar que o arrependimento é reapresentar-se ao Quartel-General para servir sob novas ordens.",
       "produzida": true
     },
     {
@@ -75,45 +75,45 @@ window.DADOS_MATRIZ = {
       "modulo": 1,
       "titulo": "A Cruz: O Juramento de Lealdade",
       "textoBase": "Lc 9.23",
-      "objetivo": "Ensinar o custo do discipulado como entrega diÃ¡ria, em resposta amorosa.",
+      "objetivo": "Ensinar o custo do discipulado como entrega diária, em resposta amorosa.",
       "produzida": true
     },
     {
       "numero": 10,
       "modulo": 1,
-      "titulo": "Nova farda, nova missÃ£o",
+      "titulo": "Nova farda, nova missão",
       "textoBase": "Jo 3.3-8",
-      "objetivo": "Apresentar o novo nascimento como nova natureza que habilita a um propÃ³sito Ãºtil.",
+      "objetivo": "Apresentar o novo nascimento como nova natureza que habilita a um propósito útil.",
       "produzida": true
     },
     {
       "numero": 11,
       "modulo": 1,
-      "titulo": "O EspÃ­rito Santo: O Instrutor Interior",
+      "titulo": "O Espírito Santo: O Instrutor Interior",
       "textoBase": "Jo 16.13",
-      "objetivo": "Ensinar que o EspÃ­rito guia, corrige e fortalece por dentro, formando obediÃªncia.",
+      "objetivo": "Ensinar que o Espírito guia, corrige e fortalece por dentro, formando obediência.",
       "produzida": true
     },
     {
       "numero": 12,
       "modulo": 1,
-      "titulo": "ComunhÃ£o e Vida de Tropa",
+      "titulo": "Comunhão e Vida de Tropa",
       "textoBase": "At 2.42-47",
-      "objetivo": "Demonstrar que ninguÃ©m cresce isolado: a tropa Ã© ambiente de edificaÃ§Ã£o e cuidado.",
+      "objetivo": "Demonstrar que ninguém cresce isolado: a tropa é ambiente de edificação e cuidado.",
       "produzida": true
     },
     {
       "numero": 13,
       "modulo": 2,
-      "titulo": "OraÃ§Ã£o: ComunicaÃ§Ã£o com o Quartel-General",
+      "titulo": "Oração: Comunicação com o Quartel-General",
       "textoBase": "Fp 4.6-7",
-      "objetivo": "Ensinar a oraÃ§Ã£o como diÃ¡logo vital e diÃ¡rio com o Comandante.",
+      "objetivo": "Ensinar a oração como diálogo vital e diário com o Comandante.",
       "produzida": false
     },
     {
       "numero": 14,
       "modulo": 2,
-      "titulo": "A Igreja: Companhia de IrmÃ£os de Armas",
+      "titulo": "A Igreja: Companhia de Irmãos de Armas",
       "textoBase": "Ef 4.11-16",
       "objetivo": "Mostrar a Igreja como corpo que serve, se edifica e marcha junto.",
       "produzida": false
@@ -123,21 +123,21 @@ window.DADOS_MATRIZ = {
       "modulo": 2,
       "titulo": "O Batismo: Juramento de Fidelidade",
       "textoBase": "Rm 6.3-4",
-      "objetivo": "Explicar o batismo como alianÃ§a pÃºblica de morte para o pecado e vida para Deus.",
+      "objetivo": "Explicar o batismo como aliança pública de morte para o pecado e vida para Deus.",
       "produzida": false
     },
     {
       "numero": 16,
       "modulo": 2,
-      "titulo": "SantificaÃ§Ã£o: SeparaÃ§Ã£o e ConsagraÃ§Ã£o",
+      "titulo": "Santificação: Separação e Consagração",
       "textoBase": "1Ts 4.3-7",
-      "objetivo": "Ensinar a santificaÃ§Ã£o como separaÃ§Ã£o do pecado e dedicaÃ§Ã£o a Deus.",
+      "objetivo": "Ensinar a santificação como separação do pecado e dedicação a Deus.",
       "produzida": false
     },
     {
       "numero": 17,
       "modulo": 2,
-      "titulo": "Combate Espiritual e TentaÃ§Ã£o",
+      "titulo": "Combate Espiritual e Tentação",
       "textoBase": "Ef 6.10-13",
       "objetivo": "Ensinar sobre a guerra espiritual e o uso das armas de Deus.",
       "produzida": false
@@ -145,41 +145,41 @@ window.DADOS_MATRIZ = {
     {
       "numero": 18,
       "modulo": 2,
-      "titulo": "AdoraÃ§Ã£o: EstratÃ©gia de Combate Espiritual",
+      "titulo": "Adoração: Estratégia de Combate Espiritual",
       "textoBase": "2Cr 20.21-22",
-      "objetivo": "Mostrar que adorar Ã© guerrear com fÃ© e que o louvor antecede a vitÃ³ria.",
+      "objetivo": "Mostrar que adorar é guerrear com fé e que o louvor antecede a vitória.",
       "produzida": false
     },
     {
       "numero": 19,
       "modulo": 2,
-      "titulo": "Mordomia e ObediÃªncia Financeira",
+      "titulo": "Mordomia e Obediência Financeira",
       "textoBase": "2Co 9.6-8",
-      "objetivo": "Ensinar fidelidade nos recursos como resposta de fÃ© e prestaÃ§Ã£o de contas.",
+      "objetivo": "Ensinar fidelidade nos recursos como resposta de fé e prestação de contas.",
       "produzida": false
     },
     {
       "numero": 20,
       "modulo": 2,
-      "titulo": "O Lar CristÃ£o: A Base da Tropa",
+      "titulo": "O Lar Cristão: A Base da Tropa",
       "textoBase": "Js 24.15",
-      "objetivo": "Ensinar que a casa Ã© o primeiro campo de discipulado e de lealdade.",
+      "objetivo": "Ensinar que a casa é o primeiro campo de discipulado e de lealdade.",
       "produzida": false
     },
     {
       "numero": 21,
       "modulo": 2,
-      "titulo": "PerdÃ£o e ReconciliaÃ§Ã£o: Cura das Feridas de Guerra",
+      "titulo": "Perdão e Reconciliação: Cura das Feridas de Guerra",
       "textoBase": "Mt 18.21-22",
-      "objetivo": "Ensinar que o perdÃ£o restaura a comunhÃ£o e impede contaminaÃ§Ã£o da tropa.",
+      "objetivo": "Ensinar que o perdão restaura a comunhão e impede contaminação da tropa.",
       "produzida": false
     },
     {
       "numero": 22,
       "modulo": 2,
-      "titulo": "Ã‰tica e Testemunho na CorporaÃ§Ã£o",
+      "titulo": "Ética e Testemunho na Corporação",
       "textoBase": "Mt 5.13-16",
-      "objetivo": "Ensinar o valor do testemunho cristÃ£o no ambiente de serviÃ§o.",
+      "objetivo": "Ensinar o valor do testemunho cristão no ambiente de serviço.",
       "produzida": false
     },
     {
@@ -193,25 +193,25 @@ window.DADOS_MATRIZ = {
     {
       "numero": 24,
       "modulo": 2,
-      "titulo": "PreparaÃ§Ã£o para o Batismo: RevisÃ£o e Entrega",
+      "titulo": "Preparação para o Batismo: Revisão e Entrega",
       "textoBase": "At 8.36-38",
-      "objetivo": "Revisar fundamentos e conduzir o discÃ­pulo Ã  consagraÃ§Ã£o pÃºblica.",
+      "objetivo": "Revisar fundamentos e conduzir o discípulo à consagração pública.",
       "produzida": false
     },
     {
       "numero": 25,
       "modulo": 3,
-      "titulo": "O EspÃ­rito Santo e os Dons de ServiÃ§o",
+      "titulo": "O Espírito Santo e os Dons de Serviço",
       "textoBase": "1Co 12.4-7",
-      "objetivo": "Ensinar que os dons sÃ£o dados para servir e edificar o corpo de Cristo.",
+      "objetivo": "Ensinar que os dons são dados para servir e edificar o corpo de Cristo.",
       "produzida": false
     },
     {
       "numero": 26,
       "modulo": 3,
-      "titulo": "O Fruto do EspÃ­rito: CarÃ¡ter do Guerreiro de Cristo",
+      "titulo": "O Fruto do Espírito: Caráter do Guerreiro de Cristo",
       "textoBase": "Gl 5.22-23",
-      "objetivo": "Mostrar que o fruto Ã© sinal de maturidade e da patente interior.",
+      "objetivo": "Mostrar que o fruto é sinal de maturidade e da patente interior.",
       "produzida": false
     },
     {
@@ -219,15 +219,15 @@ window.DADOS_MATRIZ = {
       "modulo": 3,
       "titulo": "A Mente de Cristo",
       "textoBase": "Fp 2.5-8",
-      "objetivo": "Ensinar a pensar e agir com humildade, obediÃªncia e serviÃ§o.",
+      "objetivo": "Ensinar a pensar e agir com humildade, obediência e serviço.",
       "produzida": false
     },
     {
       "numero": 28,
       "modulo": 3,
-      "titulo": "Disciplina Espiritual: Treino e ConstÃ¢ncia",
+      "titulo": "Disciplina Espiritual: Treino e Constância",
       "textoBase": "1Tm 4.7-8",
-      "objetivo": "Mostrar que a piedade se fortalece por treino, como resposta Ã  graÃ§a.",
+      "objetivo": "Mostrar que a piedade se fortalece por treino, como resposta à graça.",
       "produzida": false
     },
     {
@@ -241,7 +241,7 @@ window.DADOS_MATRIZ = {
     {
       "numero": 30,
       "modulo": 3,
-      "titulo": "Autoridade e SubmissÃ£o",
+      "titulo": "Autoridade e Submissão",
       "textoBase": "Hb 13.17",
       "objetivo": "Ensinar a obedecer e a liderar com humildade, revelando maturidade.",
       "produzida": false
@@ -251,29 +251,29 @@ window.DADOS_MATRIZ = {
       "modulo": 3,
       "titulo": "Amor e Camaradagem",
       "textoBase": "Jo 15.12-13",
-      "objetivo": "Ensinar o amor fraternal como vÃ­nculo da tropa espiritual.",
+      "objetivo": "Ensinar o amor fraternal como vínculo da tropa espiritual.",
       "produzida": false
     },
     {
       "numero": 32,
       "modulo": 3,
-      "titulo": "Humildade e ServiÃ§o",
+      "titulo": "Humildade e Serviço",
       "textoBase": "Mc 10.43-45",
-      "objetivo": "Ensinar que servir Ã© o maior posto no Reino de Deus.",
+      "objetivo": "Ensinar que servir é o maior posto no Reino de Deus.",
       "produzida": false
     },
     {
       "numero": 33,
       "modulo": 3,
-      "titulo": "Enfrentando o Sofrimento e as ProvaÃ§Ãµes",
+      "titulo": "Enfrentando o Sofrimento e as Provações",
       "textoBase": "Rm 5.3-5",
-      "objetivo": "Ensinar a ver o sofrimento como instrumento de crescimento e perseveranÃ§a.",
+      "objetivo": "Ensinar a ver o sofrimento como instrumento de crescimento e perseverança.",
       "produzida": false
     },
     {
       "numero": 34,
       "modulo": 3,
-      "titulo": "Alegria e EsperanÃ§a em Meio Ã  Luta",
+      "titulo": "Alegria e Esperança em Meio à Luta",
       "textoBase": "Fp 4.4-7",
       "objetivo": "Ensinar a manter alegria e contentamento mesmo em combate.",
       "produzida": false
@@ -281,15 +281,15 @@ window.DADOS_MATRIZ = {
     {
       "numero": 35,
       "modulo": 3,
-      "titulo": "Testemunho PÃºblico e CoerÃªncia de Vida",
+      "titulo": "Testemunho Público e Coerência de Vida",
       "textoBase": "Mt 5.14-16",
-      "objetivo": "Ensinar o poder do exemplo visÃ­vel no meio da tropa.",
+      "objetivo": "Ensinar o poder do exemplo visível no meio da tropa.",
       "produzida": false
     },
     {
       "numero": 36,
       "modulo": 3,
-      "titulo": "MultiplicaÃ§Ã£o: O DiscÃ­pulo que Forma DiscÃ­pulos",
+      "titulo": "Multiplicação: O Discípulo que Forma Discípulos",
       "textoBase": "2Tm 2.2",
       "objetivo": "Ensinar que o ciclo do discipulado se completa quando formamos outros.",
       "produzida": false
@@ -297,9 +297,9 @@ window.DADOS_MATRIZ = {
     {
       "numero": 37,
       "modulo": 4,
-      "titulo": "A Grande ComissÃ£o: O Chamado para AvanÃ§ar",
+      "titulo": "A Grande Comissão: O Chamado para Avançar",
       "textoBase": "Mt 28.18-20",
-      "objetivo": "Ensinar que todo discÃ­pulo maduro Ã© enviado.",
+      "objetivo": "Ensinar que todo discípulo maduro é enviado.",
       "produzida": false
     },
     {
@@ -313,73 +313,73 @@ window.DADOS_MATRIZ = {
     {
       "numero": 39,
       "modulo": 4,
-      "titulo": "VocaÃ§Ã£o e PropÃ³sito na CorporaÃ§Ã£o",
+      "titulo": "Vocação e Propósito na Corporação",
       "textoBase": "Cl 3.23-24",
-      "objetivo": "Mostrar que o trabalho e a farda podem ser serviÃ§o ao Senhor.",
+      "objetivo": "Mostrar que o trabalho e a farda podem ser serviço ao Senhor.",
       "produzida": false
     },
     {
       "numero": 40,
       "modulo": 4,
-      "titulo": "LideranÃ§a Espiritual e InfluÃªncia pelo Exemplo",
+      "titulo": "Liderança Espiritual e Influência pelo Exemplo",
       "textoBase": "1Pe 5.2-3",
-      "objetivo": "Ensinar que lideranÃ§a cristÃ£ Ã© serviÃ§o e autoridade moral.",
+      "objetivo": "Ensinar que liderança cristã é serviço e autoridade moral.",
       "produzida": false
     },
     {
       "numero": 41,
       "modulo": 4,
-      "titulo": "Unidade e CooperaÃ§Ã£o no Corpo de Cristo",
+      "titulo": "Unidade e Cooperação no Corpo de Cristo",
       "textoBase": "Ef 4.1-3",
-      "objetivo": "Ensinar a importÃ¢ncia da unidade e do trabalho conjunto na missÃ£o.",
+      "objetivo": "Ensinar a importância da unidade e do trabalho conjunto na missão.",
       "produzida": false
     },
     {
       "numero": 42,
       "modulo": 4,
-      "titulo": "ServiÃ§o e Diaconia: Grandeza na Humildade",
+      "titulo": "Serviço e Diaconia: Grandeza na Humildade",
       "textoBase": "Jo 13.12-15",
-      "objetivo": "Ensinar o valor do serviÃ§o humilde, Ã  semelhanÃ§a de Cristo.",
+      "objetivo": "Ensinar o valor do serviço humilde, à semelhança de Cristo.",
       "produzida": false
     },
     {
       "numero": 43,
       "modulo": 4,
-      "titulo": "OraÃ§Ã£o Intercessora e Batalha Espiritual",
+      "titulo": "Oração Intercessora e Batalha Espiritual",
       "textoBase": "1Tm 2.1-3",
-      "objetivo": "Ensinar o poder da intercessÃ£o como combate em favor de outros.",
+      "objetivo": "Ensinar o poder da intercessão como combate em favor de outros.",
       "produzida": false
     },
     {
       "numero": 44,
       "modulo": 4,
-      "titulo": "MissÃµes e CompaixÃ£o Global",
+      "titulo": "Missões e Compaixão Global",
       "textoBase": "Mc 16.15; At 1.8",
-      "objetivo": "Ampliar a visÃ£o missionÃ¡ria para alÃ©m dos muros da caserna.",
+      "objetivo": "Ampliar a visão missionária para além dos muros da caserna.",
       "produzida": false
     },
     {
       "numero": 45,
       "modulo": 4,
-      "titulo": "PerseveranÃ§a e Fidelidade atÃ© o Fim",
+      "titulo": "Perseverança e Fidelidade até o Fim",
       "textoBase": "Hb 10.35-39",
-      "objetivo": "Ensinar a manter fÃ© e lealdade mesmo nas provaÃ§Ãµes.",
+      "objetivo": "Ensinar a manter fé e lealdade mesmo nas provações.",
       "produzida": false
     },
     {
       "numero": 46,
       "modulo": 4,
-      "titulo": "A Volta do Rei: ProntidÃ£o e Santidade",
+      "titulo": "A Volta do Rei: Prontidão e Santidade",
       "textoBase": "Ap 22.12-13",
-      "objetivo": "Ensinar que a esperanÃ§a da volta de Cristo sustenta a fidelidade presente.",
+      "objetivo": "Ensinar que a esperança da volta de Cristo sustenta a fidelidade presente.",
       "produzida": false
     },
     {
       "numero": 47,
       "modulo": 4,
-      "titulo": "Recompensas e GalardÃµes do Guerreiro Fiel",
+      "titulo": "Recompensas e Galardões do Guerreiro Fiel",
       "textoBase": "2Tm 4.7-8",
-      "objetivo": "Mostrar que o serviÃ§o fiel tem recompensa eterna.",
+      "objetivo": "Mostrar que o serviço fiel tem recompensa eterna.",
       "produzida": false
     },
     {
@@ -387,7 +387,7 @@ window.DADOS_MATRIZ = {
       "modulo": 4,
       "titulo": "Formatura do Soldado de Cristo",
       "textoBase": "Fp 3.13-14",
-      "objetivo": "Celebrar a conclusÃ£o do discipulado e o envio para formar outros.",
+      "objetivo": "Celebrar a conclusão do discipulado e o envio para formar outros.",
       "produzida": false
     }
   ]
