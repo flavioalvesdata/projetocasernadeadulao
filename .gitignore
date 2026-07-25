@@ -2,7 +2,9 @@
 Thumbs.db
 node_modules/
 .vercel/
-.cursor/
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
 .env
 .env.*
 *.log

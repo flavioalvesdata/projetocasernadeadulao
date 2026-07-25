@@ -1,0 +1,11 @@
+---
+description: Commits devem ser feitos sempre na branch main
+alwaysApply: true
+---
+
+# Commits na main
+
+- Faça **todos os commits na branch `main`**.
+- Não crie branches de feature para commits do dia a dia, salvo pedido explícito do usuário.
+- Se estiver em outra branch, mude para `main` (e atualize se preciso) **antes** de commitar.
+- Pull requests e branches só quando o usuário pedir explicitamente.
