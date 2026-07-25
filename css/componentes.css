@@ -1,0 +1,432 @@
+/* Índice, trilho da marcha, cartões, mapa e rodapé. */
+
+/* —— Trilho da marcha —— */
+.trilho {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: var(--esp-4);
+  z-index: 40;
+  width: 2px;
+  height: min(52vh, 22rem);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.trilho__trilha {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--regua) 55%, transparent);
+  border-radius: 1px;
+}
+
+.trilho__progresso {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--bronze);
+  border-radius: 1px;
+  transition: height var(--duracao) var(--easing);
+}
+
+.trilho__marcadores {
+  position: absolute;
+  inset: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.trilho__marcador {
+  position: absolute;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border: 1.5px solid var(--bronze-cl);
+  border-radius: 50%;
+  background: var(--navy-esc);
+  transform: translate(-50%, -50%);
+  transition: background var(--duracao) var(--easing),
+    border-color var(--duracao) var(--easing);
+}
+
+.trilho__marcador--ativo {
+  background: var(--bronze-cl);
+  border-color: var(--bronze-cl);
+}
+
+@media (min-width: 900px) {
+  .trilho {
+    display: block;
+  }
+}
+
+@media (max-width: 899px) {
+  /* No mobile o trilho fica à direita, discreto, sem cobrir o texto. */
+  .trilho {
+    display: block;
+    left: auto;
+    right: var(--esp-3);
+    height: min(40vh, 16rem);
+    opacity: 0.85;
+  }
+}
+
+/* —— Índice lateral —— */
+.indice {
+  display: none;
+  position: fixed;
+  top: 50%;
+  right: var(--esp-4);
+  z-index: 30;
+  transform: translateY(-50%);
+}
+
+.indice__lista {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-3);
+}
+
+.indice__link {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-2);
+  font-family: var(--fonte-display);
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: color-mix(in srgb, currentColor 45%, transparent);
+  transition: color var(--duracao) var(--easing);
+}
+
+.indice__link::before {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.indice__link--ativo {
+  color: var(--bronze);
+}
+
+.indice__link:hover,
+.indice__link:focus-visible {
+  color: var(--bronze-cl);
+}
+
+@media (min-width: 1100px) {
+  .indice {
+    display: block;
+  }
+
+  /* Com índice à direita, o trilho permanece à esquerda. */
+  .trilho {
+    left: var(--esp-5);
+    right: auto;
+  }
+}
+
+/* Temas do índice conforme ato claro/escuro sob o viewport */
+body.tema-escuro .indice__link {
+  color: color-mix(in srgb, var(--creme) 40%, transparent);
+}
+
+body.tema-escuro .indice__link--ativo,
+body.tema-escuro .indice__link:hover,
+body.tema-escuro .indice__link:focus-visible {
+  color: var(--bronze-cl);
+}
+
+body.tema-claro .indice__link {
+  color: color-mix(in srgb, var(--navy) 40%, transparent);
+}
+
+body.tema-claro .indice__link--ativo,
+body.tema-claro .indice__link:hover,
+body.tema-claro .indice__link:focus-visible {
+  color: var(--bronze);
+}
+
+/* —— Cartões de recusa —— */
+.cartoes {
+  display: grid;
+  gap: var(--esp-4);
+  margin-top: var(--esp-10);
+  max-width: none;
+}
+
+@media (min-width: 768px) {
+  .cartoes {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--esp-5);
+  }
+}
+
+.cartao {
+  padding: var(--esp-6);
+  background: var(--navy-esc);
+  border-top: 2px solid var(--bronze);
+}
+
+.cartao__titulo {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-sm);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bronze-cl);
+  margin-bottom: var(--esp-3);
+  hyphens: none;
+}
+
+.cartao__texto {
+  font-size: var(--texto-sm);
+  color: color-mix(in srgb, var(--creme) 88%, transparent);
+  max-width: none;
+}
+
+/* —— Mapa da marcha —— */
+.mapa {
+  display: grid;
+  gap: var(--esp-8);
+  margin-top: var(--esp-10);
+}
+
+@media (min-width: 900px) {
+  .mapa {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    align-items: start;
+    gap: var(--esp-10);
+  }
+}
+
+.mapa__trilha {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.mapa__trilha::before {
+  content: "";
+  position: absolute;
+  left: 0.85rem;
+  top: 0.85rem;
+  bottom: 0.85rem;
+  width: 1px;
+  background: var(--regua);
+}
+
+@media (min-width: 900px) {
+  .mapa__trilha {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--esp-2);
+  }
+
+  .mapa__trilha::before {
+    left: 1.25rem;
+    right: 1.25rem;
+    top: 0.85rem;
+    bottom: auto;
+    height: 1px;
+    width: auto;
+  }
+}
+
+.mapa__tab {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--esp-3);
+  width: 100%;
+  text-align: left;
+  padding: var(--esp-2) var(--esp-2) var(--esp-4);
+  border-radius: 2px;
+  transition: color var(--duracao) var(--easing);
+}
+
+.mapa__numero {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: grid;
+  place-items: center;
+  font-family: var(--fonte-display);
+  font-size: var(--texto-xs);
+  font-weight: 800;
+  color: var(--navy);
+  background: var(--regua);
+  border-radius: 50%;
+  transition: background var(--duracao) var(--easing),
+    color var(--duracao) var(--easing);
+}
+
+.mapa__rotulo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-1);
+  min-width: 0;
+}
+
+.mapa__nome {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-sm);
+  font-weight: 700;
+  color: var(--navy);
+  hyphens: none;
+}
+
+.mapa__status {
+  font-family: var(--fonte-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bronze);
+}
+
+.mapa__tab[aria-selected="true"] .mapa__numero {
+  background: var(--bronze);
+  color: var(--papel);
+}
+
+.mapa__tab[aria-selected="true"] .mapa__nome {
+  color: var(--navy-esc);
+}
+
+.mapa__painel {
+  padding: var(--esp-6);
+  background: var(--papel);
+  border: 1px solid var(--regua);
+  min-height: 14rem;
+}
+
+.mapa__painel[hidden] {
+  display: none;
+}
+
+.mapa__painel-sobrelinha {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: var(--esp-2);
+}
+
+.mapa__painel-titulo {
+  font-size: var(--texto-lg);
+  color: var(--navy);
+  margin-bottom: var(--esp-5);
+  hyphens: none;
+}
+
+.mapa__detalhe {
+  display: grid;
+  gap: var(--esp-4);
+}
+
+.mapa__detalhe dt {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: var(--esp-1);
+}
+
+.mapa__detalhe dd {
+  font-size: var(--texto-sm);
+  color: var(--tinta);
+  max-width: none;
+}
+
+/* —— Rodapé —— */
+.rodape {
+  padding: var(--esp-12) 0 var(--esp-16);
+  background: var(--navy-esc);
+  color: color-mix(in srgb, var(--creme) 75%, transparent);
+  text-align: center;
+}
+
+.rodape__marca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--esp-4);
+  margin-bottom: var(--esp-6);
+}
+
+.rodape__brasao {
+  width: 2.5rem;
+  height: auto;
+  opacity: 0.85;
+}
+
+.rodape__instituicao {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--creme);
+}
+
+.rodape__linha {
+  font-size: var(--texto-sm);
+  max-width: none;
+}
+
+.rodape__aviso {
+  margin-top: var(--esp-5);
+  font-family: var(--fonte-display);
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bronze-cl);
+  max-width: 36ch;
+  margin-inline: auto;
+}
+
+/* —— Revelação progressiva (não obrigatória sem JS) —— */
+.js .revelar {
+  opacity: 0;
+  transform: translateY(0.75rem);
+  transition: opacity 500ms var(--easing), transform 500ms var(--easing);
+}
+
+.js .revelar--visivel {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .revelar {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .trilho__progresso {
+    transition: none;
+  }
+}
