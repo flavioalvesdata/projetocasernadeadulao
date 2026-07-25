@@ -1,40 +1,89 @@
-# Discipulando a Caserna — Prospecto pastoral
+# Discipulando a Caserna | Projeto Caserna de Adulão
 
-Site de página única: prospecto institucional do currículo **Discipulando a Caserna**, dirigido ao pastor-presidente. Projeto Caserna de Adulão (Fortaleza-CE).
+Site de página única: prospecto institucional do programa **Discipulando a Caserna**, apresentado pelo **Projeto Caserna de Adulão** (Fortaleza-CE).
 
-Versão atual: **v0.3** — Partes I–III (seções 1–6 e 10–12). Material em versão candidata.
+Versão atual: **v0.4.0** — correção técnica e consolidação editorial.
 
-## Requisitos
+## Hierarquia institucional
 
-Nenhum. HTML/CSS/JS sem build e sem dependências. Abre offline por duplo clique em `index.html`.
+- **Projeto Caserna de Adulão** — projeto institucional mais amplo.
+- **Discipulando a Caserna** — programa de formação bíblica e discipulado no contexto da caserna, pertencente ao Projeto.
 
-## Conteúdo estruturado
+## Publicação atual
 
-A fonte editável fica em `conteudo/`:
+- URL: <https://flavioiabuilder.github.io/projetocasernadeadulao/>
+- Hospedagem: **GitHub Pages**
+- Repositório: **público**
+- Indexação: a página usa `noindex, nofollow` e `robots.txt` com `Disallow: /`
 
-| Arquivo | Uso no site |
-|---|---|
-| `conteudo/modulos.json` | Mapa dos módulos (seção 5) e cabeçalhos da matriz |
-| `conteudo/matriz-curricular.json` | As 48 lições (seção 6) |
-| `conteudo/identidade.md` | Seção 4 — A marca |
-| `conteudo/programa.md` | Seções 5, 10, 11 e 12 |
+**Importante:** `noindex` e `robots.txt` **não são autenticação**. Qualquer pessoa com o link pode abrir o conteúdo. Trate esta publicação como prévia pública em apreciação pastoral.
 
-Os JSON são convertidos para scripts clássicos (uso offline, sem `fetch`):
+### Nota histórica
 
-```
-conteudo/*.json  →  js/dados/modulos.js
-                 →  js/dados/matriz.js
-```
+Versões anteriores do README mencionavam publicação na Vercel e repositório privado. Isso não descreve o estado atual.
 
-Após editar um JSON, regenere:
+## Como rodar localmente
+
+Sem instalação (somente leitura):
+
+1. Abra `index.html` em um navegador, ou
+2. Sirva a raiz com qualquer servidor estático, por exemplo:
 
 ```bash
-node ferramentas/gerar-dados.js
+npx serve .
 ```
 
-Não edite `js/dados/*.js` à mão. O script **não** é etapa de build do site — o site já consome os `.js` gerados.
+## Regenerar dados
 
-Campos `null` em `modulos.json` (virtude/tema dos módulos 3–4) são omitidos na interface.
+Fonte canônica: `conteudo/*.json`.
+
+```bash
+npm run generate
+# ou: node ferramentas/gerar-dados.js
+```
+
+Não edite `js/dados/*.js` à mão. O gerador também injeta o fallback `<noscript>` em `index.html`.
+
+## Qualidade e testes
+
+Requer Node.js 18+.
+
+```bash
+npm install
+npm run validate
+```
+
+Scripts principais:
+
+| Script | Função |
+|---|---|
+| `npm run generate` | Regenera `js/dados/*` e fallback noscript |
+| `npm run check:encoding` | Mojibake + round-trip |
+| `npm run lint:html` | Validação HTML |
+| `npm run lint:css` | Stylelint |
+| `npm run lint:js` | ESLint |
+| `npm run test` | Testes unitários (Node) |
+| `npm run test:e2e` | Playwright + axe |
+| `npm run validate` | Cadeia completa |
+
+## Arquitetura
+
+```
+index.html              Prospecto (HTML semântico)
+conteudo/               Fonte editável (JSON + MD)
+css/                    tokens, base, layout, componentes, atos, prospecto
+js/
+  dados/                modulos.js, matriz.js (gerados)
+  main.js               inicialização resiliente
+  navegacao.js          sumário, progresso de leitura
+  marcha.js, matriz.js  renderização segura dos dados
+assets/                 fontes OFL, estudos visuais de marca
+ferramentas/            geração e checagens
+testes/                 unitários e e2e
+docs/                   relatórios de auditoria
+```
+
+Sem framework, sem bundler. O `package.json` existe apenas para scripts de qualidade.
 
 ## Destinatário
 
@@ -44,32 +93,41 @@ Em `js/config.js`:
 destinatario: "Glaydston"  // → "Pastor Glaydston,"
 ```
 
-## Estrutura
-
-```
-index.html
-conteudo/           Fonte editável (JSON + MD)
-css/                tokens, base, layout, componentes, atos, prospecto
-js/
-  dados/            modulos.js, matriz.js (gerados)
-  abas.js, navegacao.js, marcha.js, marca.js, matriz.js, …
-assets/img/         brasao.svg, marca-escudo.svg (placeholders)
-ferramentas/        gerar-dados.js (opcional)
-```
-
-## Navegação
-
-Quatro partes; o trilho marca as **partes**; o índice lista partes e seções.
+## Estrutura do prospecto (v0.4.0)
 
 1. **Parte I — A identidade** — Abertura, Caverna, Convicção, Marca  
 2. **Parte II — O programa** — Arquitetura, Matriz  
 3. **Parte III — A implantação** — Progressão, Público, Princípios  
-4. **Parte IV — O estado atual** — seções 13–15 (próximo lote)
+4. **Parte IV — O estado atual** — Fechamento editorial (apreciação pastoral)
 
-## Publicação (Vercel)
+## Limitações conhecidas
 
-Preset **Other**, output na raiz, repositório privado, `noindex`.
+- Arte do escudo/brasão é estudo visual provisório (sem marca oficial homologada).
+- Módulos 2–4 têm matriz definida; produção condicionada à validação pastoral do Módulo 1.
+- Seções futuras (anatomia da lição, encontro, duas edições) ainda não publicadas.
+- Licença do código e do conteúdo pastoral ainda **não definida**.
 
-## Licença das fontes
+## Política de arquivos gerados
 
-Montserrat e Source Serif 4 — SIL OFL, self-hosted em `assets/fonts/`.
+| Editar | Não editar |
+|---|---|
+| `conteudo/*.json` | `js/dados/*.js` |
+| `conteudo/*.md` | marcadores `FALLBACK-DADOS` gerados em `index.html` |
+
+## Política `.cursor/`
+
+- `.cursor/rules/` pode ser versionada (instruções técnicas não sensíveis).
+- `.cursor/plans/` fica fora do repositório público (ver `.gitignore`).
+
+## Licenças
+
+- **Fontes** Montserrat e Source Serif 4: SIL Open Font License, self-hosted em `assets/fonts/`.
+- **Código e conteúdo pastoral:** licenciamento ainda pendente de decisão explícita. Nenhuma licença MIT/GPL/CC foi adotada neste repositório sem autorização.
+
+## Processo de publicação
+
+1. Trabalhar em branch de correção/release quando solicitado.
+2. Rodar `npm run validate`.
+3. Abrir pull request para `main`.
+4. Após merge, o GitHub Pages publica a partir de `main` (conforme configuração do repositório).
+5. Manter `noindex` enquanto o material estiver em apreciação.
