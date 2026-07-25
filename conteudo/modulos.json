@@ -1,0 +1,85 @@
+{
+  "fonte": "Guia Mestre v1.0-RC",
+  "modulos": [
+    {
+      "numero": 1,
+      "nome": "Cristo Chamando",
+      "subtitulo": "O Alistamento Espiritual",
+      "enfase": "Conversão e identidade em Cristo",
+      "etapa": "Chamado, arrependimento e adoção espiritual",
+      "resultado": "Discípulo alcançado pela graça, reconciliado e integrado à tropa de Cristo",
+      "peca": "Cinto da Verdade",
+      "pecaNota": "cinto de guarnição — a primeira peça, que sustenta todo o resto",
+      "referencia": "Ef 6.14",
+      "virtude": "Fé e rendição",
+      "tema": "Discipulado começa com contemplação: o soldado nasce da visão de Cristo.",
+      "temaRef": "2Co 3.18; 2Tm 2.3-4",
+      "marcha": "Primeira Marcha — O Recruta que se Rendeu",
+      "licoes": [
+        1,
+        12
+      ],
+      "estado": "produzido"
+    },
+    {
+      "numero": 2,
+      "nome": "Cristo Treinando",
+      "subtitulo": "Fundamentos da Fé e da Disciplina Espiritual",
+      "enfase": "Fundamentos da fé e disciplina espiritual",
+      "etapa": "Formação básica e consolidação de hábitos",
+      "resultado": "Discípulo exercitado na oração, na Palavra e na comunhão, aprendendo obediência",
+      "peca": "Couraça da Justiça",
+      "pecaNota": "colete balístico — protege o que é vital: o coração",
+      "referencia": "Ef 6.14",
+      "virtude": "Obediência e disciplina",
+      "tema": "O discípulo aprende a obedecer para vencer.",
+      "temaRef": "Ef 6.10-18; Hb 5.12-14",
+      "marcha": "Segunda Marcha — O Combatente que se Fortalece",
+      "licoes": [
+        13,
+        24
+      ],
+      "estado": "planejado"
+    },
+    {
+      "numero": 3,
+      "nome": "Cristo Moldando",
+      "subtitulo": "Caráter e Vida no Espírito",
+      "enfase": "Caráter cristão e vida no Espírito",
+      "etapa": "Amadurecimento interior e estabilidade",
+      "resultado": "Discípulo mais santo e frutífero, servindo com humildade e liderando pelo exemplo",
+      "peca": "Calçados do Evangelho da Paz",
+      "pecaNota": "coturno — firmeza e estabilidade em qualquer terreno",
+      "referencia": "Ef 6.15",
+      "virtude": null,
+      "tema": null,
+      "temaRef": null,
+      "marcha": "Terceira Marcha — O Guerreiro que Persevera",
+      "licoes": [
+        25,
+        36
+      ],
+      "estado": "planejado"
+    },
+    {
+      "numero": 4,
+      "nome": "Cristo Enviando",
+      "subtitulo": "Missão, Frutificação e Perseverança",
+      "enfase": "Missão, serviço e perseverança",
+      "etapa": "Comissionamento e frutificação",
+      "resultado": "Discípulo restaurado e reenviado, testemunhando no ambiente militar e discipulando",
+      "peca": "Escudo da Fé",
+      "pecaNota": "amarração final da identidade: remete ao próprio escudo do projeto",
+      "referencia": "Ef 6.16",
+      "virtude": null,
+      "tema": null,
+      "temaRef": null,
+      "marcha": "Formatura do Soldado de Cristo",
+      "licoes": [
+        37,
+        48
+      ],
+      "estado": "planejado"
+    }
+  ]
+}
