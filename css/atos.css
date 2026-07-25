@@ -1,0 +1,192 @@
+/* Estilos por ato — cadência navy / creme e tipografia narrativa. */
+
+.ato {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: var(--esp-16);
+  position: relative;
+}
+
+.ato--escuro {
+  background: var(--navy);
+  color: var(--creme);
+}
+
+.ato--claro {
+  background: var(--creme);
+  color: var(--tinta);
+}
+
+.ato--papel {
+  background: var(--papel);
+  color: var(--tinta);
+}
+
+.ato__sobrelinha {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bronze-cl);
+  margin-bottom: var(--esp-4);
+}
+
+.ato--claro .ato__sobrelinha,
+.ato--papel .ato__sobrelinha {
+  color: var(--bronze);
+}
+
+.ato__titulo {
+  font-size: var(--texto-2xl);
+  font-weight: 800;
+  max-width: 18ch;
+  margin-bottom: var(--esp-5);
+  color: inherit;
+}
+
+.ato--escuro .ato__titulo {
+  color: var(--papel);
+}
+
+.ato--claro .ato__titulo,
+.ato--papel .ato__titulo {
+  color: var(--navy);
+}
+
+.ato__subtitulo {
+  font-family: var(--fonte-corpo);
+  font-size: var(--texto-md);
+  font-weight: 400;
+  font-style: italic;
+  line-height: var(--lh-corpo);
+  max-width: 36ch;
+  margin-bottom: var(--esp-8);
+  color: color-mix(in srgb, var(--creme) 80%, transparent);
+}
+
+.ato__saudacao {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-base);
+  font-weight: 700;
+  margin-bottom: var(--esp-4);
+  color: var(--bronze-cl);
+}
+
+.ato__texto {
+  color: inherit;
+}
+
+.ato--escuro .ato__texto {
+  color: color-mix(in srgb, var(--creme) 90%, transparent);
+}
+
+.ato--claro .ato__texto,
+.ato--papel .ato__texto {
+  color: var(--tinta);
+}
+
+.ato__texto + .ato__texto {
+  margin-top: var(--esp-5);
+}
+
+/* Em blocos largos, justificação ajuda o ritmo de carta. */
+.ato__texto--largo {
+  max-width: var(--medida);
+}
+
+@media (min-width: 768px) {
+  .ato__texto--justificado {
+    text-align: justify;
+    hyphens: auto;
+  }
+}
+
+.ato__citacao {
+  margin: var(--esp-8) 0;
+  padding: var(--esp-6) 0 var(--esp-6) var(--esp-5);
+  border-left: 2px solid var(--bronze);
+  max-width: var(--medida);
+}
+
+.ato__citacao p {
+  font-size: var(--texto-md);
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--navy);
+  max-width: none;
+}
+
+.ato__citacao cite {
+  display: block;
+  margin-top: var(--esp-4);
+  font-family: var(--fonte-display);
+  font-size: var(--texto-xs);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bronze);
+}
+
+.ato__selo {
+  display: inline-block;
+  margin-top: var(--esp-10);
+  padding: var(--esp-2) var(--esp-4);
+  border: 1px solid var(--bronze);
+  font-family: var(--fonte-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bronze-cl);
+}
+
+.ato__rolar {
+  margin-top: var(--esp-12);
+  font-family: var(--fonte-display);
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--creme) 45%, transparent);
+}
+
+.ato__rolar::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 2rem;
+  margin-top: var(--esp-3);
+  background: color-mix(in srgb, var(--bronze-cl) 60%, transparent);
+}
+
+.ato__intro {
+  width: 100%;
+  margin-inline: 0;
+  margin-bottom: 0;
+}
+
+.ato__nota {
+  margin-top: var(--esp-10);
+  padding-top: var(--esp-6);
+  border-top: 1px solid var(--regua);
+  font-size: var(--texto-sm);
+  color: color-mix(in srgb, var(--tinta) 78%, transparent);
+  max-width: var(--medida);
+}
+
+.ato__secao-titulo {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-sm);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bronze-cl);
+  margin-top: var(--esp-12);
+  margin-bottom: var(--esp-2);
+  hyphens: none;
+}
