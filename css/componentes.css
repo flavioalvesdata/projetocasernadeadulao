@@ -5,10 +5,10 @@
   display: none;
   position: fixed;
   top: 50%;
-  left: var(--esp-4);
+  left: 1.15rem;
   z-index: 40;
   width: 2px;
-  height: min(52vh, 22rem);
+  height: min(48vh, 20rem);
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -16,7 +16,7 @@
 .trilho__trilha {
   position: absolute;
   inset: 0;
-  background: color-mix(in srgb, var(--regua) 55%, transparent);
+  background: color-mix(in srgb, var(--regua) 40%, transparent);
   border-radius: 1px;
 }
 
@@ -26,7 +26,7 @@
   left: 0;
   width: 100%;
   height: 0%;
-  background: var(--bronze);
+  background: linear-gradient(to bottom, var(--bronze-cl), var(--bronze));
   border-radius: 1px;
   transition: height var(--duracao) var(--easing);
 }
@@ -36,24 +36,27 @@
   inset: 0;
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .trilho__marcador {
   position: absolute;
   left: 50%;
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border: 1.5px solid var(--bronze-cl);
   border-radius: 50%;
-  background: var(--navy-esc);
+  background: var(--navy);
   transform: translate(-50%, -50%);
   transition: background var(--duracao) var(--easing),
-    border-color var(--duracao) var(--easing);
+    border-color var(--duracao) var(--easing),
+    transform var(--duracao) var(--easing);
 }
 
 .trilho__marcador--ativo {
   background: var(--bronze-cl);
   border-color: var(--bronze-cl);
+  transform: translate(-50%, -50%) scale(1.15);
 }
 
 @media (min-width: 900px) {
@@ -63,13 +66,13 @@
 }
 
 @media (max-width: 899px) {
-  /* No mobile o trilho fica à direita, discreto, sem cobrir o texto. */
+  /* Mobile: só o trilho, sem texto de índice — discreto à direita. */
   .trilho {
     display: block;
     left: auto;
-    right: var(--esp-3);
-    height: min(40vh, 16rem);
-    opacity: 0.85;
+    right: 0.65rem;
+    height: min(36vh, 14rem);
+    opacity: 0.7;
   }
 }
 
@@ -78,44 +81,50 @@
   display: none;
   position: fixed;
   top: 50%;
-  right: var(--esp-4);
+  right: 1.25rem;
   z-index: 30;
   transform: translateY(-50%);
+  max-width: 8.5rem;
 }
 
 .indice__lista {
   list-style: none;
   padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--esp-3);
+  gap: var(--esp-4);
+  align-items: flex-end;
 }
 
 .indice__link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: flex-end;
   gap: var(--esp-2);
+  max-width: 100%;
   font-family: var(--fonte-display);
-  font-size: var(--texto-xs);
+  font-size: 0.625rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
-  color: color-mix(in srgb, currentColor 45%, transparent);
+  white-space: nowrap;
+  color: color-mix(in srgb, var(--creme) 38%, transparent);
   transition: color var(--duracao) var(--easing);
 }
 
-.indice__link::before {
+.indice__link::after {
   content: "";
-  width: 0.4rem;
-  height: 0.4rem;
+  width: 0.35rem;
+  height: 0.35rem;
   border-radius: 50%;
   background: currentColor;
   flex-shrink: 0;
 }
 
 .indice__link--ativo {
-  color: var(--bronze);
+  color: var(--bronze-cl);
 }
 
 .indice__link:hover,
@@ -123,21 +132,15 @@
   color: var(--bronze-cl);
 }
 
-@media (min-width: 1100px) {
+/* Só aparece quando há largura de sobra — evita texto cortado. */
+@media (min-width: 1280px) {
   .indice {
     display: block;
   }
-
-  /* Com índice à direita, o trilho permanece à esquerda. */
-  .trilho {
-    left: var(--esp-5);
-    right: auto;
-  }
 }
 
-/* Temas do índice conforme ato claro/escuro sob o viewport */
 body.tema-escuro .indice__link {
-  color: color-mix(in srgb, var(--creme) 40%, transparent);
+  color: color-mix(in srgb, var(--creme) 38%, transparent);
 }
 
 body.tema-escuro .indice__link--ativo,
@@ -147,7 +150,7 @@ body.tema-escuro .indice__link:focus-visible {
 }
 
 body.tema-claro .indice__link {
-  color: color-mix(in srgb, var(--navy) 40%, transparent);
+  color: color-mix(in srgb, var(--navy) 42%, transparent);
 }
 
 body.tema-claro .indice__link--ativo,
@@ -160,11 +163,11 @@ body.tema-claro .indice__link:focus-visible {
 .cartoes {
   display: grid;
   gap: var(--esp-4);
-  margin-top: var(--esp-10);
+  margin-top: var(--esp-8);
   max-width: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 700px) {
   .cartoes {
     grid-template-columns: 1fr 1fr;
     gap: var(--esp-5);
@@ -173,15 +176,24 @@ body.tema-claro .indice__link:focus-visible {
 
 .cartao {
   padding: var(--esp-6);
-  background: var(--navy-esc);
+  background: color-mix(in srgb, var(--navy-esc) 88%, black);
   border-top: 2px solid var(--bronze);
+  transition: transform var(--duracao) var(--easing),
+    background var(--duracao) var(--easing);
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .cartao:hover {
+    transform: translateY(-2px);
+    background: var(--navy-esc);
+  }
 }
 
 .cartao__titulo {
   font-family: var(--fonte-display);
   font-size: var(--texto-sm);
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--bronze-cl);
   margin-bottom: var(--esp-3);
@@ -190,7 +202,8 @@ body.tema-claro .indice__link:focus-visible {
 
 .cartao__texto {
   font-size: var(--texto-sm);
-  color: color-mix(in srgb, var(--creme) 88%, transparent);
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--creme) 86%, transparent);
   max-width: none;
 }
 
@@ -201,18 +214,18 @@ body.tema-claro .indice__link:focus-visible {
   margin-top: var(--esp-10);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 960px) {
   .mapa {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-    align-items: start;
-    gap: var(--esp-10);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    align-items: stretch;
+    gap: var(--esp-8);
   }
 }
 
 .mapa__trilha {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: var(--esp-2);
   list-style: none;
   padding: 0;
   margin: 0;
@@ -222,25 +235,26 @@ body.tema-claro .indice__link:focus-visible {
 .mapa__trilha::before {
   content: "";
   position: absolute;
-  left: 0.85rem;
-  top: 0.85rem;
-  bottom: 0.85rem;
+  left: 1.05rem;
+  top: 1.1rem;
+  bottom: 1.1rem;
   width: 1px;
   background: var(--regua);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 960px) {
   .mapa__trilha {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: space-between;
     gap: var(--esp-2);
+    padding-bottom: var(--esp-2);
   }
 
   .mapa__trilha::before {
-    left: 1.25rem;
-    right: 1.25rem;
-    top: 0.85rem;
+    left: 1.4rem;
+    right: 1.4rem;
+    top: 1.05rem;
     bottom: auto;
     height: 1px;
     width: auto;
@@ -250,21 +264,31 @@ body.tema-claro .indice__link:focus-visible {
 .mapa__tab {
   position: relative;
   z-index: 1;
-  flex: 1;
+  flex: 1 1 0;
   display: flex;
   align-items: flex-start;
   gap: var(--esp-3);
   width: 100%;
+  min-width: 0;
   text-align: left;
-  padding: var(--esp-2) var(--esp-2) var(--esp-4);
+  padding: var(--esp-3);
   border-radius: 2px;
-  transition: color var(--duracao) var(--easing);
+  transition: background var(--duracao) var(--easing);
+}
+
+.mapa__tab:hover,
+.mapa__tab:focus-visible {
+  background: color-mix(in srgb, var(--regua) 28%, transparent);
+}
+
+.mapa__tab[aria-selected="true"] {
+  background: color-mix(in srgb, var(--papel) 90%, var(--regua));
 }
 
 .mapa__numero {
   flex-shrink: 0;
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 1.85rem;
+  height: 1.85rem;
   display: grid;
   place-items: center;
   font-family: var(--fonte-display);
@@ -280,23 +304,25 @@ body.tema-claro .indice__link:focus-visible {
 .mapa__rotulo {
   display: flex;
   flex-direction: column;
-  gap: var(--esp-1);
+  gap: 0.2rem;
   min-width: 0;
 }
 
 .mapa__nome {
   font-family: var(--fonte-display);
-  font-size: var(--texto-sm);
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   font-weight: 700;
+  line-height: 1.3;
   color: var(--navy);
   hyphens: none;
+  text-wrap: balance;
 }
 
 .mapa__status {
   font-family: var(--fonte-display);
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--bronze);
 }
@@ -310,11 +336,17 @@ body.tema-claro .indice__link:focus-visible {
   color: var(--navy-esc);
 }
 
+.mapa__paineis {
+  min-width: 0;
+}
+
 .mapa__painel {
-  padding: var(--esp-6);
+  height: 100%;
+  padding: clamp(1.25rem, 2vw, 1.75rem);
   background: var(--papel);
-  border: 1px solid var(--regua);
-  min-height: 14rem;
+  border: 1px solid color-mix(in srgb, var(--regua) 80%, transparent);
+  box-shadow: var(--sombra-suave);
+  min-height: 16rem;
 }
 
 .mapa__painel[hidden] {
@@ -334,20 +366,20 @@ body.tema-claro .indice__link:focus-visible {
 .mapa__painel-titulo {
   font-size: var(--texto-lg);
   color: var(--navy);
-  margin-bottom: var(--esp-5);
+  margin-bottom: var(--esp-6);
   hyphens: none;
 }
 
 .mapa__detalhe {
   display: grid;
-  gap: var(--esp-4);
+  gap: var(--esp-5);
 }
 
 .mapa__detalhe dt {
   font-family: var(--fonte-display);
   font-size: var(--texto-xs);
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--bronze);
   margin-bottom: var(--esp-1);
@@ -355,16 +387,29 @@ body.tema-claro .indice__link:focus-visible {
 
 .mapa__detalhe dd {
   font-size: var(--texto-sm);
+  line-height: 1.55;
   color: var(--tinta);
   max-width: none;
 }
 
 /* —— Rodapé —— */
 .rodape {
-  padding: var(--esp-12) 0 var(--esp-16);
-  background: var(--navy-esc);
-  color: color-mix(in srgb, var(--creme) 75%, transparent);
+  padding: var(--esp-16) var(--gutter-mobile) var(--esp-20);
+  background:
+    radial-gradient(
+      ellipse 60% 80% at 50% 0%,
+      color-mix(in srgb, var(--bronze) 10%, transparent),
+      transparent 55%
+    ),
+    var(--navy-esc);
+  color: color-mix(in srgb, var(--creme) 72%, transparent);
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .rodape {
+    padding-inline: var(--gutter-tablet);
+  }
 }
 
 .rodape__marca {
@@ -376,16 +421,16 @@ body.tema-claro .indice__link:focus-visible {
 }
 
 .rodape__brasao {
-  width: 2.5rem;
+  width: 2.75rem;
   height: auto;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .rodape__instituicao {
   font-family: var(--fonte-display);
   font-size: var(--texto-sm);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--creme);
 }
@@ -396,22 +441,23 @@ body.tema-claro .indice__link:focus-visible {
 }
 
 .rodape__aviso {
-  margin-top: var(--esp-5);
+  margin-top: var(--esp-6);
   font-family: var(--fonte-display);
   font-size: var(--texto-xs);
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--bronze-cl);
-  max-width: 36ch;
+  max-width: 34ch;
   margin-inline: auto;
+  line-height: 1.5;
 }
 
 /* —— Revelação progressiva (não obrigatória sem JS) —— */
 .js .revelar {
   opacity: 0;
-  transform: translateY(0.75rem);
-  transition: opacity 500ms var(--easing), transform 500ms var(--easing);
+  transform: translateY(0.85rem);
+  transition: opacity 600ms var(--easing), transform 600ms var(--easing);
 }
 
 .js .revelar--visivel {
@@ -426,7 +472,9 @@ body.tema-claro .indice__link:focus-visible {
     transition: none;
   }
 
-  .trilho__progresso {
+  .trilho__progresso,
+  .trilho__marcador,
+  .cartao {
     transition: none;
   }
 }

@@ -1,38 +1,21 @@
-/* Grid, containers e ritmo vertical da página única. */
+/* Grid, containers e ritmo — fundos full-bleed; gutters nos atos. */
 
 .pagina {
   position: relative;
 }
 
 .container {
-  width: min(100% - var(--esp-8), var(--container));
+  width: min(100%, var(--container));
   margin-inline: auto;
 }
 
 .container--largo {
-  width: min(100% - var(--esp-8), var(--container-largo));
-}
-
-@media (min-width: 768px) {
-  .container,
-  .container--largo {
-    width: min(100% - var(--esp-12), var(--container));
-  }
-
-  .container--largo {
-    width: min(100% - var(--esp-12), var(--container-largo));
-  }
-}
-
-@media (min-width: 1100px) {
-  /* Reserva faixa para índice e trilho sem espremê-los no texto. */
-  .pagina {
-    padding-inline: var(--trilho-espaco);
-  }
+  width: min(100%, var(--container-largo));
+  margin-inline: auto;
 }
 
 .fluxo > * + * {
-  margin-top: var(--esp-6);
+  margin-top: var(--esp-5);
 }
 
 .fluxo > * + h2,

@@ -1,27 +1,70 @@
 /* Estilos por ato — cadência navy / creme e tipografia narrativa. */
 
 .ato {
+  position: relative;
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-block: var(--esp-16);
-  position: relative;
+  padding-block: clamp(3.5rem, 8vh, 6rem);
+  padding-inline: var(--gutter-mobile);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .ato {
+    padding-inline: var(--gutter-tablet);
+  }
+}
+
+@media (min-width: 900px) {
+  .ato {
+    padding-left: calc(var(--gutter-tablet) + var(--rail-left));
+  }
+}
+
+@media (min-width: 1280px) {
+  .ato {
+    padding-left: calc(var(--gutter-desktop) + var(--rail-left));
+    padding-right: calc(var(--gutter-desktop) + var(--rail-right));
+  }
 }
 
 .ato--escuro {
-  background: var(--navy);
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 15% 20%,
+      color-mix(in srgb, var(--bronze) 14%, transparent),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 70% 50% at 90% 80%,
+      color-mix(in srgb, var(--navy-esc) 80%, transparent),
+      transparent 50%
+    ),
+    var(--navy);
   color: var(--creme);
 }
 
 .ato--claro {
-  background: var(--creme);
+  background:
+    radial-gradient(
+      ellipse 90% 55% at 85% 10%,
+      color-mix(in srgb, var(--regua) 35%, transparent),
+      transparent 55%
+    ),
+    var(--creme);
   color: var(--tinta);
 }
 
 .ato--papel {
-  background: var(--papel);
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--creme) 55%, var(--papel)) 0%,
+      var(--papel) 40%
+    );
   color: var(--tinta);
 }
 
@@ -29,10 +72,10 @@
   font-family: var(--fonte-display);
   font-size: var(--texto-xs);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--bronze-cl);
-  margin-bottom: var(--esp-4);
+  margin-bottom: var(--esp-5);
 }
 
 .ato--claro .ato__sobrelinha,
@@ -43,9 +86,11 @@
 .ato__titulo {
   font-size: var(--texto-2xl);
   font-weight: 800;
-  max-width: 18ch;
-  margin-bottom: var(--esp-5);
+  letter-spacing: -0.02em;
+  max-width: 12ch;
+  margin-bottom: var(--esp-6);
   color: inherit;
+  text-wrap: balance;
 }
 
 .ato--escuro .ato__titulo {
@@ -63,9 +108,9 @@
   font-weight: 400;
   font-style: italic;
   line-height: var(--lh-corpo);
-  max-width: 36ch;
-  margin-bottom: var(--esp-8);
-  color: color-mix(in srgb, var(--creme) 80%, transparent);
+  max-width: 34ch;
+  margin-bottom: var(--esp-10);
+  color: color-mix(in srgb, var(--creme) 78%, transparent);
 }
 
 .ato__saudacao {
@@ -81,7 +126,7 @@
 }
 
 .ato--escuro .ato__texto {
-  color: color-mix(in srgb, var(--creme) 90%, transparent);
+  color: color-mix(in srgb, var(--creme) 88%, transparent);
 }
 
 .ato--claro .ato__texto,
@@ -93,22 +138,19 @@
   margin-top: var(--esp-5);
 }
 
-/* Em blocos largos, justificação ajuda o ritmo de carta. */
-.ato__texto--largo {
-  max-width: var(--medida);
-}
-
 @media (min-width: 768px) {
   .ato__texto--justificado {
     text-align: justify;
+    text-justify: inter-word;
     hyphens: auto;
   }
 }
 
 .ato__citacao {
   margin: var(--esp-8) 0;
-  padding: var(--esp-6) 0 var(--esp-6) var(--esp-5);
+  padding: var(--esp-6) var(--esp-6) var(--esp-6) var(--esp-5);
   border-left: 2px solid var(--bronze);
+  background: color-mix(in srgb, var(--papel) 70%, transparent);
   max-width: var(--medida);
 }
 
@@ -127,7 +169,7 @@
   font-size: var(--texto-xs);
   font-style: normal;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--bronze);
 }
@@ -135,14 +177,15 @@
 .ato__selo {
   display: inline-block;
   margin-top: var(--esp-10);
-  padding: var(--esp-2) var(--esp-4);
-  border: 1px solid var(--bronze);
+  padding: var(--esp-3) var(--esp-5);
+  border: 1px solid color-mix(in srgb, var(--bronze-cl) 55%, transparent);
   font-family: var(--fonte-display);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--bronze-cl);
+  background: color-mix(in srgb, var(--navy-esc) 45%, transparent);
 }
 
 .ato__rolar {
@@ -150,18 +193,43 @@
   font-family: var(--fonte-display);
   font-size: var(--texto-xs);
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--creme) 45%, transparent);
+  color: color-mix(in srgb, var(--creme) 42%, transparent);
 }
 
 .ato__rolar::after {
   content: "";
   display: block;
   width: 1px;
-  height: 2rem;
+  height: 2.25rem;
   margin-top: var(--esp-3);
-  background: color-mix(in srgb, var(--bronze-cl) 60%, transparent);
+  background: linear-gradient(
+    to bottom,
+    var(--bronze-cl),
+    transparent
+  );
+  animation: ato-rolar 1.8s var(--easing) infinite;
+}
+
+@keyframes ato-rolar {
+  0%,
+  100% {
+    transform: scaleY(0.55);
+    transform-origin: top;
+    opacity: 0.45;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ato__rolar::after {
+    animation: none;
+  }
 }
 
 .ato__intro {
@@ -187,6 +255,6 @@
   text-transform: uppercase;
   color: var(--bronze-cl);
   margin-top: var(--esp-12);
-  margin-bottom: var(--esp-2);
+  margin-bottom: var(--esp-4);
   hyphens: none;
 }
