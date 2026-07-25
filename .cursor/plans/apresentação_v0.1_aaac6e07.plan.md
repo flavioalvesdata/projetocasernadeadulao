@@ -4,25 +4,25 @@ overview: Site estático de página única (HTML/CSS/JS sem build nem dependênc
 todos:
   - id: scaffold
     content: Branch, .gitignore, robots.txt, tokens/base/layout, fontes woff2, brasao.svg placeholder
-    status: pending
+    status: completed
   - id: nav-trilho
     content: index.html esqueleto + índice lateral + trilho da marcha + navegacao.js
-    status: pending
+    status: completed
   - id: ato-0
     content: Ato 0 (abertura) + SITE_CONFIG com Glaydston / cargo / nomeFormal
-    status: pending
+    status: completed
   - id: ato-1
     content: Ato 1 — A caverna (texto literal)
-    status: pending
+    status: completed
   - id: ato-2
     content: Ato 2 — A convicção + 4 cartões de recusa
-    status: pending
+    status: completed
   - id: ato-3
     content: Ato 3 — mapa tablist/tabpanel + marcha.js
-    status: pending
+    status: completed
   - id: footer-docs
     content: Rodapé, README, TODO, a11y/reduced-motion, checklist e PR
-    status: pending
+    status: completed
 isProject: false
 ---
 
