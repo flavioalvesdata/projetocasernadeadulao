@@ -1,130 +1,83 @@
-/* Índice, trilho da marcha, cartões, mapa e rodapé. */
+/* Índice-trilho unificado, cartões, mapa e rodapé. */
 
-/* —— Trilho da marcha —— */
-.trilho {
-  display: none;
+/* —— Índice = trilho da marcha (esquerda) —— */
+.indice {
   position: fixed;
   top: 50%;
-  left: 1.15rem;
+  left: 0.75rem;
   z-index: 40;
-  width: 2px;
-  height: min(48vh, 20rem);
+  display: flex;
+  align-items: stretch;
+  height: min(42vh, 16rem);
   transform: translateY(-50%);
-  pointer-events: none;
 }
 
-.trilho__trilha {
+.indice__trilha {
   position: absolute;
-  inset: 0;
-  background: color-mix(in srgb, var(--regua) 40%, transparent);
-  border-radius: 1px;
+  top: 0.55rem;
+  bottom: 0.55rem;
+  left: 0.55rem;
+  width: 1px;
+  background: color-mix(in srgb, var(--regua) 45%, transparent);
 }
 
-.trilho__progresso {
-  position: absolute;
-  top: 0;
-  left: 0;
+.indice__progresso {
   width: 100%;
   height: 0%;
   background: linear-gradient(to bottom, var(--bronze-cl), var(--bronze));
-  border-radius: 1px;
   transition: height var(--duracao) var(--easing);
 }
 
-.trilho__marcadores {
-  position: absolute;
-  inset: 0;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.trilho__marcador {
-  position: absolute;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  border: 1.5px solid var(--bronze-cl);
-  border-radius: 50%;
-  background: var(--navy);
-  transform: translate(-50%, -50%);
-  transition: background var(--duracao) var(--easing),
-    border-color var(--duracao) var(--easing),
-    transform var(--duracao) var(--easing);
-}
-
-.trilho__marcador--ativo {
-  background: var(--bronze-cl);
-  border-color: var(--bronze-cl);
-  transform: translate(-50%, -50%) scale(1.15);
-}
-
-@media (min-width: 900px) {
-  .trilho {
-    display: block;
-  }
-}
-
-@media (max-width: 899px) {
-  /* Mobile: só o trilho, sem texto de índice — discreto à direita. */
-  .trilho {
-    display: block;
-    left: auto;
-    right: 0.65rem;
-    height: min(36vh, 14rem);
-    opacity: 0.7;
-  }
-}
-
-/* —— Índice lateral —— */
-.indice {
-  display: none;
-  position: fixed;
-  top: 50%;
-  right: 1.25rem;
-  z-index: 30;
-  transform: translateY(-50%);
-  max-width: 8.5rem;
-}
-
 .indice__lista {
+  position: relative;
+  z-index: 1;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--esp-4);
-  align-items: flex-end;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .indice__link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: var(--esp-2);
-  max-width: 100%;
-  font-family: var(--fonte-display);
-  font-size: 0.625rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  gap: 0.65rem;
   text-decoration: none;
-  white-space: nowrap;
-  color: color-mix(in srgb, var(--creme) 38%, transparent);
+  color: color-mix(in srgb, var(--creme) 45%, transparent);
   transition: color var(--duracao) var(--easing);
 }
 
-.indice__link::after {
-  content: "";
-  width: 0.35rem;
-  height: 0.35rem;
-  border-radius: 50%;
-  background: currentColor;
+.indice__ponto {
   flex-shrink: 0;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 1.5px solid var(--bronze-cl);
+  border-radius: 50%;
+  background: var(--navy);
+  transition: background var(--duracao) var(--easing),
+    transform var(--duracao) var(--easing),
+    box-shadow var(--duracao) var(--easing);
+}
+
+.indice__rotulo {
+  display: none;
+  font-family: var(--fonte-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .indice__link--ativo {
   color: var(--bronze-cl);
+}
+
+.indice__link--ativo .indice__ponto {
+  background: var(--bronze-cl);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--bronze-cl) 22%, transparent);
 }
 
 .indice__link:hover,
@@ -132,31 +85,59 @@
   color: var(--bronze-cl);
 }
 
-/* Só aparece quando há largura de sobra — evita texto cortado. */
-@media (min-width: 1280px) {
+.indice__link:hover .indice__ponto,
+.indice__link:focus-visible .indice__ponto {
+  transform: scale(1.12);
+}
+
+/* Desktop: rótulos legíveis ao lado do ponto — sem caixa alta truncada. */
+@media (min-width: 900px) {
   .indice {
+    left: 1.25rem;
+    height: min(48vh, 20rem);
+  }
+
+  .indice__rotulo {
     display: block;
   }
 }
 
-body.tema-escuro .indice__link {
-  color: color-mix(in srgb, var(--creme) 38%, transparent);
-}
+/* Mobile: só pontos, à direita, sem competir com o texto. */
+@media (max-width: 899px) {
+  .indice {
+    left: auto;
+    right: 0.55rem;
+    height: min(34vh, 13rem);
+    opacity: 0.85;
+  }
 
-body.tema-escuro .indice__link--ativo,
-body.tema-escuro .indice__link:hover,
-body.tema-escuro .indice__link:focus-visible {
-  color: var(--bronze-cl);
+  .indice__trilha {
+    left: 0.55rem;
+  }
 }
 
 body.tema-claro .indice__link {
-  color: color-mix(in srgb, var(--navy) 42%, transparent);
+  color: color-mix(in srgb, var(--navy) 40%, transparent);
 }
 
 body.tema-claro .indice__link--ativo,
 body.tema-claro .indice__link:hover,
 body.tema-claro .indice__link:focus-visible {
   color: var(--bronze);
+}
+
+body.tema-claro .indice__ponto {
+  background: var(--creme);
+  border-color: var(--bronze);
+}
+
+body.tema-claro .indice__link--ativo .indice__ponto {
+  background: var(--bronze);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--bronze) 18%, transparent);
+}
+
+body.tema-claro .indice__trilha {
+  background: color-mix(in srgb, var(--regua) 70%, transparent);
 }
 
 /* —— Cartões de recusa —— */
@@ -472,8 +453,8 @@ body.tema-claro .indice__link:focus-visible {
     transition: none;
   }
 
-  .trilho__progresso,
-  .trilho__marcador,
+  .indice__progresso,
+  .indice__ponto,
   .cartao {
     transition: none;
   }

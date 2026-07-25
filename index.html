@@ -18,34 +18,38 @@
   <body class="tema-escuro">
     <a class="visually-hidden" href="#ato-0">Ir para o conteúdo</a>
 
+    <!-- Trilho + índice unificados: um só elemento à esquerda, sem menu truncado à direita. -->
     <nav class="indice" aria-label="Índice da apresentação">
+      <div class="indice__trilha" aria-hidden="true">
+        <div class="indice__progresso"></div>
+      </div>
       <ol class="indice__lista">
         <li>
-          <a class="indice__link indice__link--ativo" href="#ato-0">Abertura</a>
+          <a class="indice__link indice__link--ativo" href="#ato-0" data-ato="ato-0">
+            <span class="indice__ponto" aria-hidden="true"></span>
+            <span class="indice__rotulo">Abertura</span>
+          </a>
         </li>
         <li>
-          <a class="indice__link" href="#ato-1">A caverna</a>
+          <a class="indice__link" href="#ato-1" data-ato="ato-1">
+            <span class="indice__ponto" aria-hidden="true"></span>
+            <span class="indice__rotulo">A caverna</span>
+          </a>
         </li>
         <li>
-          <a class="indice__link" href="#ato-2">A convicção</a>
+          <a class="indice__link" href="#ato-2" data-ato="ato-2">
+            <span class="indice__ponto" aria-hidden="true"></span>
+            <span class="indice__rotulo">A convicção</span>
+          </a>
         </li>
         <li>
-          <a class="indice__link" href="#ato-3">A marcha</a>
+          <a class="indice__link" href="#ato-3" data-ato="ato-3">
+            <span class="indice__ponto" aria-hidden="true"></span>
+            <span class="indice__rotulo">A marcha</span>
+          </a>
         </li>
       </ol>
     </nav>
-
-    <aside class="trilho" aria-hidden="true">
-      <div class="trilho__trilha">
-        <div class="trilho__progresso"></div>
-      </div>
-      <ol class="trilho__marcadores">
-        <li class="trilho__marcador trilho__marcador--ativo" data-ato="ato-0" style="top: 0%"></li>
-        <li class="trilho__marcador" data-ato="ato-1" style="top: 33%"></li>
-        <li class="trilho__marcador" data-ato="ato-2" style="top: 66%"></li>
-        <li class="trilho__marcador" data-ato="ato-3" style="top: 100%"></li>
-      </ol>
-    </aside>
 
     <main class="pagina" id="conteudo">
       <!-- Ato 0 — Abertura -->

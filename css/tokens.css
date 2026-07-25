@@ -62,13 +62,7 @@
 
 @media (min-width: 900px) {
   :root {
-    --rail-left: 2.75rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  :root {
-    --rail-left: 3.25rem;
-    --rail-right: 9.5rem;
+    /* Espaço para o trilho + rótulos curtos à esquerda */
+    --rail-left: 8.5rem;
   }
 }

@@ -1,6 +1,6 @@
 /**
- * Índice lateral, seção ativa e trilho da marcha.
- * O trilho materializa progresso na narrativa — não é barra decorativa.
+ * Índice-trilho unificado: progresso da marcha + seção ativa.
+ * Um só controle à esquerda — sem menu truncado à direita.
  */
 (function () {
   const ATOS = ["ato-0", "ato-1", "ato-2", "ato-3"];
@@ -8,34 +8,29 @@
   function initNavegacao() {
     const secoes = ATOS.map((id) => document.getElementById(id)).filter(Boolean);
     const links = Array.from(document.querySelectorAll(".indice__link"));
-    const trilhoProgresso = document.querySelector(".trilho__progresso");
-    const marcadores = Array.from(document.querySelectorAll(".trilho__marcador"));
+    const progresso = document.querySelector(".indice__progresso");
     const body = document.body;
 
     if (!secoes.length) return;
 
-    function atualizarTrilho() {
+    function atualizarProgresso() {
       const doc = document.documentElement;
       const max = doc.scrollHeight - window.innerHeight;
-      const progresso = max > 0 ? window.scrollY / max : 0;
-      if (trilhoProgresso) {
-        trilhoProgresso.style.height = `${Math.min(100, Math.max(0, progresso * 100))}%`;
+      const razao = max > 0 ? window.scrollY / max : 0;
+      if (progresso) {
+        progresso.style.height = `${Math.min(100, Math.max(0, razao * 100))}%`;
       }
     }
 
     function ativarSecao(id) {
       links.forEach((link) => {
-        const ativo = link.getAttribute("href") === `#${id}`;
+        const ativo = link.dataset.ato === id;
         link.classList.toggle("indice__link--ativo", ativo);
         if (ativo) {
           link.setAttribute("aria-current", "true");
         } else {
           link.removeAttribute("aria-current");
         }
-      });
-
-      marcadores.forEach((m) => {
-        m.classList.toggle("trilho__marcador--ativo", m.dataset.ato === id);
       });
 
       const secao = document.getElementById(id);
@@ -46,7 +41,6 @@
       }
     }
 
-    // Observa qual ato ocupa o centro do viewport — mais estável que só o topo.
     const observer = new IntersectionObserver(
       (entries) => {
         const visiveis = entries
@@ -65,9 +59,9 @@
 
     secoes.forEach((s) => observer.observe(s));
 
-    window.addEventListener("scroll", atualizarTrilho, { passive: true });
-    window.addEventListener("resize", atualizarTrilho, { passive: true });
-    atualizarTrilho();
+    window.addEventListener("scroll", atualizarProgresso, { passive: true });
+    window.addEventListener("resize", atualizarProgresso, { passive: true });
+    atualizarProgresso();
     ativarSecao(secoes[0].id);
   }
 

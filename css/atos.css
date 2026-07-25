@@ -21,13 +21,14 @@
 @media (min-width: 900px) {
   .ato {
     padding-left: calc(var(--gutter-tablet) + var(--rail-left));
+    padding-right: var(--gutter-tablet);
   }
 }
 
 @media (min-width: 1280px) {
   .ato {
     padding-left: calc(var(--gutter-desktop) + var(--rail-left));
-    padding-right: calc(var(--gutter-desktop) + var(--rail-right));
+    padding-right: var(--gutter-desktop);
   }
 }
 
