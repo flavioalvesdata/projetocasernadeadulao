@@ -2,15 +2,18 @@
 
 .ato {
   position: relative;
-  min-height: 100vh;
-  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-block: clamp(3.5rem, 8vh, 6rem);
+  padding-block: clamp(3rem, 6vh, 5rem);
   padding-left: calc(var(--gutter-mobile) + var(--rail-left));
   padding-right: var(--gutter-mobile);
-  overflow-x: clip;
+  overflow-x: auto;
+}
+
+.ato--abertura {
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 @media (min-width: 768px) {
@@ -28,6 +31,18 @@
 }
 
 .ato--escuro {
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 15% 20%,
+      rgba(140, 106, 69, 0.14),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 70% 50% at 90% 80%,
+      rgba(16, 29, 51, 0.8),
+      transparent 50%
+    ),
+    var(--navy);
   background:
     radial-gradient(
       ellipse 80% 60% at 15% 20%,
@@ -176,12 +191,12 @@
   padding: var(--esp-3) var(--esp-5);
   border: 1px solid color-mix(in srgb, var(--bronze-cl) 55%, transparent);
   font-family: var(--fonte-display);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--bronze-cl);
-  background: color-mix(in srgb, var(--navy-esc) 45%, transparent);
+  background: rgba(16, 29, 51, 0.45);
 }
 
 .ato__rolar {
@@ -191,7 +206,7 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--creme) 42%, transparent);
+  color: rgba(245, 241, 231, 0.78);
 }
 
 .ato__rolar::after {
@@ -247,6 +262,11 @@
 .ato--escuro .ato__nota {
   border-top-color: color-mix(in srgb, var(--regua) 40%, transparent);
   color: color-mix(in srgb, var(--creme) 70%, transparent);
+}
+
+.ato--papel .ato__secao-titulo,
+.ato--claro .ato__secao-titulo {
+  color: var(--bronze);
 }
 
 .ato__secao-titulo {

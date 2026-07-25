@@ -107,7 +107,7 @@
 
 **Nota de fechamento:**
 
-> A escolha de uma serifa para o corpo do texto não é estética: é pastoral. O material será lido em condições difíceis — luz ruim, tempo curto, atenção disputada. A serifa sustenta a leitura longa melhor do que qualquer alternativa mais moderna.
+> A fonte serifada foi escolhida para reforçar o caráter editorial do material e favorecer uma leitura contínua e confortável, inclusive em condições de luz e atenção desfavoráveis.
 
 ---
 

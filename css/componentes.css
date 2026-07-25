@@ -1,5 +1,10 @@
 /* Índice-trilho unificado, cartões, mapa e rodapé. */
 
+/* —— Sumário móvel —— */
+.sumario-toggle {
+  display: none;
+}
+
 /* —— Índice = trilho da marcha (esquerda) —— */
 .indice {
   position: fixed;
@@ -44,6 +49,8 @@
   display: flex;
   align-items: center;
   gap: 0.65rem;
+  min-height: 44px;
+  padding-block: 0.35rem;
   text-decoration: none;
   color: color-mix(in srgb, var(--creme) 45%, transparent);
   transition: color var(--duracao) var(--easing);
@@ -68,7 +75,7 @@
   font-weight: 700;
   letter-spacing: 0.02em;
   line-height: 1.2;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
 }
 
 .indice__link--ativo {
@@ -101,25 +108,73 @@
   }
 }
 
-/* Mobile: permanece à esquerda; rótulo acessível sem ocupar espaço */
+/* Mobile: botão + drawer de sumário */
 @media (max-width: 899px) {
+  .sumario-toggle {
+    position: fixed;
+    top: var(--esp-3);
+    left: var(--esp-3);
+    z-index: 60;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.65rem 0.9rem;
+    background: var(--navy);
+    color: var(--creme);
+    border: 1px solid var(--bronze-cl);
+    font-family: var(--fonte-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
   .indice {
-    left: 0.45rem;
+    top: 0;
+    left: 0;
     right: auto;
-    height: min(48vh, 20rem);
-    opacity: 0.9;
+    width: min(20rem, 88vw);
+    height: 100%;
+    max-height: none;
+    transform: translateX(-105%);
+    padding: calc(var(--esp-16) + var(--esp-2)) var(--esp-5) var(--esp-8);
+    background: var(--navy-esc);
+    box-shadow: var(--sombra-suave);
+    transition: transform var(--duracao) var(--easing);
+    opacity: 1;
+  }
+
+  body.sumario-aberto .indice {
+    transform: translateX(0);
+  }
+
+  body.sumario-aberto::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 35;
+    background: rgba(16, 29, 51, 0.45);
+  }
+
+  .indice__trilha {
+    display: none;
   }
 
   .indice__rotulo {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+    display: block;
+    color: inherit;
+  }
+
+  .indice__link {
+    min-height: 44px;
+    color: rgba(245, 241, 231, 0.88);
+  }
+
+  .indice__link--ativo,
+  .indice__parte--ativa {
+    color: var(--bronze-cl);
   }
 }
 
@@ -134,7 +189,7 @@
 }
 
 body.tema-escuro .indice__link {
-  color: color-mix(in srgb, var(--creme) 50%, transparent);
+  color: rgba(245, 241, 231, 0.82);
 }
 
 body.tema-escuro .indice__ponto {
@@ -149,7 +204,7 @@ body.tema-escuro .indice__link:focus-visible {
 }
 
 body.tema-claro .indice__link {
-  color: color-mix(in srgb, var(--navy) 48%, transparent);
+  color: rgba(26, 42, 68, 0.78);
 }
 
 body.tema-claro .indice__link--ativo,
@@ -314,7 +369,7 @@ body.tema-claro .indice__trilha {
 
 .mapa__status {
   font-family: var(--fonte-display);
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -429,123 +484,7 @@ body.tema-claro .indice__trilha {
   max-width: none;
 }
 
-/* —— Anatomia (Ato 4) —— */
-.anatomia {
-  display: grid;
-  gap: var(--esp-8);
-  margin-top: var(--esp-10);
-  width: 100%;
-  min-width: 0;
-}
-
-@media (min-width: 960px) {
-  .anatomia {
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-    align-items: start;
-    gap: var(--esp-8);
-  }
-}
-
-.anatomia__figura {
-  position: relative;
-  margin: 0;
-  max-width: 1100px;
-  background: var(--papel);
-  box-shadow: var(--sombra-suave);
-}
-
-.anatomia__img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.anatomia__marcadores {
-  position: absolute;
-  inset: 0;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  pointer-events: none;
-}
-
-.anatomia__marcador {
-  position: absolute;
-  z-index: 2;
-  width: 1.75rem;
-  height: 1.75rem;
-  display: grid;
-  place-items: center;
-  transform: translate(-50%, -50%);
-  pointer-events: auto;
-  font-family: var(--fonte-display);
-  font-size: 0.7rem;
-  font-weight: 800;
-  color: var(--papel);
-  background: var(--bronze);
-  border: 2px solid var(--papel);
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(16, 29, 51, 0.25);
-  transition: transform var(--duracao) var(--easing),
-    background var(--duracao) var(--easing);
-}
-
-.anatomia__marcador[aria-selected="true"] {
-  background: var(--navy);
-  transform: translate(-50%, -50%) scale(1.12);
-}
-
-.anatomia__marcador:hover,
-.anatomia__marcador:focus-visible {
-  transform: translate(-50%, -50%) scale(1.12);
-}
-
-@media (max-width: 599px) {
-  .anatomia__marcador {
-    width: 1.5rem;
-    height: 1.5rem;
-    font-size: 0.65rem;
-  }
-}
-
-.anatomia__painel {
-  padding: var(--esp-6);
-  background: color-mix(in srgb, var(--navy-esc) 88%, black);
-  border-top: 2px solid var(--bronze);
-  min-height: 10rem;
-}
-
-.anatomia__painel[hidden] {
-  display: none;
-}
-
-.anatomia__painel-num {
-  font-family: var(--fonte-display);
-  font-size: var(--texto-xs);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--bronze-cl);
-  margin-bottom: var(--esp-2);
-}
-
-.anatomia__painel-titulo {
-  font-family: var(--fonte-display);
-  font-size: var(--texto-lg);
-  font-weight: 800;
-  color: var(--papel);
-  margin-bottom: var(--esp-4);
-  hyphens: none;
-}
-
-.anatomia__painel-texto {
-  font-size: var(--texto-sm);
-  line-height: 1.55;
-  color: color-mix(in srgb, var(--creme) 88%, transparent);
-  max-width: none;
-}
-
-/* —— Edições (Ato 5) —— */
+/* —— Edições (reservado para seção futura) —— */
 .edicoes {
   display: grid;
   gap: var(--esp-8);
@@ -782,11 +721,11 @@ body.tema-claro .indice__trilha {
   background:
     radial-gradient(
       ellipse 60% 80% at 50% 0%,
-      color-mix(in srgb, var(--bronze) 10%, transparent),
+      rgba(140, 106, 69, 0.1),
       transparent 55%
     ),
     var(--navy-esc);
-  color: color-mix(in srgb, var(--creme) 72%, transparent);
+  color: rgba(245, 241, 231, 0.88);
   text-align: center;
 }
 
@@ -822,19 +761,21 @@ body.tema-claro .indice__trilha {
 .rodape__linha {
   font-size: var(--texto-sm);
   max-width: none;
+  overflow-wrap: anywhere;
 }
 
 .rodape__aviso {
   margin-top: var(--esp-6);
   font-family: var(--fonte-display);
-  font-size: var(--texto-xs);
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-transform: none;
   color: var(--bronze-cl);
-  max-width: 34ch;
+  max-width: 52ch;
   margin-inline: auto;
-  line-height: 1.5;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 /* —— Revelação progressiva (não obrigatória sem JS) —— */

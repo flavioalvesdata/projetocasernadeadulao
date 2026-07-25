@@ -6,20 +6,69 @@
     <meta name="robots" content="noindex, nofollow" />
     <meta
       name="description"
-      content="Prospecto do currículo Discipulando a Caserna — Projeto Caserna de Adulão."
+      content="Projeto Caserna de Adulão apresenta o programa Discipulando a Caserna: formação bíblica e discipulado no contexto da caserna."
     />
-    <title>Discipulando a Caserna — Prospecto pastoral</title>
-    <link rel="stylesheet" href="css/tokens.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/componentes.css" />
-    <link rel="stylesheet" href="css/atos.css" />
-    <link rel="stylesheet" href="css/prospecto.css" />
+    <meta name="theme-color" content="#1a2a44" />
+    <link
+      rel="canonical"
+      href="https://flavioiabuilder.github.io/projetocasernadeadulao/"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Discipulando a Caserna | Projeto Caserna de Adulão"
+    />
+    <meta
+      property="og:description"
+      content="Apresentação do programa de formação bíblica e discipulado no contexto da caserna. Documento de trabalho em apreciação pastoral."
+    />
+    <meta
+      property="og:url"
+      content="https://flavioiabuilder.github.io/projetocasernadeadulao/"
+    />
+    <meta property="og:locale" content="pt_BR" />
+    <title>Discipulando a Caserna | Projeto Caserna de Adulão</title>
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="assets/fonts/source-serif-4-latin-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/montserrat-latin-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/tokens.css?v=0.4.0" />
+    <link rel="stylesheet" href="css/base.css?v=0.4.0" />
+    <link rel="stylesheet" href="css/layout.css?v=0.4.0" />
+    <link rel="stylesheet" href="css/componentes.css?v=0.4.0" />
+    <link rel="stylesheet" href="css/atos.css?v=0.4.0" />
+    <link rel="stylesheet" href="css/prospecto.css?v=0.4.0" />
   </head>
   <body class="tema-escuro">
-    <a class="visually-hidden" href="#secao-1">Ir para o conteúdo</a>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
 
-    <nav class="indice" aria-label="Índice do prospecto">
+    <button
+      type="button"
+      class="sumario-toggle"
+      data-sumario-toggle
+      aria-controls="sumario-painel"
+      aria-expanded="false"
+    >
+      Sumário
+    </button>
+
+    <nav
+      class="indice"
+      id="sumario-painel"
+      data-sumario-painel
+      aria-label="Índice do prospecto"
+    >
       <div class="indice__trilha" aria-hidden="true">
         <div class="indice__progresso"></div>
       </div>
@@ -83,21 +132,35 @@
           </a>
           <ol class="indice__sublista">
             <li>
-              <a class="indice__link" href="#secao-10">
+              <a class="indice__link" href="#secao-7">
                 <span class="indice__ponto" aria-hidden="true"></span>
                 <span class="indice__rotulo">Progressão</span>
               </a>
             </li>
             <li>
-              <a class="indice__link" href="#secao-11">
+              <a class="indice__link" href="#secao-8">
                 <span class="indice__ponto" aria-hidden="true"></span>
                 <span class="indice__rotulo">Público</span>
               </a>
             </li>
             <li>
-              <a class="indice__link" href="#secao-12">
+              <a class="indice__link" href="#secao-9">
                 <span class="indice__ponto" aria-hidden="true"></span>
                 <span class="indice__rotulo">Princípios</span>
+              </a>
+            </li>
+          </ol>
+        </li>
+        <li class="indice__grupo">
+          <a class="indice__link indice__parte" href="#parte-4">
+            <span class="indice__ponto" aria-hidden="true"></span>
+            <span class="indice__rotulo">Parte IV</span>
+          </a>
+          <ol class="indice__sublista">
+            <li>
+              <a class="indice__link" href="#secao-10">
+                <span class="indice__ponto" aria-hidden="true"></span>
+                <span class="indice__rotulo">Estado atual</span>
               </a>
             </li>
           </ol>
@@ -105,43 +168,55 @@
       </ol>
     </nav>
 
-    <main class="pagina" id="conteudo">
-      <!-- PARTE I -->
-      <header class="parte" id="parte-1" aria-labelledby="parte-1-titulo">
-        <p class="parte__romano" aria-hidden="true">I</p>
-        <h2 class="parte__titulo" id="parte-1-titulo">A identidade</h2>
-        <p class="parte__texto">De onde o projeto vem e o que a marca confessa.</p>
-      </header>
-
-      <!-- Seção 1 — Abertura -->
-      <section class="ato ato--escuro" id="secao-1" aria-labelledby="secao-1-titulo">
+    <main class="pagina" id="conteudo" tabindex="-1">
+      <!-- Seção 1 — Abertura (h1 primeiro no DOM) -->
+      <section
+        class="ato ato--escuro ato--abertura"
+        id="secao-1"
+        aria-labelledby="secao-1-titulo"
+      >
         <div class="container fluxo">
-          <p class="ato__sobrelinha revelar">Projeto Caserna de Adulão</p>
-          <h1 class="ato__titulo revelar" id="secao-1-titulo">Discipulando a Caserna</h1>
+          <p class="ato__sobrelinha revelar">
+            Projeto Caserna de Adulão apresenta
+          </p>
+          <h1 class="ato__titulo revelar" id="secao-1-titulo">
+            Discipulando a Caserna
+          </h1>
           <p class="ato__subtitulo revelar">
-            Um discipulado cristocêntrico para a caserna e para os que estão em
-            aperto
+            Programa de formação bíblica e discipulado no contexto da caserna
           </p>
           <p class="ato__saudacao revelar" data-saudacao>Pastor Glaydston,</p>
           <p class="ato__texto ato__texto--justificado revelar">
-            Escrevo o senhor por meio desta apresentação. Aqui está, reunido em
-            um só lugar, tudo o que foi construído até agora: a convicção que
-            sustenta o projeto, o método que o organiza e o material que já está
-            pronto. Nada disto é definitivo. O senhor lê estas páginas como quem
-            tem a palavra final.
+            Dirijo-me ao senhor por meio desta apresentação. Aqui está, reunido
+            em um só lugar, o que o Projeto Caserna de Adulão construiu até agora
+            no programa Discipulando a Caserna: a convicção que o sustenta, o
+            método que o organiza e o material pastoral já produzido. Nada disto
+            é definitivo. O documento é submetido à sua apreciação pastoral,
+            para orientação, validação e eventuais ajustes antes de sua
+            consolidação.
           </p>
           <p class="ato__selo revelar">
-            Versão candidata — aguardando apreciação pastoral
+            Documento de trabalho · versão 0.4.0 · aguardando apreciação pastoral
           </p>
           <p class="ato__rolar revelar" aria-hidden="true">Role para continuar</p>
         </div>
       </section>
 
+      <header class="parte" id="parte-1" aria-labelledby="parte-1-titulo">
+        <p class="parte__romano" aria-hidden="true">I</p>
+        <h2 class="parte__titulo" id="parte-1-titulo">A identidade</h2>
+        <p class="parte__texto">
+          De onde o Projeto Caserna de Adulão vem e o que a marca confessa.
+        </p>
+      </header>
+
       <!-- Seção 2 — A caverna -->
       <section class="ato ato--claro" id="secao-2" aria-labelledby="secao-2-titulo">
         <div class="container fluxo">
           <p class="ato__sobrelinha revelar">De onde vem o nome</p>
-          <h3 class="ato__titulo revelar" id="secao-2-titulo">A caverna de Adulão</h3>
+          <h3 class="ato__titulo revelar" id="secao-2-titulo">
+            A caverna de Adulão
+          </h3>
           <blockquote class="ato__citacao revelar">
             <p>
               “Todo homem que se achava em aperto, todo homem endividado e todo
@@ -156,14 +231,15 @@
             que marchariam com ele.
           </p>
           <p class="ato__texto ato__texto--justificado revelar">
-            Este projeto nasce da mesma convicção. O homem que chega ao
-            discipulado dentro de um quartel ou de uma unidade prisional
+            O Projeto Caserna de Adulão nasce da mesma convicção. O homem que
+            chega ao discipulado dentro de um quartel ou de uma unidade prisional
             raramente chega inteiro. Chega ferido, muitas vezes envergonhado,
             quase sempre desconfiado de autoridade. Adulão não é o lugar dos
-            prontos — é o lugar dos que ainda não têm para onde ir.
+            prontos: é o lugar dos que ainda não têm para onde ir.
           </p>
           <p class="ato__texto ato__texto--justificado revelar">
-            É por isso que o material não começa cobrando. Começa acolhendo.
+            É por isso que o material do programa não começa cobrando. Começa
+            acolhendo.
           </p>
         </div>
       </section>
@@ -177,12 +253,12 @@
           </h3>
           <p class="ato__texto ato__texto--justificado revelar">
             Todo o programa se apoia em um único eixo: é Cristo quem age. O
-            discípulo não escala uma carreira espiritual — ele responde a um
+            discípulo não escala uma carreira espiritual: ele responde a um
             Comandante que já o alcançou pela graça. A obediência é fruto e
             resposta, nunca moeda de troca.
           </p>
-          <h4 class="ato__secao-titulo revelar" style="color: var(--bronze)">
-            O que este projeto recusa
+          <h4 class="ato__secao-titulo revelar">
+            O que o programa recusa
           </h4>
           <div class="cartoes">
             <article class="cartao revelar">
@@ -195,7 +271,7 @@
             <article class="cartao revelar">
               <h5 class="cartao__titulo">Militarização da fé</h5>
               <p class="cartao__texto">
-                A metáfora militar serve ao evangelho — nunca o contrário. Ela
+                A metáfora militar serve ao evangelho, nunca o contrário. Ela
                 ilumina a lealdade; não fabrica bravata nem humilha.
               </p>
             </article>
@@ -222,20 +298,24 @@
         <div class="container--largo">
           <div class="container fluxo ato__intro">
             <p class="ato__sobrelinha revelar">A marca e o que ela confessa</p>
-            <h3 class="ato__titulo revelar" id="secao-4-titulo">Um escudo que ensina</h3>
+            <h3 class="ato__titulo revelar" id="secao-4-titulo">
+              Um escudo que ensina
+            </h3>
             <p class="ato__texto ato__texto--justificado revelar">
-              A identidade visual do projeto não é ornamento. Ela é a doutrina em
-              forma de imagem — pensada para ser lida por quem talvez nunca leia
-              o Guia Mestre inteiro.
+              A identidade visual proposta para o Projeto Caserna de Adulão não é
+              ornamento. Ela busca ser doutrina em forma de imagem, pensada para
+              ser lida por quem talvez nunca leia o Guia Mestre inteiro. A arte
+              abaixo é um estudo visual provisório, sujeito à homologação da
+              marca oficial.
             </p>
           </div>
 
           <div class="marca-bloco revelar">
             <h4 class="marca-bloco__titulo">A logomarca, peça por peça</h4>
             <p class="ato__texto">
-              A logomarca é um escudo com as insígnias cravadas: o cinto, a
-              couraça, os calçados e, no quarto campo, o próprio escudo do
-              Projeto — encimado pelo capacete e atravessado pela espada.
+              A proposta de logomarca é um escudo com as insígnias cravadas: o
+              cinto, a couraça, os calçados e, no quarto campo, o próprio escudo
+              do Projeto, encimado pelo capacete e atravessado pela espada.
             </p>
 
             <div class="marca-escudo" data-marca-escudo>
@@ -245,34 +325,147 @@
                   src="assets/img/marca-escudo.svg"
                   width="200"
                   height="260"
-                  alt="Escudo placeholder do Projeto Caserna de Adulão, com as peças da armadura"
+                  alt="Estudo visual do escudo do Projeto Caserna de Adulão, com as peças da armadura"
                 />
                 <div
                   class="marca-escudo__alvos"
                   role="tablist"
                   aria-label="Elementos da logomarca"
                 >
-                  <button class="marca-escudo__alvo" role="tab" id="tab-marca-1" aria-controls="painel-marca-1" aria-selected="true" tabindex="0" style="top: 14%; left: 50%">1</button>
-                  <button class="marca-escudo__alvo" role="tab" id="tab-marca-2" aria-controls="painel-marca-2" aria-selected="false" tabindex="-1" style="top: 32%; left: 36%">2</button>
-                  <button class="marca-escudo__alvo" role="tab" id="tab-marca-3" aria-controls="painel-marca-3" aria-selected="false" tabindex="-1" style="top: 32%; left: 64%">3</button>
-                  <button class="marca-escudo__alvo" role="tab" id="tab-marca-4" aria-controls="painel-marca-4" aria-selected="false" tabindex="-1" style="top: 52%; left: 36%">4</button>
-                  <button class="marca-escudo__alvo" role="tab" id="tab-marca-5" aria-controls="painel-marca-5" aria-selected="false" tabindex="-1" style="top: 52%; left: 64%">5</button>
-                  <button class="marca-escudo__alvo" role="tab" id="tab-marca-6" aria-controls="painel-marca-6" aria-selected="false" tabindex="-1" style="top: 72%; left: 50%">6</button>
+                  <button
+                    type="button"
+                    class="marca-escudo__alvo"
+                    role="tab"
+                    id="tab-marca-1"
+                    aria-controls="painel-marca-1"
+                    aria-selected="true"
+                    aria-label="Ver Capacete da Salvação"
+                    tabindex="0"
+                    style="top: 14%; left: 50%"
+                  >
+                    1
+                  </button>
+                  <button
+                    type="button"
+                    class="marca-escudo__alvo"
+                    role="tab"
+                    id="tab-marca-2"
+                    aria-controls="painel-marca-2"
+                    aria-selected="false"
+                    aria-label="Ver Cinto da Verdade"
+                    tabindex="-1"
+                    style="top: 32%; left: 36%"
+                  >
+                    2
+                  </button>
+                  <button
+                    type="button"
+                    class="marca-escudo__alvo"
+                    role="tab"
+                    id="tab-marca-3"
+                    aria-controls="painel-marca-3"
+                    aria-selected="false"
+                    aria-label="Ver Couraça da Justiça"
+                    tabindex="-1"
+                    style="top: 32%; left: 64%"
+                  >
+                    3
+                  </button>
+                  <button
+                    type="button"
+                    class="marca-escudo__alvo"
+                    role="tab"
+                    id="tab-marca-4"
+                    aria-controls="painel-marca-4"
+                    aria-selected="false"
+                    aria-label="Ver Calçados do Evangelho da Paz"
+                    tabindex="-1"
+                    style="top: 52%; left: 36%"
+                  >
+                    4
+                  </button>
+                  <button
+                    type="button"
+                    class="marca-escudo__alvo"
+                    role="tab"
+                    id="tab-marca-5"
+                    aria-controls="painel-marca-5"
+                    aria-selected="false"
+                    aria-label="Ver Escudo da Fé"
+                    tabindex="-1"
+                    style="top: 52%; left: 64%"
+                  >
+                    5
+                  </button>
+                  <button
+                    type="button"
+                    class="marca-escudo__alvo"
+                    role="tab"
+                    id="tab-marca-6"
+                    aria-controls="painel-marca-6"
+                    aria-selected="false"
+                    aria-label="Ver Espada do Espírito"
+                    tabindex="-1"
+                    style="top: 72%; left: 50%"
+                  >
+                    6
+                  </button>
                 </div>
               </figure>
 
+              <div
+                class="marca-escudo__lista"
+                data-escudo-lista
+                role="group"
+                aria-label="Lista das peças da armadura"
+              >
+                <button type="button" data-escudo-indice="0" aria-pressed="true">
+                  Capacete da Salvação
+                </button>
+                <button type="button" data-escudo-indice="1" aria-pressed="false">
+                  Cinto da Verdade
+                </button>
+                <button type="button" data-escudo-indice="2" aria-pressed="false">
+                  Couraça da Justiça
+                </button>
+                <button type="button" data-escudo-indice="3" aria-pressed="false">
+                  Calçados do Evangelho da Paz
+                </button>
+                <button type="button" data-escudo-indice="4" aria-pressed="false">
+                  Escudo da Fé
+                </button>
+                <button type="button" data-escudo-indice="5" aria-pressed="false">
+                  Espada do Espírito
+                </button>
+              </div>
+
               <div class="marca-escudo__paineis">
-                <div class="marca-escudo__painel" role="tabpanel" id="painel-marca-1" aria-labelledby="tab-marca-1">
-                  <p class="marca-escudo__painel-kicker">Capacete da Salvação · Ef 6.17</p>
+                <div
+                  class="marca-escudo__painel"
+                  role="tabpanel"
+                  id="painel-marca-1"
+                  aria-labelledby="tab-marca-1"
+                >
+                  <p class="marca-escudo__painel-kicker">
+                    Capacete da Salvação · Ef 6.17
+                  </p>
                   <h4 class="marca-escudo__painel-titulo">Capacete da Salvação</h4>
                   <p class="marca-escudo__painel-texto">
                     Guarda a mente na esperança da salvação. Está reservado à
-                    dimensão pastoral de socorro — o cuidado com quem atravessa
+                    dimensão pastoral de socorro: o cuidado com quem atravessa
                     crise, não uma etapa a ser vencida.
                   </p>
                 </div>
-                <div class="marca-escudo__painel" role="tabpanel" id="painel-marca-2" aria-labelledby="tab-marca-2" hidden>
-                  <p class="marca-escudo__painel-kicker">Campo 1 · Módulo Cristo Chamando</p>
+                <div
+                  class="marca-escudo__painel"
+                  role="tabpanel"
+                  id="painel-marca-2"
+                  aria-labelledby="tab-marca-2"
+                  hidden
+                >
+                  <p class="marca-escudo__painel-kicker">
+                    Campo 1 · Módulo Cristo Chamando
+                  </p>
                   <h4 class="marca-escudo__painel-titulo">Cinto da Verdade</h4>
                   <p class="marca-escudo__painel-texto">
                     O cinto de guarnição é uma das primeiras peças que o soldado
@@ -280,8 +473,16 @@
                     do chamado de Cristo sustenta a jornada inteira.
                   </p>
                 </div>
-                <div class="marca-escudo__painel" role="tabpanel" id="painel-marca-3" aria-labelledby="tab-marca-3" hidden>
-                  <p class="marca-escudo__painel-kicker">Campo 2 · Módulo Cristo Treinando</p>
+                <div
+                  class="marca-escudo__painel"
+                  role="tabpanel"
+                  id="painel-marca-3"
+                  aria-labelledby="tab-marca-3"
+                  hidden
+                >
+                  <p class="marca-escudo__painel-kicker">
+                    Campo 2 · Módulo Cristo Treinando
+                  </p>
                   <h4 class="marca-escudo__painel-titulo">Couraça da Justiça</h4>
                   <p class="marca-escudo__painel-texto">
                     A couraça protege o que é vital: o coração. É no treino
@@ -289,26 +490,54 @@
                     concessões que, somadas, desprotegem.
                   </p>
                 </div>
-                <div class="marca-escudo__painel" role="tabpanel" id="painel-marca-4" aria-labelledby="tab-marca-4" hidden>
-                  <p class="marca-escudo__painel-kicker">Campo 3 · Módulo Cristo Moldando</p>
-                  <h4 class="marca-escudo__painel-titulo">Calçados do Evangelho da Paz</h4>
+                <div
+                  class="marca-escudo__painel"
+                  role="tabpanel"
+                  id="painel-marca-4"
+                  aria-labelledby="tab-marca-4"
+                  hidden
+                >
+                  <p class="marca-escudo__painel-kicker">
+                    Campo 3 · Módulo Cristo Moldando
+                  </p>
+                  <h4 class="marca-escudo__painel-titulo">
+                    Calçados do Evangelho da Paz
+                  </h4>
                   <p class="marca-escudo__painel-texto">
-                    O coturno dá firmeza em qualquer terreno — lama ou pedra. É
-                    a estabilidade de caráter que permite permanecer de pé onde
+                    O coturno dá firmeza em qualquer terreno, lama ou pedra. É a
+                    estabilidade de caráter que permite permanecer de pé onde
                     antes se escorregava.
                   </p>
                 </div>
-                <div class="marca-escudo__painel" role="tabpanel" id="painel-marca-5" aria-labelledby="tab-marca-5" hidden>
-                  <p class="marca-escudo__painel-kicker">Campo 4 · Módulo Cristo Enviando</p>
-                  <h4 class="marca-escudo__painel-titulo">O próprio escudo do Projeto</h4>
+                <div
+                  class="marca-escudo__painel"
+                  role="tabpanel"
+                  id="painel-marca-5"
+                  aria-labelledby="tab-marca-5"
+                  hidden
+                >
+                  <p class="marca-escudo__painel-kicker">
+                    Campo 4 · Módulo Cristo Enviando
+                  </p>
+                  <h4 class="marca-escudo__painel-titulo">
+                    O próprio escudo do Projeto
+                  </h4>
                   <p class="marca-escudo__painel-texto">
                     O Escudo da Fé remete ao escudo-símbolo do projeto: o
                     discípulo formado torna-se, simbolicamente, a própria marca.
                     Envio pressupõe chamado, treino e caráter.
                   </p>
                 </div>
-                <div class="marca-escudo__painel" role="tabpanel" id="painel-marca-6" aria-labelledby="tab-marca-6" hidden>
-                  <p class="marca-escudo__painel-kicker">Espada do Espírito · Ef 6.17</p>
+                <div
+                  class="marca-escudo__painel"
+                  role="tabpanel"
+                  id="painel-marca-6"
+                  aria-labelledby="tab-marca-6"
+                  hidden
+                >
+                  <p class="marca-escudo__painel-kicker">
+                    Espada do Espírito · Ef 6.17
+                  </p>
                   <h4 class="marca-escudo__painel-titulo">Espada do Espírito</h4>
                   <p class="marca-escudo__painel-texto">
                     É a Palavra de Deus. Não pertence a uma etapa: permeia todo
@@ -319,10 +548,10 @@
               </div>
             </div>
 
-            <p class="ato__texto" style="margin-top: var(--esp-8)">
+            <p class="ato__texto marca-bloco__espaco">
               A imagem ensina o que o programa confessa: o discípulo não
               coleciona medalhas; ele é revestido por Cristo. Cada peça aponta
-              para o Senhor que chama, treina, molda e envia — e que cobre e
+              para o Senhor que chama, treina, molda e envia, e que cobre e
               sustenta o soldado em todo o percurso.
             </p>
           </div>
@@ -338,7 +567,7 @@
             <p class="ato__texto">
               A diferença entre uma imagem e um sistema é que o sistema tem
               regra. Aqui a regra é esta: a linguagem militar sempre serve ao
-              evangelho, e nunca o contrário. Ela ilumina a lealdade — não
+              evangelho, e nunca o contrário. Ela ilumina a lealdade: não
               fabrica bravata, não humilha, não transforma a fé em desempenho.
             </p>
           </div>
@@ -367,17 +596,23 @@
             <div class="marchas">
               <div class="marcha-item">
                 <p class="marcha-item__mod">Módulo 1</p>
-                <p class="marcha-item__nome">Primeira Marcha — O Recruta que se Rendeu</p>
+                <p class="marcha-item__nome">
+                  Primeira Marcha — O Recruta que se Rendeu
+                </p>
                 <p class="marcha-item__simbolo">Cinto da Verdade</p>
               </div>
               <div class="marcha-item">
                 <p class="marcha-item__mod">Módulo 2</p>
-                <p class="marcha-item__nome">Segunda Marcha — O Combatente que se Fortalece</p>
+                <p class="marcha-item__nome">
+                  Segunda Marcha — O Combatente que se Fortalece
+                </p>
                 <p class="marcha-item__simbolo">Couraça da Justiça</p>
               </div>
               <div class="marcha-item">
                 <p class="marcha-item__mod">Módulo 3</p>
-                <p class="marcha-item__nome">Terceira Marcha — O Guerreiro que Persevera</p>
+                <p class="marcha-item__nome">
+                  Terceira Marcha — O Guerreiro que Persevera
+                </p>
                 <p class="marcha-item__simbolo">Calçados do Evangelho da Paz</p>
               </div>
               <div class="marcha-item">
@@ -386,10 +621,10 @@
                 <p class="marcha-item__simbolo">Escudo da Fé</p>
               </div>
             </div>
-            <p class="ato__texto" style="margin-top: var(--esp-8)">
+            <p class="ato__texto marca-bloco__espaco">
               O certificado não é troféu nem comprovação de mérito espiritual. É
-              memória pastoral do rito de transição — o registro simples de que
-              o discípulo atravessou, pela graça, uma etapa da marcha.
+              memória pastoral do rito de transição: o registro simples de que o
+              discípulo atravessou, pela graça, uma etapa da marcha.
             </p>
             <p class="ato__texto">
               “Certificamos que [nome] concluiu, pela graça de Cristo, a [marcha
@@ -401,50 +636,52 @@
           <div class="marca-bloco revelar">
             <h4 class="marca-bloco__titulo">O sistema gráfico</h4>
             <p class="ato__texto">
-              A mesma identidade governa o Guia Mestre, as apostilas e esta
-              apresentação. Quem recebe a revista impressa e quem abre este site
-              estão diante da mesma marca.
+              A proposta gráfica abaixo orienta o Guia Mestre, as apostilas e
+              esta apresentação enquanto a marca oficial não for homologada.
+              Quem recebe a revista impressa e quem abre este site deve
+              encontrar a mesma direção visual, ainda em consolidação.
             </p>
-            <div class="paleta" aria-label="Paleta de cores">
+            <div class="paleta" role="group" aria-label="Paleta de cores">
               <div class="paleta__amostra">
-                <div class="paleta__chip" style="background: var(--navy)"></div>
+                <div class="paleta__chip paleta__chip--navy"></div>
                 <p class="paleta__nome">Navy</p>
                 <p class="paleta__hex">#1A2A44</p>
               </div>
               <div class="paleta__amostra">
-                <div class="paleta__chip" style="background: var(--navy-esc)"></div>
+                <div class="paleta__chip paleta__chip--navy-esc"></div>
                 <p class="paleta__nome">Navy escuro</p>
                 <p class="paleta__hex">#101D33</p>
               </div>
               <div class="paleta__amostra">
-                <div class="paleta__chip" style="background: var(--bronze)"></div>
+                <div class="paleta__chip paleta__chip--bronze"></div>
                 <p class="paleta__nome">Bronze</p>
                 <p class="paleta__hex">#8C6A45</p>
               </div>
               <div class="paleta__amostra">
-                <div class="paleta__chip" style="background: var(--creme)"></div>
+                <div class="paleta__chip paleta__chip--creme"></div>
                 <p class="paleta__nome">Creme</p>
                 <p class="paleta__hex">#F5F1E7</p>
               </div>
               <div class="paleta__amostra">
-                <div class="paleta__chip" style="background: var(--regua)"></div>
+                <div class="paleta__chip paleta__chip--regua"></div>
                 <p class="paleta__nome">Régua</p>
                 <p class="paleta__hex">#C9BCA1</p>
               </div>
               <div class="paleta__amostra">
-                <div class="paleta__chip" style="background: var(--tinta)"></div>
+                <div class="paleta__chip paleta__chip--tinta"></div>
                 <p class="paleta__nome">Tinta</p>
                 <p class="paleta__hex">#23262B</p>
               </div>
             </div>
             <div class="tipografia-amostra">
-              <p class="tipografia-amostra__display">Montserrat — títulos e rótulos</p>
+              <p class="tipografia-amostra__display">
+                Montserrat — títulos e rótulos
+              </p>
               <p class="tipografia-amostra__corpo">
-                Source Serif 4 — texto corrido. A escolha de uma serifa para o
-                corpo do texto não é estética: é pastoral. O material será lido
-                em condições difíceis — luz ruim, tempo curto, atenção
-                disputada. A serifa sustenta a leitura longa melhor do que
-                qualquer alternativa mais moderna.
+                Source Serif 4 — texto corrido. A fonte serifada foi escolhida
+                para reforçar o caráter editorial do material e favorecer uma
+                leitura contínua e confortável, inclusive em condições de luz e
+                atenção desfavoráveis.
               </p>
             </div>
           </div>
@@ -455,7 +692,10 @@
       <header class="parte" id="parte-2" aria-labelledby="parte-2-titulo">
         <p class="parte__romano" aria-hidden="true">II</p>
         <h2 class="parte__titulo" id="parte-2-titulo">O programa</h2>
-        <p class="parte__texto">Como o caminho se organiza e o que cada lição carrega.</p>
+        <p class="parte__texto">
+          Como o caminho do Discipulando a Caserna se organiza e o que cada
+          lição carrega.
+        </p>
       </header>
 
       <!-- Seção 5 — Arquitetura -->
@@ -489,7 +729,7 @@
               lições cada, totalizando quarenta e oito encontros ao longo de
               aproximadamente um ano. Cada módulo aprofunda o anterior e
               trabalha uma ênfase espiritual distinta. Alguns temas retornam com
-              maior densidade, mas nenhum módulo repete o outro — o objetivo não
+              maior densidade, mas nenhum módulo repete o outro: o objetivo não
               é variação temática, e sim amadurecimento real do discípulo na
               mesma centralidade de Cristo.
             </p>
@@ -520,7 +760,9 @@
         <div class="container--largo">
           <div class="container fluxo ato__intro">
             <p class="ato__sobrelinha revelar">As quarenta e oito lições</p>
-            <h3 class="ato__titulo revelar" id="secao-6-titulo">Matriz curricular</h3>
+            <h3 class="ato__titulo revelar" id="secao-6-titulo">
+              Matriz curricular
+            </h3>
             <p class="ato__texto ato__texto--justificado revelar">
               Esta matriz não é apenas um calendário, mas uma ferramenta de
               contemplação e planejamento pastoral. Cada lição tem título,
@@ -541,20 +783,491 @@
               definidos no Guia Mestre, e sua produção está condicionada à
               validação pastoral do Módulo 1.
             </p>
-            <div class="matriz__filtro" data-matriz-filtro role="group" aria-label="Filtrar por módulo">
-              <button type="button" class="matriz__filtro-btn matriz__filtro-btn--ativo" data-filtro="todos" aria-pressed="true">Todos</button>
-              <button type="button" class="matriz__filtro-btn" data-filtro="1" aria-pressed="false">Módulo 1</button>
-              <button type="button" class="matriz__filtro-btn" data-filtro="2" aria-pressed="false">Módulo 2</button>
-              <button type="button" class="matriz__filtro-btn" data-filtro="3" aria-pressed="false">Módulo 3</button>
-              <button type="button" class="matriz__filtro-btn" data-filtro="4" aria-pressed="false">Módulo 4</button>
+            <div
+              class="matriz__filtro"
+              data-matriz-filtro
+              role="group"
+              aria-label="Filtrar por módulo"
+            >
+              <button
+                type="button"
+                class="matriz__filtro-btn matriz__filtro-btn--ativo"
+                data-filtro="todos"
+                aria-pressed="true"
+              >
+                Todos
+              </button>
+              <button
+                type="button"
+                class="matriz__filtro-btn"
+                data-filtro="1"
+                aria-pressed="false"
+              >
+                Módulo 1
+              </button>
+              <button
+                type="button"
+                class="matriz__filtro-btn"
+                data-filtro="2"
+                aria-pressed="false"
+              >
+                Módulo 2
+              </button>
+              <button
+                type="button"
+                class="matriz__filtro-btn"
+                data-filtro="3"
+                aria-pressed="false"
+              >
+                Módulo 3
+              </button>
+              <button
+                type="button"
+                class="matriz__filtro-btn"
+                data-filtro="4"
+                aria-pressed="false"
+              >
+                Módulo 4
+              </button>
             </div>
+            <p class="matriz__live visually-hidden" data-matriz-live aria-live="polite"></p>
             <div class="matriz__lista" data-matriz-lista></div>
-            <noscript>
-              <p class="matriz__nota">
-                Ative o JavaScript para filtrar a matriz, ou consulte
-                <code>conteudo/matriz-curricular.json</code>.
-              </p>
-            </noscript>
+            <!-- FALLBACK-DADOS:START -->
+<noscript class="fallback-dados">
+  <div class="container fluxo">
+    <p class="matriz__nota">
+      Esta página funciona sem JavaScript. Abaixo estão o mapa dos módulos e a
+      matriz curricular completos do programa Discipulando a Caserna.
+    </p>
+    <section class="fallback-mapa" aria-label="Mapa dos módulos">
+      <h3 class="fallback-titulo">Mapa dos módulos</h3>
+      <article class="fallback-item">
+  <h4>Módulo 1: Cristo Chamando</h4>
+  <p>O Alistamento Espiritual · Cinto da Verdade · Material completo</p>
+  <p>Conversão e identidade em Cristo</p>
+</article>
+<article class="fallback-item">
+  <h4>Módulo 2: Cristo Treinando</h4>
+  <p>Fundamentos da Fé e da Disciplina Espiritual · Couraça da Justiça · Produção condicionada</p>
+  <p>Fundamentos da fé e disciplina espiritual</p>
+</article>
+<article class="fallback-item">
+  <h4>Módulo 3: Cristo Moldando</h4>
+  <p>Caráter e Vida no Espírito · Calçados do Evangelho da Paz · Produção condicionada</p>
+  <p>Caráter cristão e vida no Espírito</p>
+</article>
+<article class="fallback-item">
+  <h4>Módulo 4: Cristo Enviando</h4>
+  <p>Missão, Frutificação e Perseverança · Escudo da Fé · Produção condicionada</p>
+  <p>Missão, serviço e perseverança</p>
+</article>
+    </section>
+    <section class="fallback-matriz" aria-label="Matriz curricular">
+      <h3 class="fallback-titulo">Matriz curricular (48 lições)</h3>
+      <div class="fallback-tabela-wrap">
+        <table class="fallback-tabela">
+          <thead>
+            <tr>
+              <th scope="col">Nº</th>
+              <th scope="col">Módulo</th>
+              <th scope="col">Título</th>
+              <th scope="col">Texto-base</th>
+              <th scope="col">Objetivo</th>
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+<tr>
+  <td>1</td>
+  <td>1</td>
+  <td>Bem-vindo a Adulão: o quartel dos feridos</td>
+  <td>2Tm 2.3</td>
+  <td>Acolher o ferido antes de qualquer exigência: Adulão é abrigo, não vitrine de heróis.</td>
+  <td>Produzida</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>1</td>
+  <td>O Comandante que entra na caverna</td>
+  <td>Jo 14.18</td>
+  <td>Mostrar Cristo como o Senhor que desce ao lugar do fracasso para resgatar.</td>
+  <td>Produzida</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>1</td>
+  <td>Contemplação: resposta de gratidão ao resgate</td>
+  <td>2Co 3.18</td>
+  <td>Ensinar a contemplação como resposta ao resgate, não técnica para merecer.</td>
+  <td>Produzida</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>1</td>
+  <td>A Bíblia: o Manual do Guerreiro</td>
+  <td>Sl 119.105</td>
+  <td>Firmar a autoridade da Escritura como manual que orienta a marcha.</td>
+  <td>Produzida</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>1</td>
+  <td>Insubordinação: a quebra de lealdade que custa a honra</td>
+  <td>Rm 3.23</td>
+  <td>Apresentar o pecado como quebra de lealdade, com diagnóstico que cura.</td>
+  <td>Produzida</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>1</td>
+  <td>Ordem de reintegração: a graça que devolve a patente</td>
+  <td>Ef 2.8-9</td>
+  <td>Anunciar a graça que reintegra: dom de Cristo, não salário do esforço.</td>
+  <td>Produzida</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>1</td>
+  <td>A Fé: Confiança e Obediência</td>
+  <td>Hb 11.6</td>
+  <td>Ensinar a fé como confiança que se traduz em obediência.</td>
+  <td>Produzida</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>1</td>
+  <td>Apresentando-se para o serviço: a rendição que restaura a confiança</td>
+  <td>At 3.19</td>
+  <td>Demonstrar que o arrependimento é reapresentar-se ao Quartel-General para servir sob novas ordens.</td>
+  <td>Produzida</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td>1</td>
+  <td>A Cruz: O Juramento de Lealdade</td>
+  <td>Lc 9.23</td>
+  <td>Ensinar o custo do discipulado como entrega diária, em resposta amorosa.</td>
+  <td>Produzida</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td>1</td>
+  <td>Nova farda, nova missão</td>
+  <td>Jo 3.3-8</td>
+  <td>Apresentar o novo nascimento como nova natureza que habilita a um propósito útil.</td>
+  <td>Produzida</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td>1</td>
+  <td>O Espírito Santo: O Instrutor Interior</td>
+  <td>Jo 16.13</td>
+  <td>Ensinar que o Espírito guia, corrige e fortalece por dentro, formando obediência.</td>
+  <td>Produzida</td>
+</tr>
+<tr>
+  <td>12</td>
+  <td>1</td>
+  <td>Comunhão e Vida de Tropa</td>
+  <td>At 2.42-47</td>
+  <td>Demonstrar que ninguém cresce isolado: a tropa é ambiente de edificação e cuidado.</td>
+  <td>Produzida</td>
+</tr>
+<tr>
+  <td>13</td>
+  <td>2</td>
+  <td>Oração: Comunicação com o Quartel-General</td>
+  <td>Fp 4.6-7</td>
+  <td>Ensinar a oração como diálogo vital e diário com o Comandante.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>14</td>
+  <td>2</td>
+  <td>A Igreja: Companhia de Irmãos de Armas</td>
+  <td>Ef 4.11-16</td>
+  <td>Mostrar a Igreja como corpo que serve, se edifica e marcha junto.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>15</td>
+  <td>2</td>
+  <td>O Batismo: Juramento de Fidelidade</td>
+  <td>Rm 6.3-4</td>
+  <td>Explicar o batismo como aliança pública de morte para o pecado e vida para Deus.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>16</td>
+  <td>2</td>
+  <td>Santificação: Separação e Consagração</td>
+  <td>1Ts 4.3-7</td>
+  <td>Ensinar a santificação como separação do pecado e dedicação a Deus.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>17</td>
+  <td>2</td>
+  <td>Combate Espiritual e Tentação</td>
+  <td>Ef 6.10-13</td>
+  <td>Ensinar sobre a guerra espiritual e o uso das armas de Deus.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>18</td>
+  <td>2</td>
+  <td>Adoração: Estratégia de Combate Espiritual</td>
+  <td>2Cr 20.21-22</td>
+  <td>Mostrar que adorar é guerrear com fé e que o louvor antecede a vitória.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>19</td>
+  <td>2</td>
+  <td>Mordomia e Obediência Financeira</td>
+  <td>2Co 9.6-8</td>
+  <td>Ensinar fidelidade nos recursos como resposta de fé e prestação de contas.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>20</td>
+  <td>2</td>
+  <td>O Lar Cristão: A Base da Tropa</td>
+  <td>Js 24.15</td>
+  <td>Ensinar que a casa é o primeiro campo de discipulado e de lealdade.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>21</td>
+  <td>2</td>
+  <td>Perdão e Reconciliação: Cura das Feridas de Guerra</td>
+  <td>Mt 18.21-22</td>
+  <td>Ensinar que o perdão restaura a comunhão e impede contaminação da tropa.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>22</td>
+  <td>2</td>
+  <td>Ética e Testemunho na Corporação</td>
+  <td>Mt 5.13-16</td>
+  <td>Ensinar o valor do testemunho cristão no ambiente de serviço.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>23</td>
+  <td>2</td>
+  <td>A Palavra e o Juramento</td>
+  <td>Tg 5.12</td>
+  <td>Ensinar integridade no falar e fidelidade aos compromissos assumidos.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>24</td>
+  <td>2</td>
+  <td>Preparação para o Batismo: Revisão e Entrega</td>
+  <td>At 8.36-38</td>
+  <td>Revisar fundamentos e conduzir o discípulo à consagração pública.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>25</td>
+  <td>3</td>
+  <td>O Espírito Santo e os Dons de Serviço</td>
+  <td>1Co 12.4-7</td>
+  <td>Ensinar que os dons são dados para servir e edificar o corpo de Cristo.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>26</td>
+  <td>3</td>
+  <td>O Fruto do Espírito: Caráter do Guerreiro de Cristo</td>
+  <td>Gl 5.22-23</td>
+  <td>Mostrar que o fruto é sinal de maturidade e da patente interior.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>27</td>
+  <td>3</td>
+  <td>A Mente de Cristo</td>
+  <td>Fp 2.5-8</td>
+  <td>Ensinar a pensar e agir com humildade, obediência e serviço.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>28</td>
+  <td>3</td>
+  <td>Disciplina Espiritual: Treino e Constância</td>
+  <td>1Tm 4.7-8</td>
+  <td>Mostrar que a piedade se fortalece por treino, como resposta à graça.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>29</td>
+  <td>3</td>
+  <td>Santidade no Campo de Batalha</td>
+  <td>1Pe 1.15-16</td>
+  <td>Ensinar santidade como modo de vida em qualquer ambiente.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>30</td>
+  <td>3</td>
+  <td>Autoridade e Submissão</td>
+  <td>Hb 13.17</td>
+  <td>Ensinar a obedecer e a liderar com humildade, revelando maturidade.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>31</td>
+  <td>3</td>
+  <td>Amor e Camaradagem</td>
+  <td>Jo 15.12-13</td>
+  <td>Ensinar o amor fraternal como vínculo da tropa espiritual.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>32</td>
+  <td>3</td>
+  <td>Humildade e Serviço</td>
+  <td>Mc 10.43-45</td>
+  <td>Ensinar que servir é o maior posto no Reino de Deus.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>33</td>
+  <td>3</td>
+  <td>Enfrentando o Sofrimento e as Provações</td>
+  <td>Rm 5.3-5</td>
+  <td>Ensinar a ver o sofrimento como instrumento de crescimento e perseverança.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>34</td>
+  <td>3</td>
+  <td>Alegria e Esperança em Meio à Luta</td>
+  <td>Fp 4.4-7</td>
+  <td>Ensinar a manter alegria e contentamento mesmo em combate.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>35</td>
+  <td>3</td>
+  <td>Testemunho Público e Coerência de Vida</td>
+  <td>Mt 5.14-16</td>
+  <td>Ensinar o poder do exemplo visível no meio da tropa.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>36</td>
+  <td>3</td>
+  <td>Multiplicação: O Discípulo que Forma Discípulos</td>
+  <td>2Tm 2.2</td>
+  <td>Ensinar que o ciclo do discipulado se completa quando formamos outros.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>37</td>
+  <td>4</td>
+  <td>A Grande Comissão: O Chamado para Avançar</td>
+  <td>Mt 28.18-20</td>
+  <td>Ensinar que todo discípulo maduro é enviado.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>38</td>
+  <td>4</td>
+  <td>Evangelismo Relacional no Contexto Militar</td>
+  <td>Jo 4.28-30</td>
+  <td>Ensinar a evangelizar com sabedoria e testemunho no dia a dia.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>39</td>
+  <td>4</td>
+  <td>Vocação e Propósito na Corporação</td>
+  <td>Cl 3.23-24</td>
+  <td>Mostrar que o trabalho e a farda podem ser serviço ao Senhor.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>40</td>
+  <td>4</td>
+  <td>Liderança Espiritual e Influência pelo Exemplo</td>
+  <td>1Pe 5.2-3</td>
+  <td>Ensinar que liderança cristã é serviço e autoridade moral.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>41</td>
+  <td>4</td>
+  <td>Unidade e Cooperação no Corpo de Cristo</td>
+  <td>Ef 4.1-3</td>
+  <td>Ensinar a importância da unidade e do trabalho conjunto na missão.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>42</td>
+  <td>4</td>
+  <td>Serviço e Diaconia: Grandeza na Humildade</td>
+  <td>Jo 13.12-15</td>
+  <td>Ensinar o valor do serviço humilde, à semelhança de Cristo.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>43</td>
+  <td>4</td>
+  <td>Oração Intercessora e Batalha Espiritual</td>
+  <td>1Tm 2.1-3</td>
+  <td>Ensinar o poder da intercessão como combate em favor de outros.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>44</td>
+  <td>4</td>
+  <td>Missões e Compaixão Global</td>
+  <td>Mc 16.15; At 1.8</td>
+  <td>Ampliar a visão missionária para além dos muros da caserna.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>45</td>
+  <td>4</td>
+  <td>Perseverança e Fidelidade até o Fim</td>
+  <td>Hb 10.35-39</td>
+  <td>Ensinar a manter fé e lealdade mesmo nas provações.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>46</td>
+  <td>4</td>
+  <td>A Volta do Rei: Prontidão e Santidade</td>
+  <td>Ap 22.12-13</td>
+  <td>Ensinar que a esperança da volta de Cristo sustenta a fidelidade presente.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>47</td>
+  <td>4</td>
+  <td>Recompensas e Galardões do Guerreiro Fiel</td>
+  <td>2Tm 4.7-8</td>
+  <td>Mostrar que o serviço fiel tem recompensa eterna.</td>
+  <td>Planejada</td>
+</tr>
+<tr>
+  <td>48</td>
+  <td>4</td>
+  <td>Formatura do Soldado de Cristo</td>
+  <td>Fp 3.13-14</td>
+  <td>Celebrar a conclusão do discipulado e o envio para formar outros.</td>
+  <td>Planejada</td>
+</tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</noscript>
+<!-- FALLBACK-DADOS:END -->
           </div>
         </div>
       </section>
@@ -566,17 +1279,17 @@
         <p class="parte__texto">Progressão, público e o que não se negocia.</p>
       </header>
 
-      <!-- Seção 10 -->
-      <section class="ato ato--papel" id="secao-10" aria-labelledby="secao-10-titulo">
+      <!-- Seção 7 — Progressão (antes #secao-10; esse id agora identifica o fechamento) -->
+      <section class="ato ato--papel" id="secao-7" aria-labelledby="secao-7-titulo">
         <div class="container fluxo">
           <p class="ato__sobrelinha revelar">Por que não se pula etapa</p>
-          <h3 class="ato__titulo revelar" id="secao-10-titulo">
+          <h3 class="ato__titulo revelar" id="secao-7-titulo">
             Progressão é cuidado, não promoção
           </h3>
           <p class="ato__texto ato__texto--justificado revelar">
             Em linguagem conhecida do ambiente militar, não se avança de fase
             sem concluir a anterior. Mas aqui essa progressão não é promoção por
-            mérito — é cuidado de graça.
+            mérito: é cuidado de graça.
           </p>
           <p class="ato__texto ato__texto--justificado revelar">
             Ao considerar a passagem para a etapa seguinte, o instrutor e a
@@ -594,18 +1307,19 @@
         </div>
       </section>
 
-      <!-- Seção 11 -->
-      <section class="ato ato--claro" id="secao-11" aria-labelledby="secao-11-titulo">
+      <!-- Seção 8 — Público (antes secao-11) -->
+      <section class="ato ato--claro" id="secao-8" aria-labelledby="secao-8-titulo">
+        <span id="secao-11" hidden></span>
         <div class="container fluxo">
           <p class="ato__sobrelinha revelar">Para quem este material foi escrito</p>
-          <h3 class="ato__titulo revelar" id="secao-11-titulo">
+          <h3 class="ato__titulo revelar" id="secao-8-titulo">
             Irmãos em processo de restauração
           </h3>
           <p class="ato__texto ato__texto--justificado revelar">
-            O público primário é formado por militares e custodiados — vistos
-            não como alunos acadêmicos, mas como irmãos em processo de
-            restauração e futuros multiplicadores sob supervisão pastoral. O
-            público secundário abrange instrutores, capelanias e lideranças
+            O público primário é formado por militares e custodiados, vistos não
+            como alunos acadêmicos, mas como irmãos em processo de restauração e
+            futuros multiplicadores sob supervisão pastoral. O público
+            secundário abrange instrutores, capelanias e lideranças
             corresponsáveis pela missão.
           </p>
           <div class="escopo-grade revelar">
@@ -614,10 +1328,13 @@
               <ul>
                 <li>Fundamentos bíblicos e hermenêuticos do discipulado</li>
                 <li>
-                  Currículo anual completo — 48 lições em quatro módulos, em
+                  Currículo anual completo: 48 lições em quatro módulos, em
                   narrativa unificada
                 </li>
-                <li>Módulos de socorro para crises específicas (apêndices pastorais)</li>
+                <li>
+                  Módulos de socorro para crises específicas (apêndices
+                  pastorais)
+                </li>
                 <li>Diretrizes de vida, método e cuidado para o instrutor</li>
                 <li>
                   Ritos de passagem e transições simbólicas como marcos
@@ -631,7 +1348,7 @@
                 <li>Debates confessionais secundários</li>
                 <li>Políticas institucionais</li>
                 <li>
-                  Tratamentos clínicos — encaminhados à capelania e a
+                  Tratamentos clínicos: encaminhados à capelania e a
                   profissionais de saúde
                 </li>
               </ul>
@@ -640,16 +1357,17 @@
         </div>
       </section>
 
-      <!-- Seção 12 -->
-      <section class="ato ato--papel" id="secao-12" aria-labelledby="secao-12-titulo">
+      <!-- Seção 9 — Princípios (antes secao-12) -->
+      <section class="ato ato--papel" id="secao-9" aria-labelledby="secao-9-titulo">
+        <span id="secao-12" hidden></span>
         <div class="container fluxo">
           <p class="ato__sobrelinha revelar">O que não se negocia</p>
-          <h3 class="ato__titulo revelar" id="secao-12-titulo">Sete compromissos</h3>
+          <h3 class="ato__titulo revelar" id="secao-9-titulo">Sete compromissos</h3>
           <div class="principios revelar">
             <div class="principio">
               <h4 class="principio__nome">Cristocentrismo</h4>
               <p class="principio__texto">
-                Tudo aponta para Cristo, o Comandante — não para o esforço, o
+                Tudo aponta para Cristo, o Comandante: não para o esforço, o
                 mérito ou a bravata do discípulo.
               </p>
             </div>
@@ -698,15 +1416,112 @@
         </div>
       </section>
 
-      <!-- PARTE IV — placeholder de orientação -->
+      <!-- PARTE IV -->
       <header class="parte" id="parte-4" aria-labelledby="parte-4-titulo">
         <p class="parte__romano" aria-hidden="true">IV</p>
         <h2 class="parte__titulo" id="parte-4-titulo">O estado atual</h2>
         <p class="parte__texto">
-          As seções 13 a 15 (o que está pronto, o que depende do senhor e o
-          encerramento) entram no próximo lote.
+          O que está pronto, o que permanece provisório e o que pedimos à
+          apreciação pastoral.
         </p>
       </header>
+
+      <!-- Seção 10 — Fechamento -->
+      <section
+        class="ato ato--claro ato--fechamento"
+        id="secao-10"
+        aria-labelledby="secao-10-titulo"
+      >
+        <div class="container fluxo">
+          <p class="ato__sobrelinha revelar">Para apreciação pastoral</p>
+          <h3 class="ato__titulo revelar" id="secao-10-titulo">
+            Onde o programa está e o que pedimos agora
+          </h3>
+
+          <h4 class="ato__secao-titulo revelar">Estado atual do programa</h4>
+          <p class="ato__texto ato__texto--justificado revelar">
+            O Projeto Caserna de Adulão apresenta nesta versão o programa
+            Discipulando a Caserna como documento de trabalho. A arquitetura de
+            quatro módulos e quarenta e oito lições está definida; a identidade
+            teológica e os princípios de implantação estão descritos; a
+            navegação desta apresentação cobre as Partes I a IV de forma
+            contínua.
+          </p>
+
+          <h4 class="ato__secao-titulo revelar">Materiais já concluídos</h4>
+          <ul class="lista-firme revelar">
+            <li>
+              Módulo 1 (Cristo Chamando) integralmente produzido nas edições do
+              Aluno e do Instrutor
+            </li>
+            <li>
+              Matriz curricular completa com títulos, textos-base e objetivos
+              das 48 lições
+            </li>
+            <li>
+              Proposta de marca, progressão, público e sete compromissos
+              pastorais documentados neste prospecto
+            </li>
+          </ul>
+
+          <h4 class="ato__secao-titulo revelar">Elementos ainda provisórios</h4>
+          <ul class="lista-firme revelar">
+            <li>
+              Representação visual do escudo e do brasão: estudo visual, ainda
+              sem homologação da arte oficial
+            </li>
+            <li>
+              Módulos 2 a 4: títulos e objetivos definidos; produção condicionada
+              à validação pastoral do Módulo 1
+            </li>
+            <li>
+              Seções futuras sobre anatomia de uma lição, o encontro e as duas
+              edições, ainda não incluídas nesta versão
+            </li>
+          </ul>
+
+          <h4 class="ato__secao-titulo revelar">
+            Pontos que dependem de apreciação pastoral
+          </h4>
+          <ul class="lista-firme revelar">
+            <li>Validação do Módulo 1 como base para a produção dos demais</li>
+            <li>Confirmação da progressão e dos critérios de passagem de etapa</li>
+            <li>Orientação sobre a identidade visual oficial</li>
+            <li>
+              Decisão sobre formas futuras de distribuição do material pastoral
+            </li>
+          </ul>
+
+          <h4 class="ato__secao-titulo revelar">Próximos passos</h4>
+          <p class="ato__texto ato__texto--justificado revelar">
+            Após a apreciação pastoral, os ajustes indicados serão incorporados
+            ao programa e à apresentação. Em seguida, a produção dos Módulos 2 a
+            4 poderá avançar conforme a orientação recebida, e a arte oficial
+            substituirá o estudo visual atual.
+          </p>
+
+          <div class="fechamento revelar">
+            <p class="fechamento__versao">
+              Versão <span data-versao>0.4.0</span> · Documento de trabalho
+              submetido à apreciação pastoral. Conteúdo sujeito a revisão.
+            </p>
+            <p class="fechamento__nome" data-encerramento-nome>
+              Pr. Glaydston Gama Lopes
+            </p>
+            <p class="fechamento__cargo" data-encerramento-cargo>
+              Pastor-presidente
+            </p>
+            <p class="fechamento__contato">
+              Contato:
+              <a
+                data-encerramento-email
+                href="mailto:casernadeadulao@gmail.com"
+                >casernadeadulao@gmail.com</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="rodape">
@@ -717,31 +1532,36 @@
             src="assets/img/brasao.svg"
             width="40"
             height="50"
-            alt="Brasão placeholder do Projeto Caserna de Adulão"
+            alt="Estudo visual do brasão do Projeto Caserna de Adulão"
           />
           <p class="rodape__instituicao">
             Projeto Caserna de Adulão · Fortaleza-CE
           </p>
         </div>
         <p class="rodape__linha">
-          CNPJ 63.724.286/0001-78 · casernadeadulao@gmail.com
+          CNPJ 63.724.286/0001-78 ·
+          <a href="mailto:casernadeadulao@gmail.com"
+            >casernadeadulao@gmail.com</a
+          >
         </p>
         <p class="rodape__aviso">
-          Material em versão candidata — não distribuir antes da apreciação
-          pastoral.
+          Documento de trabalho submetido à apreciação pastoral. Conteúdo
+          sujeito a revisão. Esta prévia pública não é material restrito: qualquer
+          pessoa com o link pode abri-la. A orientação
+          <code>noindex</code> apenas pede que buscadores não indexem a página.
         </p>
       </div>
     </footer>
 
-    <script src="js/config.js"></script>
-    <script src="js/dados/modulos.js"></script>
-    <script src="js/dados/matriz.js"></script>
-    <script src="js/abas.js"></script>
-    <script src="js/navegacao.js"></script>
-    <script src="js/revelar.js"></script>
-    <script src="js/marcha.js"></script>
-    <script src="js/marca.js"></script>
-    <script src="js/matriz.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/config.js?v=0.4.0"></script>
+    <script src="js/dados/modulos.js?v=0.4.0"></script>
+    <script src="js/dados/matriz.js?v=0.4.0"></script>
+    <script src="js/abas.js?v=0.4.0"></script>
+    <script src="js/navegacao.js?v=0.4.0"></script>
+    <script src="js/revelar.js?v=0.4.0"></script>
+    <script src="js/marcha.js?v=0.4.0"></script>
+    <script src="js/marca.js?v=0.4.0"></script>
+    <script src="js/matriz.js?v=0.4.0"></script>
+    <script src="js/main.js?v=0.4.0"></script>
   </body>
 </html>

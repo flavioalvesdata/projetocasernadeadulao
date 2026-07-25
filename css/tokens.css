@@ -67,9 +67,9 @@
   }
 }
 
-/* Mobile: índice permanece à esquerda — reserva faixa estreita */
+/* Mobile: sumário em drawer — sem reserva de trilho lateral */
 @media (max-width: 899px) {
   :root {
-    --rail-left: 2rem;
+    --rail-left: 0px;
   }
 }
