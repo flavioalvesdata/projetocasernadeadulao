@@ -1,0 +1,57 @@
+/* Tokens da identidade digital — espelham a marca impressa, com navy no comando. */
+
+:root {
+  /* Cor */
+  --navy: #1a2a44;
+  --navy-esc: #101d33;
+  --bronze: #8c6a45;
+  --bronze-cl: #c9a86a;
+  --creme: #f5f1e7;
+  --papel: #fbf8f2;
+  --regua: #c9bca1;
+  --tinta: #23262b;
+
+  /* Tipografia */
+  --fonte-display: "Montserrat", sans-serif;
+  --fonte-corpo: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+
+  --texto-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.8125rem);
+  --texto-sm: clamp(0.875rem, 0.82rem + 0.25vw, 0.9375rem);
+  --texto-base: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
+  --texto-md: clamp(1.125rem, 1.05rem + 0.4vw, 1.3125rem);
+  --texto-lg: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --texto-xl: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem);
+  --texto-2xl: clamp(2.125rem, 1.6rem + 2vw, 3.25rem);
+
+  --lh-aperto: 1.25;
+  --lh-corpo: 1.65;
+  --medida: 68ch;
+
+  /* Espaço (escala de 4px) */
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 0.75rem;
+  --esp-4: 1rem;
+  --esp-5: 1.25rem;
+  --esp-6: 1.5rem;
+  --esp-8: 2rem;
+  --esp-10: 2.5rem;
+  --esp-12: 3rem;
+  --esp-16: 4rem;
+  --esp-20: 5rem;
+  --esp-24: 6rem;
+
+  /* Layout */
+  --container: 45rem; /* ~720px */
+  --container-largo: 68.75rem; /* ~1100px */
+  --trilho-espaco: 3rem;
+
+  /* Sombra e movimento */
+  --sombra-suave: 0 1px 0 rgba(16, 29, 51, 0.06);
+  --duracao: 280ms;
+  --easing: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Foco */
+  --foco-anel: 2px solid var(--bronze-cl);
+  --foco-offset: 3px;
+}
