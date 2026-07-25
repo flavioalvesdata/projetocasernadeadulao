@@ -66,3 +66,10 @@
     --rail-left: 8.5rem;
   }
 }
+
+/* Mobile: índice permanece à esquerda — reserva faixa estreita */
+@media (max-width: 899px) {
+  :root {
+    --rail-left: 2rem;
+  }
+}

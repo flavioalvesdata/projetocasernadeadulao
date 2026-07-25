@@ -17,6 +17,9 @@
       if (window.Caserna.initNavegacao) window.Caserna.initNavegacao();
       if (window.Caserna.initRevelar) window.Caserna.initRevelar();
       if (window.Caserna.initMarcha) window.Caserna.initMarcha();
+      if (window.Caserna.initAnatomia) window.Caserna.initAnatomia();
+      if (window.Caserna.initEdicoes) window.Caserna.initEdicoes();
+      if (window.Caserna.initEncontro) window.Caserna.initEncontro();
     }
   }
 

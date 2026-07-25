@@ -2,7 +2,7 @@
 
 Site de página única para apresentação do currículo **Discipulando a Caserna** ao pastor-presidente, validador pastoral do material. Produzido pelo Projeto Caserna de Adulão (Fortaleza-CE).
 
-Versão atual: **v0.1** (Atos 0–3). Material em versão candidata — não distribuir antes da apreciação pastoral.
+Versão atual: **v0.2** (Atos 0–6). Material em versão candidata — não distribuir antes da apreciação pastoral.
 
 ## Requisitos
 
@@ -40,9 +40,9 @@ Altere só `destinatario` para trocar a saudação. `cargo` e `nomeFormal` serve
 ```
 index.html          Página única
 css/                Tokens, base, layout, componentes, atos
-js/                 config, navegação, revelar, marcha, main
+js/                 config, abas, navegação, revelar, marcha, anatomia, edicoes, encontro, main
 assets/fonts/       Montserrat e Source Serif 4 (.woff2)
-assets/img/         Brasão (placeholder)
+assets/img/         Brasão (placeholder) + licao1/ (páginas WebP)
 robots.txt          Bloqueia indexação
 ```
 
@@ -55,14 +55,22 @@ robots.txt          Bloqueia indexação
 
 O repositório deve permanecer privado; o link é para leitura pastoral, não para indexação pública.
 
-## Escopo v0.1
+## Escopo
 
+### v0.1
 - Andaime (tokens, tipografia, layout)
 - Índice lateral + trilho da marcha
-- Atos 0 (abertura), 1 (a caverna), 2 (a convicção), 3 (a marcha)
+- Atos 0–3
 - Rodapé institucional
 
-Pendências e próximos atos: ver `TODO.md`.
+### v0.2
+- Ato 4 — Anatomia de uma lição (marcadores sobre a página)
+- Ato 5 — Comparação Aluno / Instrutor
+- Ato 6 — Linha do tempo do encontro (1h30)
+- Módulo compartilhado de abas (`js/abas.js`)
+- Páginas WebP da Lição 1 em `assets/img/licao1/` (~2,7 MB no disco)
+
+Pendências (Atos 7–9, PDFs, brasão oficial): ver `TODO.md`.
 
 ## Licença das fontes
 

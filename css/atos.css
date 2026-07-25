@@ -8,17 +8,12 @@
   flex-direction: column;
   justify-content: center;
   padding-block: clamp(3.5rem, 8vh, 6rem);
-  padding-inline: var(--gutter-mobile);
+  padding-left: calc(var(--gutter-mobile) + var(--rail-left));
+  padding-right: var(--gutter-mobile);
   overflow-x: clip;
 }
 
 @media (min-width: 768px) {
-  .ato {
-    padding-inline: var(--gutter-tablet);
-  }
-}
-
-@media (min-width: 900px) {
   .ato {
     padding-left: calc(var(--gutter-tablet) + var(--rail-left));
     padding-right: var(--gutter-tablet);
@@ -88,7 +83,7 @@
   font-size: var(--texto-2xl);
   font-weight: 800;
   letter-spacing: -0.02em;
-  max-width: 12ch;
+  max-width: 18ch;
   margin-bottom: var(--esp-6);
   color: inherit;
   text-wrap: balance;
@@ -235,7 +230,7 @@
 
 .ato__intro {
   width: 100%;
-  max-width: var(--container);
+  max-width: none;
   margin-inline: 0;
   margin-bottom: 0;
 }
@@ -247,6 +242,11 @@
   font-size: var(--texto-sm);
   color: color-mix(in srgb, var(--tinta) 78%, transparent);
   max-width: var(--medida);
+}
+
+.ato--escuro .ato__nota {
+  border-top-color: color-mix(in srgb, var(--regua) 40%, transparent);
+  color: color-mix(in srgb, var(--creme) 70%, transparent);
 }
 
 .ato__secao-titulo {

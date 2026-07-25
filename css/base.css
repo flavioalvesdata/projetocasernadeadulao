@@ -137,3 +137,27 @@ p {
   white-space: nowrap;
   border: 0;
 }
+
+/* Skip link: só aparece no foco de teclado */
+.visually-hidden:focus,
+.visually-hidden:focus-visible {
+  position: fixed;
+  top: var(--esp-3);
+  left: var(--esp-3);
+  z-index: 100;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: var(--esp-3) var(--esp-4);
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  background: var(--navy-esc);
+  color: var(--creme);
+  font-family: var(--fonte-display);
+  font-size: var(--texto-sm);
+  font-weight: 700;
+  text-decoration: none;
+  outline: var(--foco-anel);
+  outline-offset: var(--foco-offset);
+}

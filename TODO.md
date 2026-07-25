@@ -1,14 +1,13 @@
-# Pendências — fora do escopo v0.1
+# Pendências
 
-Registrar aqui o que não entra neste PR. Não implementar adiantado.
+Registrar o que não entra no lote atual. Não implementar adiantado.
 
 ## Conteúdo e atos
 
-- [ ] Atos 4 a 9 da narrativa de apresentação
+- [x] Atos 4 a 6 (anatomia, edições, encontro) — entregues na v0.2
+- [ ] Atos 7 a 9 da narrativa de apresentação
 - [ ] Usar `SITE_CONFIG.cargo` e `SITE_CONFIG.nomeFormal` no Ato 8 / bloco de assinatura (`Pr. Glaydston Gama Lopes`, Pastor-presidente)
-- [ ] Folheador de lições (amostra do material)
-- [ ] Comparador de edições (Aluno × Instrutor)
-- [ ] Linha do tempo de um encontro
+- [ ] Folheador completo de lições (amostra navegável além da página 2)
 
 ## Arte e marca
 
