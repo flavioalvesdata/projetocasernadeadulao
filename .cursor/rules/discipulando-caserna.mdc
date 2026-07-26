@@ -1,0 +1,47 @@
+---
+description: Hierarquia, finalidade e governança da apresentação Discipulando a Caserna
+alwaysApply: true
+---
+
+# Discipulando a Caserna — contexto permanente
+
+## Hierarquia (não sinônimos)
+
+- **Projeto Caserna de Adulão** — projeto ministerial, missionário e institucional mais amplo.
+- **Discipulando a Caserna** — projeto específico de discipulado que serve ao Projeto Caserna de Adulão.
+- Protagonista desta apresentação: **Discipulando a Caserna**.
+- O Projeto Caserna de Adulão é o **contexto** institucional ao qual o discipulado serve — não o assunto principal do site.
+
+## Finalidade do site
+
+Apresentação digital do Discipulando a Caserna ao **Pr. Glaydston** (apreciação, orientação e validação pastoral).
+
+Não é o portal público do Projeto Caserna de Adulão.
+
+Deve permitir compreender: origem/necessidade; o que é e a quem se destina; fundamentos bíblicos e princípios; metodologia e currículo; integração com o Projeto; o produzido, o em desenvolvimento e o que pede validação.
+
+## Natureza da experiência
+
+Prospecto pastoral + carta institucional + apresentação de projeto + manifesto + documento editorial interativo + narrativa em rolagem + apresentação curricular.
+
+**Não** tratar como: portal de igreja, eventos, notícias, catálogo de ministérios, arrecadação, landing comercial, template religioso genérico, plataforma de cursos ou captação de participantes.
+
+## Tom e fidelidade
+
+- Tom pastoral e institucional; português brasileiro natural.
+- Não inventar conteúdo institucional, endossos, aprovações, cargos, datas, resultados ou lacunas do Guia Mestre.
+- Preservar fidelidade bíblica (texto governa a aplicação; Escrituras na NAA, refs. decimais).
+- Não copiar literalmente referências externas fora das fontes canônicas do repositório; citações `>` em `conteudo/*.md` são literais — não parafrasear.
+- Campos `null` em JSON: omitir na UI, sem placeholder inventado.
+
+## Conteúdo e arquivos
+
+- Canônicos: `conteudo/*.json`, `conteudo/*.md` (e HTML editorial já publicado, enquanto não migrado).
+- **Não** editar manualmente `js/dados/*.js` nem blocos `FALLBACK-DADOS` em `index.html`.
+- Após alterar JSON: `npm run generate` e `npm run check:encoding`.
+
+## Qualidade e a11y
+
+Antes de declarar tarefa concluída: `npm run validate` (ou, no mínimo, generate + checks relevantes + inspeção do que mudou).
+
+Mínimos: um `h1`; headings em ordem; skip link `#conteudo`; `:focus-visible`; nomes acessíveis; alvos ≥44×44 quando possível; contraste AA.
