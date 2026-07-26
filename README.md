@@ -1,133 +1,69 @@
 # Discipulando a Caserna | Projeto Caserna de Adulão
 
-Site de página única: prospecto institucional do programa **Discipulando a Caserna**, apresentado pelo **Projeto Caserna de Adulão** (Fortaleza-CE).
+Prospecto pastoral digital do programa **Discipulando a Caserna**, submetido ao
+**Pr. Glaydston** para apreciação, orientação e validação.
 
-Versão atual: **v0.4.0** — correção técnica e consolidação editorial.
+Versão em construção neste branch: **v1.0** (Movimentos I e II — seções 1 a 7).
 
-## Hierarquia institucional
+## O que é
 
-- **Projeto Caserna de Adulão** — projeto institucional mais amplo.
-- **Discipulando a Caserna** — programa de formação bíblica e discipulado no contexto da caserna, pertencente ao Projeto.
+Não é landing page, portal de igreja nem plataforma de cursos. É uma **carta que
+se abre em prospecto**: começa pessoal e desenvolve a necessidade, a resposta e
+(em PRs seguintes) o programa, a prova e o pedido pastoral.
 
-## Publicação atual
+## Hierarquia
 
-- URL: <https://flavioiabuilder.github.io/projetocasernadeadulao/>
-- Hospedagem: **GitHub Pages**
-- Repositório: **público**
-- Indexação: a página usa `noindex, nofollow` e `robots.txt` com `Disallow: /`
+- **Discipulando a Caserna** — protagonista desta apresentação
+- **Projeto Caserna de Adulão** — contexto institucional ao qual o discipulado serve
 
-**Importante:** `noindex` e `robots.txt` **não são autenticação**. Qualquer pessoa com o link pode abrir o conteúdo. Trate esta publicação como prévia pública em apreciação pastoral.
+## Arquitetura narrativa
 
-### Nota histórica
+Cinco movimentos, quinze seções:
 
-Versões anteriores do README mencionavam publicação na Vercel e repositório privado. Isso não descreve o estado atual.
+| Movimento | Seções | Status |
+|---|---|---|
+| I — A necessidade | 1–4 | neste PR |
+| II — A resposta | 5–7 | neste PR |
+| III — O programa | 8–11 | âncoras (próximo PR) |
+| IV — A prova | 12–13 | âncoras (próximo PR) |
+| V — O pedido | 14–15 | âncoras (próximo PR) |
 
-## Como rodar localmente
+## Como abrir
 
-Sem instalação (somente leitura):
+Offline, sem instalação:
 
-1. Abra `index.html` em um navegador, ou
-2. Sirva a raiz com qualquer servidor estático, por exemplo:
+1. Abra `index.html` no navegador (duplo clique), ou
+2. Sirva a raiz com qualquer servidor estático:
 
 ```bash
 npx serve .
 ```
 
-## Regenerar dados
+Zero CDN. Fontes self-hosted em `assets/fonts/`.
 
-Fonte canônica: `conteudo/*.json`.
+## Conteúdo
 
-```bash
-npm run generate
-# ou: node ferramentas/gerar-dados.js
-```
+Fonte da verdade: `conteudo/`. Ver `conteudo/LEIA-ME.md`.
 
-Não edite `js/dados/*.js` à mão. O gerador também injeta o fallback `<noscript>` em `index.html`.
+Citações (`>`) nos Markdown são literais — não parafrasear.
 
-## Qualidade e testes
-
-Requer Node.js 18+.
+## Qualidade
 
 ```bash
 npm install
 npm run validate
 ```
 
-Scripts principais:
+## Publicação
 
-| Script | Função |
-|---|---|
-| `npm run generate` | Regenera `js/dados/*` e fallback noscript |
-| `npm run check:encoding` | Mojibake + round-trip |
-| `npm run lint:html` | Validação HTML |
-| `npm run lint:css` | Stylelint |
-| `npm run lint:js` | ESLint |
-| `npm run test` | Testes unitários (Node) |
-| `npm run test:e2e` | Playwright + axe |
-| `npm run validate` | Cadeia completa |
+- URL prevista: <https://flavioiabuilder.github.io/projetocasernadeadulao/>
+- Indexação bloqueada (`robots.txt` + `noindex`)
 
-## Arquitetura
+## Referência de layout
 
-```
-index.html              Prospecto (HTML semântico)
-conteudo/               Fonte editável (JSON + MD)
-css/                    tokens, base, layout, componentes, atos, prospecto
-js/
-  dados/                modulos.js, matriz.js (gerados)
-  main.js               inicialização resiliente
-  navegacao.js          sumário, progresso de leitura
-  marcha.js, matriz.js  renderização segura dos dados
-assets/                 fontes OFL, estudos visuais de marca
-ferramentas/            geração e checagens
-testes/                 unitários e e2e
-docs/                   relatórios de auditoria
-```
+Mockups em `referencia/stitch/` (ignorados pelo git) orientam composição.
+Nenhum código Tailwind/CDN deles entra no produto.
 
-Sem framework, sem bundler. O `package.json` existe apenas para scripts de qualidade.
+## Pendências
 
-## Destinatário
-
-Em `js/config.js`:
-
-```js
-destinatario: "Glaydston"  // → "Pastor Glaydston,"
-```
-
-## Estrutura do prospecto (v0.4.0)
-
-1. **Parte I — A identidade** — Abertura, Caverna, Convicção, Marca  
-2. **Parte II — O programa** — Arquitetura, Matriz  
-3. **Parte III — A implantação** — Progressão, Público, Princípios  
-4. **Parte IV — O estado atual** — Fechamento editorial (apreciação pastoral)
-
-## Limitações conhecidas
-
-- Arte do escudo/brasão é estudo visual provisório (sem marca oficial homologada).
-- Módulos 2–4 têm matriz definida; produção condicionada à validação pastoral do Módulo 1.
-- Seções futuras (anatomia da lição, encontro, duas edições) ainda não publicadas.
-- Licença do código e do conteúdo pastoral ainda **não definida**.
-
-## Política de arquivos gerados
-
-| Editar | Não editar |
-|---|---|
-| `conteudo/*.json` | `js/dados/*.js` |
-| `conteudo/*.md` | marcadores `FALLBACK-DADOS` gerados em `index.html` |
-
-## Política `.cursor/`
-
-- `.cursor/rules/` pode ser versionada (instruções técnicas não sensíveis).
-- `.cursor/plans/` fica fora do repositório público (ver `.gitignore`).
-
-## Licenças
-
-- **Fontes** Montserrat e Source Serif 4: SIL Open Font License, self-hosted em `assets/fonts/`.
-- **Código e conteúdo pastoral:** licenciamento ainda pendente de decisão explícita. Nenhuma licença MIT/GPL/CC foi adotada neste repositório sem autorização.
-
-## Processo de publicação
-
-1. Trabalhar em branch de correção/release quando solicitado.
-2. Rodar `npm run validate`.
-3. Abrir pull request para `main`.
-4. Após merge, o GitHub Pages publica a partir de `main` (conforme configuração do repositório).
-5. Manter `noindex` enquanto o material estiver em apreciação.
+Ver [`TODO.md`](TODO.md).

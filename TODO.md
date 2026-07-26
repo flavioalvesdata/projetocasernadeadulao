@@ -1,28 +1,41 @@
-# Pendências
+# Pendências — site v1.0
 
-## Decisões humanas
+## Este PR (seções 1–7)
 
-- [ ] Homologar arte oficial da logomarca (substituir estudos visuais em `assets/img/`)
-- [ ] Definir licença do código e do conteúdo pastoral
+- [x] Fundação (tokens, base, layout, componentes, seções)
+- [x] Índice + trilho da marcha (5 movimentos)
+- [x] Seções 1–4 — A Necessidade
+- [x] Seções 5–7 — A Resposta
+- [x] Âncoras das seções 8–15
+
+## Próximo PR — seções 8 a 15
+
+- [ ] Seção 8 — Arquitetura do programa
+- [ ] Seção 9 — Matriz curricular (reativar `FALLBACK-DADOS` / `gerar-dados` no HTML)
+- [ ] Seção 10 — Anatomia de uma lição
+- [ ] Seção 11 — As duas edições e o encontro
+- [ ] Seção 12 — O que está pronto (folheador)
+- [ ] Seção 13 — Rigor de produção
+- [ ] Seção 14 — Progressão, marchas e certificados
+- [ ] Seção 15 — O portão pastoral
+
+## Arte e identidade
+
+- [ ] Arte oficial da logomarca (substituir `assets/img/brasao.svg`)
+- [ ] Artes das quatro insígnias, se existirem como peças separadas
+- [ ] Confirmar versões monocromática e reduzida no Caderno de Identidade Visual
+
+## Decisões humanas / conteúdo
+
+- [ ] Confirmar se a menção nominal à PMCE permanece caso o site circule além do destinatário
+- [ ] Definir se a Seção 2 recebe algum elemento gráfico além da tipografia
 - [ ] Apreciação pastoral do Módulo 1 e deste prospecto
-- [ ] Decidir política de acesso (prévia pública vs. área restrita real)
-- [ ] Domínio próprio e publicação definitiva (avaliar remoção de `noindex`)
+- [ ] Licença do código e do conteúdo pastoral
+- [ ] Domínio próprio e política de indexação (`noindex`)
 
-## Conteúdo futuro (fora da numeração atual 1–10)
-
-- [ ] Anatomia de uma lição
-- [ ] O encontro
-- [ ] As duas edições
-- [ ] Artes das quatro insígnias como peças separadas (se existirem)
-- [ ] Versões monocromática e reduzida no Caderno de Identidade Visual
-- [ ] Downloads de PDF (quando houver autorização pastoral)
-
-## Arquivos JS reservados (não carregados na v0.4.0)
-
-- `js/anatomia.js`, `js/edicoes.js`, `js/encontro.js` — mantidos para reutilização futura documentada acima.
-
-## Explicitamente fora
+## Explícitamente fora
 
 - Formulários, analytics, cookies, back-end
 - Framework, bundler, CDN de runtime
-- Migração para React/Vue/Next/Astro/Tailwind
+- Barra de navegação superior tipo portal / CTA de captação
+- Fotografias ou ilustrações de pessoas
