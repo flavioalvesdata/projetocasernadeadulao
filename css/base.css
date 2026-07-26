@@ -79,7 +79,7 @@ body {
   color: var(--tinta);
   background: var(--papel);
   text-rendering: optimizeLegibility;
-  overflow-x: clip;
+  overflow-x: auto;
 }
 
 img,
@@ -139,8 +139,20 @@ p {
 }
 
 /* Skip link: só aparece no foco de teclado */
-.visually-hidden:focus,
-.visually-hidden:focus-visible {
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
   position: fixed;
   top: var(--esp-3);
   left: var(--esp-3);

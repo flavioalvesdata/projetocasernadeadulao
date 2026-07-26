@@ -1,0 +1,30 @@
+---
+description: Governança do site estático Caserna de Adulão
+alwaysApply: true
+---
+
+# Qualidade do prospecto estático
+
+## Comandos
+
+- Regenerar dados: `npm run generate` (ou `node ferramentas/gerar-dados.js`)
+- Validação completa: `npm run validate`
+
+## Dados
+
+- Fonte canônica: `conteudo/*.json` e `conteudo/*.md`
+- Não editar manualmente `js/dados/*.js`
+- Após alterar JSON, rodar generate e check:encoding
+
+## Entrega
+
+- Rodar validações antes de concluir alterações relevantes
+- Não inventar conteúdo institucional, endossos, aprovações, cargos, datas ou resultados
+
+## Acessibilidade essencial
+
+- Um único `h1`; headings em ordem lógica
+- Skip link para `#conteudo`
+- Foco visível com `:focus-visible` (sem remover outline globalmente sem alternativa)
+- Controles com nome acessível e alvo adequado (≥44×44 quando possível)
+- Contraste AA para texto e componentes

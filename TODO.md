@@ -1,27 +1,28 @@
 # Pendências
 
-## Próximos lotes (Partes II e IV)
+## Decisões humanas
 
-- [ ] Seção 7 — Anatomia de uma lição
-- [ ] Seção 8 — O encontro
-- [ ] Seção 9 — As duas edições
-- [ ] Seção 13 — O que está pronto
-- [ ] Seção 14 — O que depende do senhor
-- [ ] Seção 15 — Encerramento
-- [ ] Usar `SITE_CONFIG.cargo` e `SITE_CONFIG.nomeFormal` no encerramento / assinatura
+- [ ] Homologar arte oficial da logomarca (substituir estudos visuais em `assets/img/`)
+- [ ] Definir licença do código e do conteúdo pastoral
+- [ ] Apreciação pastoral do Módulo 1 e deste prospecto
+- [ ] Decidir política de acesso (prévia pública vs. área restrita real)
+- [ ] Domínio próprio e publicação definitiva (avaliar remoção de `noindex`)
 
-## Arte e marca
+## Conteúdo futuro (fora da numeração atual 1–10)
 
-- [ ] Substituir `assets/img/marca-escudo.svg` e `assets/img/brasao.svg` pela arte oficial da logomarca
-- [ ] Artes das quatro insígnias, se existirem como peças separadas
-- [ ] Confirmar versões monocromática e reduzida no Caderno de Identidade Visual
-
-## Distribuição
-
+- [ ] Anatomia de uma lição
+- [ ] O encontro
+- [ ] As duas edições
+- [ ] Artes das quatro insígnias como peças separadas (se existirem)
+- [ ] Versões monocromática e reduzida no Caderno de Identidade Visual
 - [ ] Downloads de PDF (quando houver autorização pastoral)
-- [ ] Área restrita, se necessária
+
+## Arquivos JS reservados (não carregados na v0.4.0)
+
+- `js/anatomia.js`, `js/edicoes.js`, `js/encontro.js` — mantidos para reutilização futura documentada acima.
 
 ## Explicitamente fora
 
 - Formulários, analytics, cookies, back-end
-- Framework, bundler, gerenciador de pacotes, CDN
+- Framework, bundler, CDN de runtime
+- Migração para React/Vue/Next/Astro/Tailwind

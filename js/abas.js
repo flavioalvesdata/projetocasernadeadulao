@@ -1,6 +1,5 @@
 /**
  * Comportamento compartilhado de abas (tablist / tab / tabpanel).
- * Usado pelo mapa, anatomia, edições e encontro.
  */
 (function () {
   function initAbas(root, opcoes) {

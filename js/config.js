@@ -1,7 +1,6 @@
 /**
  * Único estado de configuração compartilhado.
- * Troque destinatario para mudar a saudação do Ato 0 sem tocar no HTML.
- * cargo e nomeFormal ficam separados para referências formais (PRs futuros).
+ * Troque destinatario para mudar a saudação da abertura sem tocar no HTML.
  */
 window.SITE_CONFIG = {
   destinatario: "Glaydston",
@@ -11,4 +10,5 @@ window.SITE_CONFIG = {
   cidade: "Fortaleza-CE",
   cnpj: "63.724.286/0001-78",
   email: "casernadeadulao@gmail.com",
+  versao: "0.4.0",
 };

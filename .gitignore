@@ -5,6 +5,7 @@ node_modules/
 .cursor/*
 !.cursor/rules/
 !.cursor/rules/**
+.cursor/plans/
 .env
 .env.*
 *.log
@@ -12,3 +13,7 @@ node_modules/
 .vscode/
 *.swp
 *~
+playwright-report/
+test-results/
+blob-report/
+.npm-cache/
