@@ -1,34 +1,30 @@
 /**
- * Entrada suave de blocos ao entrar no viewport.
- * Progressivo: sem JS o conteúdo já está legível no HTML.
+ * Revelação discreta ao rolar. Desliga com prefers-reduced-motion.
  */
 (function () {
   function initRevelar() {
-    const reduzMovimento = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    const alvos = Array.from(document.querySelectorAll(".revelar"));
+    const reduzido = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const alvos = Array.from(document.querySelectorAll("[data-revelar]"));
     if (!alvos.length) return;
 
-    if (reduzMovimento || !("IntersectionObserver" in window)) {
-      alvos.forEach((el) => el.classList.add("revelar--visivel"));
+    if (reduzido.matches || !("IntersectionObserver" in window)) {
+      alvos.forEach((el) => el.classList.add("is-revelado"));
       return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
+    const io = new IntersectionObserver(
+      (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("revelar--visivel");
-            obs.unobserve(entry.target);
+            entry.target.classList.add("is-revelado");
+            io.unobserve(entry.target);
           }
         });
       },
       { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
     );
 
-    alvos.forEach((el) => observer.observe(el));
+    alvos.forEach((el) => io.observe(el));
   }
 
   window.Caserna = window.Caserna || {};

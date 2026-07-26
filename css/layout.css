@@ -1,25 +1,116 @@
-/* Grid, containers e ritmo — fundos full-bleed; gutters nos atos. */
+/* Layout: gutters, containers, cadência de fundo das seções. */
 
 .pagina {
   position: relative;
+  padding-left: var(--rail-left);
+  padding-right: var(--rail-right);
 }
 
 .container {
-  width: min(100%, var(--container));
+  width: min(100% - 2 * var(--gutter-mobile), var(--container));
   margin-inline: auto;
 }
 
 .container--largo {
-  width: min(100%, var(--container-largo));
+  width: min(100% - 2 * var(--gutter-mobile), var(--container-largo));
   margin-inline: auto;
-  min-width: 0;
 }
 
-.fluxo > * + * {
-  margin-top: var(--esp-5);
+@media (min-width: 768px) {
+  .container,
+  .container--largo {
+    width: min(100% - 2 * var(--gutter-tablet), var(--container));
+  }
+
+  .container--largo {
+    width: min(100% - 2 * var(--gutter-tablet), var(--container-largo));
+  }
 }
 
-.fluxo > * + h2,
-.fluxo > * + h3 {
-  margin-top: var(--esp-10);
+@media (min-width: 900px) {
+  .container,
+  .container--largo {
+    width: min(100% - 2 * var(--gutter-desktop), var(--container));
+  }
+
+  .container--largo {
+    width: min(100% - 2 * var(--gutter-desktop), var(--container-largo));
+  }
+}
+
+/* Cadência: 1 navy · 2 papel · 3 navy · 4 papel · 5 navy · 6 creme · 7 navy profundo */
+.secao {
+  position: relative;
+  padding-block: var(--esp-16);
+}
+
+.secao--navy {
+  background: var(--navy);
+  color: var(--creme);
+}
+
+.secao--navy-esc {
+  background: var(--navy-esc);
+  color: var(--creme);
+}
+
+.secao--papel {
+  background: var(--papel);
+  color: var(--tinta);
+}
+
+.secao--creme {
+  background: var(--creme);
+  color: var(--tinta);
+}
+
+.secao--ancora {
+  min-height: 40vh;
+  padding-block: var(--esp-20);
+  background: var(--papel);
+  color: var(--tinta);
+  border-top: 1px solid color-mix(in srgb, var(--regua) 55%, transparent);
+}
+
+.movimento {
+  scroll-margin-top: var(--esp-8);
+}
+
+.movimento__cabeca {
+  padding-block: var(--esp-12) var(--esp-4);
+  text-align: center;
+}
+
+.movimento__romano {
+  display: block;
+  font-family: var(--fonte-display);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--bronze);
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+}
+
+.movimento__titulo {
+  margin-top: var(--esp-3);
+  font-size: var(--texto-sm);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bronze);
+}
+
+.movimento--sobre-navy .movimento__titulo {
+  color: var(--bronze-cl);
+}
+
+@media (min-width: 900px) {
+  .secao {
+    padding-block: var(--esp-20);
+  }
+
+  .pagina {
+    padding-right: 14rem;
+  }
 }

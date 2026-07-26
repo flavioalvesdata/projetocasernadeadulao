@@ -1,5 +1,6 @@
 /**
- * Escudo anatomizado (seção 4 — A marca).
+ * Escudo anatomizado (seção 7 — A marca).
+ * Trocar o SVG em assets/img/ não exige refazer esta interação.
  */
 (function () {
   function syncLista(root, indice) {

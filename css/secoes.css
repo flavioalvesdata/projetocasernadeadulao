@@ -1,0 +1,53 @@
+/* Ajustes específicos por seção — composição da abertura e âncoras. */
+
+#secao-1 {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding-block: var(--esp-20);
+}
+
+.abertura {
+  text-align: left;
+}
+
+.abertura__brasao {
+  width: 3.25rem;
+  height: auto;
+  margin-bottom: var(--esp-8);
+  padding: var(--esp-2);
+  background: var(--navy-esc);
+}
+
+.abertura__titulo {
+  margin-bottom: var(--esp-5);
+  font-size: var(--texto-2xl);
+  max-width: 12ch;
+  color: var(--papel);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.abertura__movimento {
+  margin-bottom: var(--esp-5);
+  color: var(--bronze-cl);
+}
+
+.abertura__saudacao {
+  margin-bottom: var(--esp-4);
+  font-family: var(--fonte-display);
+  font-weight: 700;
+  font-size: var(--texto-base);
+}
+
+.abertura .prosa {
+  color: color-mix(in srgb, var(--creme) 92%, white);
+}
+
+.ancora__nota {
+  margin-top: var(--esp-4);
+  font-size: var(--texto-sm);
+  color: var(--navy);
+  max-width: var(--medida);
+}

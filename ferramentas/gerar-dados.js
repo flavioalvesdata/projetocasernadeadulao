@@ -211,9 +211,10 @@ function injetarFallback(modulos, matriz) {
       `<div class="matriz__lista" data-matriz-lista></div>\n            ${bloco}`
     );
   } else {
-    throw new Error(
-      "index.html: não foi possível localizar marcadores FALLBACK-DADOS nem data-matriz-lista"
+    console.warn(
+      "AVISO: index.html sem marcadores FALLBACK-DADOS — injeção adianda (matriz no próximo PR)."
     );
+    return;
   }
 
   escreverUtf8(indexPath, html);
