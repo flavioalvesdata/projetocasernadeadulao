@@ -19,7 +19,7 @@
     "test": "node --test testes/unitarios/*.test.js",
     "test:e2e": "playwright test testes/e2e/site.spec.js",
     "test:e2e:install": "playwright install chromium firefox webkit",
-    "test:a11y": "playwright test testes/e2e/site.spec.js -g \"a11y\"",
+    "test:a11y": "playwright test testes/e2e/site.spec.js --grep \"@a11y\"",
     "test:visual": "playwright test testes/e2e/visual.spec.js --project=chromium",
     "audit": "npm audit --audit-level=high",
     "validate": "npm run check:generated && npm run check:encoding && npm run format:check && npm run lint:html && npm run lint:css && npm run lint:js && npm run test && npm run test:e2e"

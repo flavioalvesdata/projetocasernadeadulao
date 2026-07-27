@@ -109,7 +109,7 @@ test.describe("prospecto v1.0 — seções 1 a 7", () => {
     await context.close();
   });
 
-  test("a11y automatizável com axe", async ({ page }) => {
+  test("@a11y automatizável com Axe", async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
     await page.goto("/");
     await page.waitForTimeout(300);
@@ -243,7 +243,7 @@ test.describe("estrutura e navegação completas", () => {
   });
 });
 
-test("a11y nos estados interativos mobile e escudo alternativo", async ({ page }) => {
+test("@a11y nos estados interativos mobile e escudo alternativo", async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 740 });
   await page.goto("/");
   await page.locator("[data-indice-toggle]").click();
