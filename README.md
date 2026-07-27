@@ -59,7 +59,7 @@ Abra `http://127.0.0.1:4173`. Também é possível abrir `index.html`, com limit
 
 ## 12. Scripts
 
-`generate:data` gera dados; `generate:fallback` informa quando o fallback não se aplica; `check:generated`, `check:encoding`, `format`, `format:check`, três linters, `test`, `test:e2e`, `test:a11y`, `test:visual`, `audit` e `validate` compõem a manutenção.
+`npm run generate` é a preparação editorial explícita que atualiza os dados derivados. `npm run check:generated` apenas compara os artefatos atuais com uma geração temporária. `check:encoding`, `format`, `format:check`, três linters, `test`, `test:e2e`, `test:a11y`, `test:visual`, `audit` e `validate` compõem a manutenção.
 
 ## 13. Arquitetura
 
@@ -75,11 +75,11 @@ Edite `conteudo/*.md` e `conteudo/*.json`. Preserve literalmente citações `>` 
 
 ## 16. Arquivos gerados
 
-Nunca edite `js/dados/*.js`; rode `npm run generate`. A sincronização é verificada automaticamente.
+Nunca edite `js/dados/*.js`; após mudar uma fonte JSON, rode explicitamente `npm run generate` para atualizá-los. Use `npm run check:generated` para verificar a sincronização sem escrever nesses artefatos.
 
 ## 17. Testes
 
-A estratégia e os comandos individuais estão em `docs/testes.md`. `npm run validate` é a esteira determinística principal.
+A estratégia e os comandos individuais estão em `docs/testes.md`. `npm run validate` é a esteira determinística principal: ela começa verificando os gerados e não corrige a árvore de trabalho.
 
 ## 18. Acessibilidade
 
@@ -103,11 +103,11 @@ Concluir somente após autorização as seções 8–15 e decisões registradas 
 
 ## 23. Solução de problemas
 
-Falha `browser executable doesn't exist`: execute a instalação Playwright. Erro de rede/registro: repita em ambiente autorizado. Gerado divergente: `npm run generate:data`. Porta ocupada: `PORT=4174 npm start`.
+Falha `browser executable doesn't exist`: execute a instalação Playwright. Erro de rede/registro: repita em ambiente autorizado. Gerado divergente: execute `npm run generate` como preparação editorial e então repita a verificação. Porta ocupada: `PORT=4174 npm start`.
 
 ## 24. Contribuição
 
-Leia `AGENTS.md` e a regra em `.cursor/rules/discipulando-caserna.mdc`; não invente conteúdo. Faça mudanças pequenas, gere artefatos e execute `npm run validate`.
+Leia `AGENTS.md` e a regra em `.cursor/rules/discipulando-caserna.mdc`; não invente conteúdo. Faça mudanças pequenas, execute `npm run generate` após alterações editoriais e só então rode `npm run validate`, que verifica sem corrigir a árvore.
 
 ## 25. Documentos complementares
 

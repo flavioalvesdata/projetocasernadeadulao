@@ -1,4 +1,4 @@
-/** Confere os artefatos gerados sem depender do estado geral do Git. */
+/** Confere, sem alterar a árvore de trabalho, se os artefatos gerados estão atuais. */
 "use strict";
 const fs = require("node:fs");
 const os = require("node:os");
@@ -14,7 +14,7 @@ try {
     const atual = fs.readFileSync(path.join(raiz, "js", "dados", arquivo));
     if (!esperado.equals(atual))
       throw new Error(
-        `js/dados/${arquivo} está desatualizado; execute npm run generate:data.`
+        `js/dados/${arquivo} está desatualizado; execute npm run generate.`
       );
   }
   console.log("check:generated OK");

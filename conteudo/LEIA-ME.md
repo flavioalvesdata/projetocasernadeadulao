@@ -28,3 +28,12 @@ visível e sem texto substituto.
 
 Todo texto marcado como citação (`>`) nos arquivos `.md` é **literal**. Não parafrasear,
 não resumir, não "melhorar". Faltando algo, registrar em `TODO.md`.
+
+## Fluxo dos dados derivados
+
+Após editar `conteudo/*.json`, execute `npm run generate` como etapa explícita de
+preparação editorial; esse comando atualiza `js/dados/*.js`. `npm run check:generated`
+somente gera uma cópia temporária e a compara com os arquivos versionados, sem
+sobrescrevê-los. `npm run validate` começa por essa verificação e também não corrige
+a árvore de trabalho: uma divergência deve falhar até que a geração seja executada
+deliberadamente.
