@@ -121,19 +121,49 @@
     const toggle = document.querySelector("[data-indice-toggle]");
     const drawer = document.querySelector("[data-indice]");
     const overlay = document.querySelector("[data-indice-overlay]");
+    const fundo = Array.from(document.querySelectorAll("main, footer, .trilho"));
+    let focoAnterior = null;
 
-    function fecharIndice() {
+    function elementosFocaveis() {
+      if (!drawer) return [];
+      return Array.from(
+        drawer.querySelectorAll(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter((elemento) => !elemento.hidden);
+    }
+
+    function fecharIndice({ restaurarFoco = true } = {}) {
       if (!drawer) return;
       drawer.classList.remove("indice--aberto");
       document.body.classList.remove("indice-aberto");
       if (toggle) toggle.setAttribute("aria-expanded", "false");
+      fundo.forEach((elemento) => {
+        elemento.inert = false;
+        elemento.removeAttribute("aria-hidden");
+      });
+      if (
+        restaurarFoco &&
+        focoAnterior &&
+        typeof focoAnterior.focus === "function"
+      ) {
+        focoAnterior.focus();
+      }
+      focoAnterior = null;
     }
 
     function abrirIndice() {
       if (!drawer) return;
+      focoAnterior = document.activeElement;
       drawer.classList.add("indice--aberto");
       document.body.classList.add("indice-aberto");
       if (toggle) toggle.setAttribute("aria-expanded", "true");
+      fundo.forEach((elemento) => {
+        elemento.inert = true;
+        elemento.setAttribute("aria-hidden", "true");
+      });
+      const primeiro = elementosFocaveis()[0];
+      if (primeiro) primeiro.focus();
     }
 
     if (toggle && drawer) {
@@ -149,7 +179,29 @@
       overlay.addEventListener("click", fecharIndice);
     }
     links.forEach((link) => {
-      link.addEventListener("click", fecharIndice);
+      link.addEventListener("click", () =>
+        fecharIndice({ restaurarFoco: false })
+      );
+    });
+    document.addEventListener("keydown", (evento) => {
+      if (!drawer || !drawer.classList.contains("indice--aberto")) return;
+      if (evento.key === "Escape") {
+        evento.preventDefault();
+        fecharIndice();
+        return;
+      }
+      if (evento.key !== "Tab") return;
+      const focaveis = elementosFocaveis();
+      if (!focaveis.length) return;
+      const primeiro = focaveis[0];
+      const ultimo = focaveis[focaveis.length - 1];
+      if (evento.shiftKey && document.activeElement === primeiro) {
+        evento.preventDefault();
+        ultimo.focus();
+      } else if (!evento.shiftKey && document.activeElement === ultimo) {
+        evento.preventDefault();
+        primeiro.focus();
+      }
     });
   }
 

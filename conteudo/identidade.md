@@ -5,9 +5,11 @@
 ---
 
 ## Sobrelinha
+
 `A MARCA E O QUE ELA CONFESSA`
 
 ## Título
+
 `Um escudo que ensina`
 
 ## Abertura
@@ -24,19 +26,19 @@
 
 **Os quatro campos do escudo** (cada um corresponde a um módulo):
 
-| Campo | Peça | Módulo | O que significa |
-|---|---|---|---|
-| 1 | Cinto da Verdade | Cristo Chamando | O cinto de guarnição é uma das primeiras peças que o soldado veste, e é o que dá suporte a todo o resto. Assim a verdade do chamado de Cristo sustenta a jornada inteira. |
-| 2 | Couraça da Justiça | Cristo Treinando | A couraça protege o que é vital: o coração. É no treino diário que o discípulo aprende a guardá-lo das pequenas concessões que, somadas, desprotegem. |
-| 3 | Calçados do Evangelho da Paz | Cristo Moldando | O coturno dá firmeza em qualquer terreno — lama ou pedra. É a estabilidade de caráter que permite permanecer de pé onde antes se escorregava. |
-| 4 | O próprio escudo do Projeto | Cristo Enviando | O Escudo da Fé remete ao escudo-símbolo do projeto: o discípulo formado torna-se, simbolicamente, a própria marca. Envio pressupõe chamado, treino e caráter. |
+| Campo | Peça                         | Módulo           | O que significa                                                                                                                                                           |
+| ----- | ---------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1     | Cinto da Verdade             | Cristo Chamando  | O cinto de guarnição é uma das primeiras peças que o soldado veste, e é o que dá suporte a todo o resto. Assim a verdade do chamado de Cristo sustenta a jornada inteira. |
+| 2     | Couraça da Justiça           | Cristo Treinando | A couraça protege o que é vital: o coração. É no treino diário que o discípulo aprende a guardá-lo das pequenas concessões que, somadas, desprotegem.                     |
+| 3     | Calçados do Evangelho da Paz | Cristo Moldando  | O coturno dá firmeza em qualquer terreno — lama ou pedra. É a estabilidade de caráter que permite permanecer de pé onde antes se escorregava.                             |
+| 4     | O próprio escudo do Projeto  | Cristo Enviando  | O Escudo da Fé remete ao escudo-símbolo do projeto: o discípulo formado torna-se, simbolicamente, a própria marca. Envio pressupõe chamado, treino e caráter.             |
 
 **Acima e através do escudo:**
 
-| Elemento | Referência | Por que está fora dos módulos |
-|---|---|---|
-| Capacete da Salvação | Ef 6.17 | Guarda a mente na esperança da salvação. Está reservado à dimensão pastoral de socorro — o cuidado com quem atravessa crise, não uma etapa a ser vencida. |
-| Espada do Espírito | Ef 6.17 | É a Palavra de Deus. Não pertence a uma etapa: permeia todo o percurso, do chamado ao envio, como instrumento de cada lição. |
+| Elemento             | Referência | Por que está fora dos módulos                                                                                                                             |
+| -------------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Capacete da Salvação | Ef 6.17    | Guarda a mente na esperança da salvação. Está reservado à dimensão pastoral de socorro — o cuidado com quem atravessa crise, não uma etapa a ser vencida. |
+| Espada do Espírito   | Ef 6.17    | É a Palavra de Deus. Não pertence a uma etapa: permeia todo o percurso, do chamado ao envio, como instrumento de cada lição.                              |
 
 **Frase de fechamento do bloco:**
 
@@ -66,12 +68,12 @@
 
 **As quatro marchas:**
 
-| Módulo | Nome da marcha | Símbolo |
-|---|---|---|
-| 1 | Primeira Marcha — O Recruta que se Rendeu | Cinto da Verdade |
-| 2 | Segunda Marcha — O Combatente que se Fortalece | Couraça da Justiça |
-| 3 | Terceira Marcha — O Guerreiro que Persevera | Calçados do Evangelho da Paz |
-| 4 | Formatura do Soldado de Cristo | Escudo da Fé |
+| Módulo | Nome da marcha                                 | Símbolo                      |
+| ------ | ---------------------------------------------- | ---------------------------- |
+| 1      | Primeira Marcha — O Recruta que se Rendeu      | Cinto da Verdade             |
+| 2      | Segunda Marcha — O Combatente que se Fortalece | Couraça da Justiça           |
+| 3      | Terceira Marcha — O Guerreiro que Persevera    | Calçados do Evangelho da Paz |
+| 4      | Formatura do Soldado de Cristo                 | Escudo da Fé                 |
 
 **Nota sobre o certificado:**
 
@@ -89,21 +91,21 @@
 
 **Paleta:**
 
-| Cor | Hex | Uso |
-|---|---|---|
-| Navy | `#1A2A44` | Banners, faixas de título, capa da lição |
+| Cor         | Hex       | Uso                                      |
+| ----------- | --------- | ---------------------------------------- |
+| Navy        | `#1A2A44` | Banners, faixas de título, capa da lição |
 | Navy escuro | `#101D33` | Caixas de contemplação, fundos profundos |
-| Bronze | `#8C6A45` | Filetes, rótulos, detalhes, selos |
-| Creme | `#F5F1E7` | Fundo de caixas (texto-base, oração) |
-| Régua | `#C9BCA1` | Linhas finas, divisórias, anotações |
-| Tinta | `#23262B` | Texto corrido |
+| Bronze      | `#8C6A45` | Filetes, rótulos, detalhes, selos        |
+| Creme       | `#F5F1E7` | Fundo de caixas (texto-base, oração)     |
+| Régua       | `#C9BCA1` | Linhas finas, divisórias, anotações      |
+| Tinta       | `#23262B` | Texto corrido                            |
 
 **Tipografia:**
 
-| Papel | Fonte | Uso |
-|---|---|---|
-| Display | Montserrat (700–800) | Títulos, rótulos, numeração |
-| Corpo | Source Serif 4 | Texto corrido, ~9 pt no miolo de duas colunas |
+| Papel   | Fonte                | Uso                                           |
+| ------- | -------------------- | --------------------------------------------- |
+| Display | Montserrat (700–800) | Títulos, rótulos, numeração                   |
+| Corpo   | Source Serif 4       | Texto corrido, ~9 pt no miolo de duas colunas |
 
 **Nota de fechamento:**
 

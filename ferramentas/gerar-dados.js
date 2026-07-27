@@ -32,6 +32,11 @@ function assertSemMojibake(texto, rotulo) {
   }
 }
 
+function stringObrigatoria(valor, local) {
+  if (typeof valor !== "string" || !valor.trim())
+    throw new Error(`${local}: string obrigatória vazia ou inválida`);
+}
+
 function validarModulos(dados) {
   if (!dados || typeof dados !== "object") {
     throw new Error("modulos.json: raiz inválida");
@@ -39,6 +44,8 @@ function validarModulos(dados) {
   if (!Array.isArray(dados.modulos) || dados.modulos.length !== 4) {
     throw new Error("modulos.json: esperado array modulos com 4 itens");
   }
+  const numeros = new Set();
+  const estados = new Set(["produzido", "planejado"]);
   dados.modulos.forEach((mod, i) => {
     ["numero", "nome", "subtitulo", "enfase", "peca", "estado", "licoes"].forEach(
       (campo) => {
@@ -47,13 +54,40 @@ function validarModulos(dados) {
         }
       }
     );
+    if (!Number.isInteger(mod.numero) || mod.numero < 1 || mod.numero > 4)
+      throw new Error(`modulos.json: módulo ${i + 1} — numero deve estar entre 1 e 4`);
+    if (numeros.has(mod.numero))
+      throw new Error(`modulos.json: número de módulo duplicado ${mod.numero}`);
+    numeros.add(mod.numero);
+    ["nome", "subtitulo", "enfase", "peca"].forEach((campo) =>
+      stringObrigatoria(mod[campo], `modulos.json: módulo ${mod.numero}, campo ${campo}`)
+    );
+    if (!estados.has(mod.estado))
+      throw new Error(
+        `modulos.json: módulo ${mod.numero} — estado desconhecido "${mod.estado}"`
+      );
     if (!Array.isArray(mod.licoes) || mod.licoes.length !== 2) {
       throw new Error(`modulos.json: módulo ${mod.numero} — licoes deve ser [ini, fim]`);
     }
+    const [inicio, fim] = mod.licoes;
+    if (
+      !Number.isInteger(inicio) ||
+      !Number.isInteger(fim) ||
+      fim < inicio ||
+      fim - inicio + 1 !== 12
+    )
+      throw new Error(
+        `modulos.json: módulo ${mod.numero} — intervalo deve conter exatamente 12 lições`
+      );
+    const esperado = (mod.numero - 1) * 12 + 1;
+    if (inicio !== esperado || fim !== esperado + 11)
+      throw new Error(
+        `modulos.json: módulo ${mod.numero} — intervalo incompatível, esperado ${esperado}–${esperado + 11}`
+      );
   });
 }
 
-function validarMatriz(dados) {
+function validarMatriz(dados, modulos) {
   if (!dados || typeof dados !== "object") {
     throw new Error("matriz-curricular.json: raiz inválida");
   }
@@ -63,24 +97,73 @@ function validarMatriz(dados) {
   if (!Array.isArray(dados.licoes) || dados.licoes.length !== 48) {
     throw new Error("matriz-curricular.json: esperado 48 lições");
   }
+  const numeros = new Set();
+  const titulos = new Set();
   dados.licoes.forEach((l, i) => {
     ["numero", "modulo", "titulo", "textoBase", "objetivo"].forEach((campo) => {
       if (l[campo] == null) {
         throw new Error(`matriz-curricular.json: lição índice ${i} sem "${campo}"`);
       }
     });
+    if (!Number.isInteger(l.numero))
+      throw new Error(
+        `matriz-curricular.json: lição índice ${i} — numero deve ser inteiro`
+      );
+    if (numeros.has(l.numero))
+      throw new Error(`matriz-curricular.json: número de lição duplicado ${l.numero}`);
+    numeros.add(l.numero);
+    if (l.numero !== i + 1)
+      throw new Error(
+        `matriz-curricular.json: sequência quebrada na posição ${i + 1}; recebido ${l.numero}`
+      );
+    if (!Number.isInteger(l.modulo) || l.modulo < 1 || l.modulo > 4)
+      throw new Error(`matriz-curricular.json: lição ${l.numero} — módulo inválido`);
+    const moduloEsperado = Math.ceil(l.numero / 12);
+    if (l.modulo !== moduloEsperado)
+      throw new Error(
+        `matriz-curricular.json: lição ${l.numero} — módulo incompatível; esperado ${moduloEsperado}`
+      );
+    ["titulo", "textoBase", "objetivo"].forEach((campo) =>
+      stringObrigatoria(
+        l[campo],
+        `matriz-curricular.json: lição ${l.numero}, campo ${campo}`
+      )
+    );
+    const titulo = l.titulo.trim().toLocaleLowerCase("pt-BR");
+    if (titulos.has(titulo))
+      throw new Error(
+        `matriz-curricular.json: título duplicado na lição ${l.numero}: ${l.titulo}`
+      );
+    titulos.add(titulo);
     if (typeof l.produzida !== "boolean") {
-      throw new Error(`matriz-curricular.json: lição ${l.numero} — produzida deve ser boolean`);
+      throw new Error(
+        `matriz-curricular.json: lição ${l.numero} — produzida deve ser boolean`
+      );
     }
   });
+  if (modulos) {
+    for (const modulo of modulos.modulos) {
+      const produzidas = dados.licoes.filter(
+        (l) => l.modulo === modulo.numero && l.produzida
+      ).length;
+      if (modulo.estado === "produzido" && produzidas !== 12)
+        throw new Error(
+          `modulos.json: módulo ${modulo.numero} marcado produzido, mas possui ${produzidas} lições produzidas`
+        );
+      if (modulo.estado !== "produzido" && produzidas === 12)
+        throw new Error(
+          `modulos.json: módulo ${modulo.numero} planejado, mas todas as lições estão produzidas`
+        );
+    }
+  }
 }
 
-function gerarScript(origemRel, destinoRel, nomeGlobal, validar) {
-  const origem = path.join(raiz, origemRel);
-  const destino = path.join(raiz, destinoRel);
+function gerarScript(origemRel, destinoRel, nomeGlobal, validar, opcoes = {}) {
+  const base = opcoes.raiz || raiz;
+  const destino = opcoes.destino || path.join(base, destinoRel);
   let bruto;
   try {
-    bruto = lerUtf8(origem);
+    bruto = lerUtf8(path.join(base, origemRel));
   } catch (err) {
     throw new Error(`Falha ao ler ${origemRel}: ${err.message}`);
   }
@@ -119,7 +202,7 @@ window.${nomeGlobal} = ${corpo};
     throw new Error(`${destinoRel}: round-trip divergente da fonte ${origemRel}`);
   }
 
-  console.log("OK", destinoRel);
+  if (!opcoes.silencioso) console.log("OK", destinoRel);
   return dados;
 }
 
@@ -211,35 +294,59 @@ function injetarFallback(modulos, matriz) {
       `<div class="matriz__lista" data-matriz-lista></div>\n            ${bloco}`
     );
   } else {
-    console.warn(
-      "AVISO: index.html sem marcadores FALLBACK-DADOS — injeção adianda (matriz no próximo PR)."
+    console.log(
+      "NÃO APLICÁVEL: index.html não contém marcadores FALLBACK-DADOS; nenhuma alteração foi feita."
     );
-    return;
+    return false;
   }
 
   escreverUtf8(indexPath, html);
   console.log("OK", "index.html (fallback noscript)");
+  return true;
 }
 
-function main() {
+function gerarDados({
+  raiz: base = raiz,
+  diretorioSaida = path.join(base, "js", "dados"),
+  silencioso = false,
+} = {}) {
   const modulos = gerarScript(
     "conteudo/modulos.json",
     "js/dados/modulos.js",
     "DADOS_MODULOS",
-    validarModulos
+    validarModulos,
+    { raiz: base, destino: path.join(diretorioSaida, "modulos.js"), silencioso }
   );
   const matriz = gerarScript(
     "conteudo/matriz-curricular.json",
     "js/dados/matriz.js",
     "DADOS_MATRIZ",
-    validarMatriz
+    (dados) => validarMatriz(dados, modulos),
+    { raiz: base, destino: path.join(diretorioSaida, "matriz.js"), silencioso }
   );
-  injetarFallback(modulos, matriz);
+  return { modulos, matriz };
 }
 
-try {
-  main();
-} catch (err) {
-  console.error("ERRO:", err.message);
-  process.exit(1);
+function main() {
+  const modo = process.argv[2] || "--dados";
+  const dados = gerarDados();
+  if (modo === "--fallback") injetarFallback(dados.modulos, dados.matriz);
+  else if (modo !== "--dados") throw new Error(`Opção desconhecida: ${modo}`);
 }
+
+if (require.main === module) {
+  try {
+    main();
+  } catch (err) {
+    console.error("ERRO:", err.message);
+    process.exit(1);
+  }
+}
+
+module.exports = {
+  gerarDados,
+  injetarFallback,
+  montarFallback,
+  validarMatriz,
+  validarModulos,
+};

@@ -4,16 +4,24 @@
   "private": true,
   "description": "Prospecto pastoral Discipulando a Caserna — Projeto Caserna de Adulão",
   "scripts": {
-    "generate": "node ferramentas/gerar-dados.js",
+    "start": "node ferramentas/servidor-estatico.js --porta 4173",
+    "generate": "npm run generate:data",
+    "generate:data": "node ferramentas/gerar-dados.js --dados",
+    "generate:fallback": "node ferramentas/gerar-dados.js --fallback",
+    "check:generated": "node ferramentas/check-generated.js",
     "check:encoding": "node ferramentas/check-encoding.js",
+    "format": "prettier --write css/**/*.css js/**/*.js ferramentas/**/*.js testes/**/*.js *.md conteudo/**/*.md docs/**/*.md .github/**/*.yml",
+    "format:check": "prettier --check css/**/*.css js/**/*.js ferramentas/**/*.js testes/**/*.js *.md conteudo/**/*.md docs/**/*.md",
     "lint:html": "node ferramentas/lint-html.js",
     "lint:css": "stylelint css/**/*.css",
-    "lint:js": "eslint js/**/*.js ferramentas/**/*.js testes/**/*.js",
-    "format:check": "prettier --check css/**/*.css js/**/*.js ferramentas/**/*.js testes/**/*.js *.md conteudo/**/*.md docs/**/*.md",
-    "test": "node --test testes/unitarios/estrutura.test.js testes/unitarios/dados.test.js",
+    "lint:js": "eslint --max-warnings=0 js/**/*.js ferramentas/**/*.js testes/**/*.js",
+    "test": "node --test testes/unitarios/*.test.js",
+    "test:e2e": "playwright test testes/e2e/site.spec.js",
+    "test:e2e:install": "playwright install chromium firefox webkit",
     "test:a11y": "playwright test testes/e2e/site.spec.js -g \"a11y\"",
-    "test:e2e": "playwright test testes/e2e",
-    "validate": "npm run generate && npm run check:encoding && npm run lint:html && npm run lint:css && npm run lint:js && npm run test && npm run test:e2e"
+    "test:visual": "playwright test testes/e2e/visual.spec.js --project=chromium",
+    "audit": "npm audit --audit-level=high",
+    "validate": "npm run generate && npm run check:generated && npm run check:encoding && npm run format:check && npm run lint:html && npm run lint:css && npm run lint:js && npm run test && npm run test:e2e"
   },
   "engines": {
     "node": ">=18"

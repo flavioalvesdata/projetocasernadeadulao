@@ -33,9 +33,13 @@ function startServer() {
   return new Promise((resolve) => {
     const server = http.createServer((req, res) => {
       const urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
-      let rel = urlPath === "/" ? "/prototipos/direcao-a/index.html" : urlPath;
+      const rel = urlPath === "/" ? "/prototipos/direcao-a/index.html" : urlPath;
       const filePath = path.join(ROOT, rel.replace(/^\//, "").replace(/\//g, path.sep));
-      if (!filePath.startsWith(ROOT) || !fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
+      if (
+        !filePath.startsWith(ROOT) ||
+        !fs.existsSync(filePath) ||
+        fs.statSync(filePath).isDirectory()
+      ) {
         res.writeHead(404);
         res.end("Not found");
         return;
@@ -73,8 +77,13 @@ async function captureAll() {
           { key: "fim", y: null },
         ];
 
-        const scrollHeight = await page.evaluate(() => document.documentElement.scrollHeight);
-        shots[1].y = Math.max(0, Math.floor(scrollHeight * 0.4) - Math.floor(vp.height / 2));
+        const scrollHeight = await page.evaluate(
+          () => document.documentElement.scrollHeight
+        );
+        shots[1].y = Math.max(
+          0,
+          Math.floor(scrollHeight * 0.4) - Math.floor(vp.height / 2)
+        );
         shots[2].y = Math.max(0, scrollHeight - vp.height);
 
         for (const shot of shots) {

@@ -52,7 +52,6 @@
 
 html {
   scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -119,7 +118,6 @@ h4 {
   font-weight: 800;
   line-height: var(--lh-aperto);
   hyphens: none;
-  -webkit-hyphens: none;
 }
 
 p {

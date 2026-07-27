@@ -70,13 +70,13 @@
 
 **Elemento central — os cinco descompassos.** Apresentar como comparação em duas colunas: o que o material padrão pressupõe × o que se encontra na caserna.
 
-| O material comum pressupõe | O que se encontra ali |
-|---|---|
-| Alguém que chega curioso, querendo aprender mais | Alguém que chega quebrado, querendo saber se ainda há lugar para ele |
-| Liberdade de agenda e continuidade de encontros | Escala, pernoite, revista, transferência, sanção — a turma muda sem aviso |
-| Vocabulário eclesiástico como língua natural | Vocabulário de hierarquia, lealdade, missão e honra |
-| Que a vergonha seja tratada mais adiante, quando houver confiança | Que a vergonha é a porta de entrada, e nada avança antes dela |
-| Um leitor que pode se expor com segurança | Um leitor que aprendeu que se expor tem custo, e às vezes preço |
+| O material comum pressupõe                                        | O que se encontra ali                                                     |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| Alguém que chega curioso, querendo aprender mais                  | Alguém que chega quebrado, querendo saber se ainda há lugar para ele      |
+| Liberdade de agenda e continuidade de encontros                   | Escala, pernoite, revista, transferência, sanção — a turma muda sem aviso |
+| Vocabulário eclesiástico como língua natural                      | Vocabulário de hierarquia, lealdade, missão e honra                       |
+| Que a vergonha seja tratada mais adiante, quando houver confiança | Que a vergonha é a porta de entrada, e nada avança antes dela             |
+| Um leitor que pode se expor com segurança                         | Um leitor que aprendeu que se expor tem custo, e às vezes preço           |
 
 **Parágrafos de fechamento:**
 
@@ -110,11 +110,11 @@
 
 **Bloco de paralelo** — três pares, apresentados lado a lado:
 
-| Em Adulão | Na caserna |
-|---|---|
-| Homens em crise encontraram novo propósito | O lugar de correção tornou-se campo de reconstrução |
-| Guerreiros desonrados foram treinados para nova lealdade | A honra é reconstruída em graça, não em desempenho |
-| Soldados feridos foram curados e reempregados | O restaurado é reenviado para servir e formar outros |
+| Em Adulão                                                | Na caserna                                           |
+| -------------------------------------------------------- | ---------------------------------------------------- |
+| Homens em crise encontraram novo propósito               | O lugar de correção tornou-se campo de reconstrução  |
+| Guerreiros desonrados foram treinados para nova lealdade | A honra é reconstruída em graça, não em desempenho   |
+| Soldados feridos foram curados e reempregados            | O restaurado é reenviado para servir e formar outros |
 
 **Parágrafos de fechamento:**
 

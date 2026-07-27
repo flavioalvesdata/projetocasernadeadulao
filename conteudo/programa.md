@@ -11,12 +11,12 @@
 
 **Números de destaque:**
 
-| Valor | Rótulo |
-|---|---|
-| 4 | módulos sequenciais |
-| 12 | lições por módulo |
-| 48 | encontros ao todo |
-| ~1 | ano de percurso |
+| Valor | Rótulo              |
+| ----- | ------------------- |
+| 4     | módulos sequenciais |
+| 12    | lições por módulo   |
+| 48    | encontros ao todo   |
+| ~1    | ano de percurso     |
 
 **Texto:**
 
@@ -90,12 +90,12 @@
 **Sobrelinha:** `O QUE NÃO SE NEGOCIA`
 **Título:** `Sete compromissos`
 
-| Princípio | Descrição |
-|---|---|
-| Cristocentrismo | Tudo aponta para Cristo, o Comandante — não para o esforço, o mérito ou a bravata do discípulo. |
-| Graça antes do desempenho | A aceitação é dom de Cristo, recebido pela fé; a obediência é fruto e resposta, nunca moeda de troca. |
-| Antilegalismo | Combate explícito ao moralismo (autojustificação) e ao fatalismo (condenação) em cada lição. |
-| Sem militarização da fé | A metáfora militar serve ao evangelho, e nunca o contrário. |
+| Princípio                  | Descrição                                                                                                 |
+| -------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Cristocentrismo            | Tudo aponta para Cristo, o Comandante — não para o esforço, o mérito ou a bravata do discípulo.           |
+| Graça antes do desempenho  | A aceitação é dom de Cristo, recebido pela fé; a obediência é fruto e resposta, nunca moeda de troca.     |
+| Antilegalismo              | Combate explícito ao moralismo (autojustificação) e ao fatalismo (condenação) em cada lição.              |
+| Sem militarização da fé    | A metáfora militar serve ao evangelho, e nunca o contrário.                                               |
 | Neutralidade institucional | O material do aluno não traz referências militares institucionais; a linguagem é pastoral e restaurativa. |
-| Cuidado pastoral | Acolhe feridas reais (vergonha, estigma, autoridade) sem expor ninguém; reconstrói a honra em graça. |
-| Fidelidade bíblica | Escrituras na NAA, com referências no padrão decimal; o texto governa a aplicação, não o contrário. |
+| Cuidado pastoral           | Acolhe feridas reais (vergonha, estigma, autoridade) sem expor ninguém; reconstrói a honra em graça.      |
+| Fidelidade bíblica         | Escrituras na NAA, com referências no padrão decimal; o texto governa a aplicação, não o contrário.       |

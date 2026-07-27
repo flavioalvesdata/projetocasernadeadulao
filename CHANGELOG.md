@@ -1,20 +1,31 @@
 # Changelog
 
+Formato inspirado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). A versão do produto permanece 1.0.0; “Não lançado” não representa aprovação pastoral nem nova release.
+
+## [Não lançado]
+
+### Adicionado
+
+- Servidor estático local, verificação determinística dos gerados, CI e Dependabot.
+- Cobertura de servidor, invariantes curriculares, relações DOM, teclado, âncoras, Axe e regressão visual.
+- Documentação operacional, simples, de testes, arquitetura, segurança, publicação e rollback.
+
+### Alterado
+
+- Narrativa reconstruída em cinco movimentos, com seções 1–7 implementadas e âncoras 8–15 preservadas.
+- Headings, drawer móvel, foco, Escape e cobertura multi-motor Playwright aprimorados.
+- Geração separada entre dados e fallback não aplicável; formato e lint incorporados à validação.
+
+### Pendente
+
+- Conteúdo e tratamento das seções 8–15, aprovação pastoral, acesso, indexação, licença, domínio, marca e demais decisões humanas.
+
 ## [0.4.0] — 2026-07-25
 
-### Correção técnica e consolidação editorial
+### Alterado
 
-- Regeneração UTF-8 dos dados (`js/dados/*`) a partir de `conteudo/*.json`, com validação de mojibake e round-trip.
-- Hierarquia institucional explícita: Projeto Caserna de Adulão apresenta o programa Discipulando a Caserna.
-- Numeração contínua das seções publicadas (1–10); Parte IV com fechamento editorial real.
-- Acessibilidade: skip link para `<main>`, headings, sumário móvel, contraste, foco, nomes do escudo, `aria-live` nos filtros.
-- Fallback editorial sem JavaScript (mapa + matriz).
-- JavaScript resiliente (isolamento de erros, fallback de IntersectionObserver, progresso por rolagem, DOM seguro).
-- Metadados técnicos (canonical, theme-color, favicon, Open Graph) mantendo `noindex`.
-- Ferramentas mínimas de qualidade (`package.json`, lint, testes unitários e e2e).
-- Documentação alinhada à publicação no GitHub Pages (repositório público).
+- Consolidação editorial e técnica anterior, dados UTF-8, acessibilidade, fallback e ferramentas mínimas de qualidade.
 
 ## [0.3.0] — anterior
 
-- Prospecto em quatro partes com seções 1–6 e 10–12.
-- Escudo interativo e matriz curricular offline.
+- Prospecto anterior em quatro partes com escudo e matriz offline.

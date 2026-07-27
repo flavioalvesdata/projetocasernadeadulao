@@ -25,6 +25,8 @@ module.exports = [
         DocumentFragment: "readonly",
         history: "readonly",
         getComputedStyle: "readonly",
+        fetch: "readonly",
+        structuredClone: "readonly",
       },
     },
     rules: {
@@ -40,6 +42,8 @@ module.exports = [
     languageOptions: {
       globals: {
         getComputedStyle: "readonly",
+        fetch: "readonly",
+        structuredClone: "readonly",
       },
     },
   },

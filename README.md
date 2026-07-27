@@ -1,69 +1,114 @@
 # Discipulando a Caserna | Projeto Caserna de Adulão
 
-Prospecto pastoral digital do programa **Discipulando a Caserna**, submetido ao
-**Pr. Glaydston** para apreciação, orientação e validação.
+## 1. Visão geral
 
-Versão em construção neste branch: **v1.0** (Movimentos I e II — seções 1 a 7).
+Prospecto pastoral digital do programa **Discipulando a Caserna**, submetido ao **Pr. Glaydston** para apreciação, orientação e validação.
 
-## O que é
+## 2. Projeto e programa
 
-Não é landing page, portal de igreja nem plataforma de cursos. É uma **carta que
-se abre em prospecto**: começa pessoal e desenvolve a necessidade, a resposta e
-(em PRs seguintes) o programa, a prova e o pedido pastoral.
+O Discipulando a Caserna é o protagonista do documento. O Projeto Caserna de Adulão é seu contexto institucional mais amplo; os nomes não são sinônimos.
 
-## Hierarquia
+## 3. Destinatário e finalidade
 
-- **Discipulando a Caserna** — protagonista desta apresentação
-- **Projeto Caserna de Adulão** — contexto institucional ao qual o discipulado serve
+É uma carta que se abre em prospecto de trabalho pastoral, não landing page, portal público, curso ou mecanismo de captação.
 
-## Arquitetura narrativa
+## 4. Estado real
 
-Cinco movimentos, quinze seções:
+A versão declarada permanece **1.0.0**, sem declaração de conclusão. Os movimentos I–II (seções 1–7) estão implementados; 8–15 são âncoras incompletas dependentes de decisão humana.
 
-| Movimento | Seções | Status |
-|---|---|---|
-| I — A necessidade | 1–4 | neste PR |
-| II — A resposta | 5–7 | neste PR |
-| III — O programa | 8–11 | âncoras (próximo PR) |
-| IV — A prova | 12–13 | âncoras (próximo PR) |
-| V — O pedido | 14–15 | âncoras (próximo PR) |
+## 5. Pronto
 
-## Como abrir
+Estrutura editorial, cinco movimentos, sumário, trilho, seções 1–7, escudo interativo, fontes locais, fallback textual e automação técnica.
 
-Offline, sem instalação:
+## 6. Pendente
 
-1. Abra `index.html` no navegador (duplo clique), ou
-2. Sirva a raiz com qualquer servidor estático:
+Conteúdo pastoral 8–15, anatomia, encontro, edições, pedido, arte oficial, acesso, domínio, licença e decisões institucionais. Veja `TODO.md`.
 
-```bash
-npx serve .
-```
+## 7. Requisitos técnicos
 
-Zero CDN. Fontes self-hosted em `assets/fonts/`.
+Node.js 18 ou superior e npm compatível com o lockfile. O navegador moderno é necessário para interação; o texto abre sem instalação.
 
-## Conteúdo
+## 8. Versão de Node
 
-Fonte da verdade: `conteudo/`. Ver `conteudo/LEIA-ME.md`.
+A CI usa Node 20; `engines.node` aceita `>=18`.
 
-Citações (`>`) nos Markdown são literais — não parafrasear.
-
-## Qualidade
+## 9. Instalação
 
 ```bash
-npm install
-npm run validate
+npm ci
 ```
 
-## Publicação
+O comando instala dependências npm exatas, não binários Playwright.
 
-- URL prevista: <https://flavioiabuilder.github.io/projetocasernadeadulao/>
-- Indexação bloqueada (`robots.txt` + `noindex`)
+## 10. Navegadores
 
-## Referência de layout
+```bash
+npx playwright install chromium firefox webkit
+npx playwright install --with-deps chromium firefox webkit # Linux/CI
+```
 
-Mockups em `referencia/stitch/` (ignorados pelo git) orientam composição.
-Nenhum código Tailwind/CDN deles entra no produto.
+O segundo também prepara dependências do sistema quando suportado.
 
-## Pendências
+## 11. Execução local
 
-Ver [`TODO.md`](TODO.md).
+```bash
+npm start
+```
+
+Abra `http://127.0.0.1:4173`. Também é possível abrir `index.html`, com limitações normais do protocolo `file:`.
+
+## 12. Scripts
+
+`generate:data` gera dados; `generate:fallback` informa quando o fallback não se aplica; `check:generated`, `check:encoding`, `format`, `format:check`, três linters, `test`, `test:e2e`, `test:a11y`, `test:visual`, `audit` e `validate` compõem a manutenção.
+
+## 13. Arquitetura
+
+HTML estático + CSS modular + JavaScript clássico + Node para ferramentas. Consulte `docs/arquitetura-tecnica.md`.
+
+## 14. Diretórios
+
+`conteudo/` guarda fontes; `css/` estilos; `js/` comportamento e gerados; `ferramentas/` automação; `testes/` cobertura; `docs/` documentação; `assets/` fontes e imagens locais.
+
+## 15. Fontes canônicas
+
+Edite `conteudo/*.md` e `conteudo/*.json`. Preserve literalmente citações `>` e campos `null`.
+
+## 16. Arquivos gerados
+
+Nunca edite `js/dados/*.js`; rode `npm run generate`. A sincronização é verificada automaticamente.
+
+## 17. Testes
+
+A estratégia e os comandos individuais estão em `docs/testes.md`. `npm run validate` é a esteira determinística principal.
+
+## 18. Acessibilidade
+
+Há skip link, headings sem salto, foco visível, drawer com contenção de foco, teclado e Axe. Axe complementa, mas não substitui, auditoria manual.
+
+## 19. Publicação
+
+Não há deploy automático nesta mudança. Procedimento e rollback: `docs/publicacao-e-rollback.md`.
+
+## 20. Privacidade e noindex
+
+O HTML e `robots.txt` contêm diretivas existentes de não indexação, que não garantem sigilo nem controle de acesso. Sua manutenção é decisão humana.
+
+## 21. Limitações conhecidas
+
+Seções futuras não estão completas; arte é estudo provisório; política de acesso, publicação e segurança institucional estão pendentes. Configurar WebKit não equivale a afirmar suporte a Safari/iOS.
+
+## 22. Roadmap
+
+Concluir somente após autorização as seções 8–15 e decisões registradas em `TODO.md`; manter qualidade, revisão pastoral e rastreabilidade.
+
+## 23. Solução de problemas
+
+Falha `browser executable doesn't exist`: execute a instalação Playwright. Erro de rede/registro: repita em ambiente autorizado. Gerado divergente: `npm run generate:data`. Porta ocupada: `PORT=4174 npm start`.
+
+## 24. Contribuição
+
+Leia `AGENTS.md` e a regra em `.cursor/rules/discipulando-caserna.mdc`; não invente conteúdo. Faça mudanças pequenas, gere artefatos e execute `npm run validate`.
+
+## 25. Documentos complementares
+
+Índice: [`docs/README.md`](docs/README.md). Conteúdo: [`conteudo/LEIA-ME.md`](conteudo/LEIA-ME.md). Contexto: [`docs/contexto-do-projeto.md`](docs/contexto-do-projeto.md). Segurança: [`SECURITY.md`](SECURITY.md).
