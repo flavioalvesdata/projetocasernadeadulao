@@ -19,7 +19,7 @@ describe("servidor estático", () => {
   it("serve GET / e HEAD sem corpo", async () => {
     const get = await fetch(`${origem}/`);
     assert.equal(get.status, 200);
-    assert.match(await get.text(), /<!DOCTYPE html>/);
+    assert.match(await get.text(), /<!doctype html>/i);
     const head = await fetch(`${origem}/`, { method: "HEAD" });
     assert.equal(head.status, 200);
     assert.equal(await head.text(), "");

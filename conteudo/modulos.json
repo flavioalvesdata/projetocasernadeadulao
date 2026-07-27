@@ -15,10 +15,7 @@
       "tema": "Discipulado começa com contemplação: o soldado nasce da visão de Cristo.",
       "temaRef": "2Co 3.18; 2Tm 2.3-4",
       "marcha": "Primeira Marcha — O Recruta que se Rendeu",
-      "licoes": [
-        1,
-        12
-      ],
+      "licoes": [1, 12],
       "estado": "produzido"
     },
     {
@@ -35,10 +32,7 @@
       "tema": "O discípulo aprende a obedecer para vencer.",
       "temaRef": "Ef 6.10-18; Hb 5.12-14",
       "marcha": "Segunda Marcha — O Combatente que se Fortalece",
-      "licoes": [
-        13,
-        24
-      ],
+      "licoes": [13, 24],
       "estado": "planejado"
     },
     {
@@ -55,10 +49,7 @@
       "tema": null,
       "temaRef": null,
       "marcha": "Terceira Marcha — O Guerreiro que Persevera",
-      "licoes": [
-        25,
-        36
-      ],
+      "licoes": [25, 36],
       "estado": "planejado"
     },
     {
@@ -75,10 +66,7 @@
       "tema": null,
       "temaRef": null,
       "marcha": "Formatura do Soldado de Cristo",
-      "licoes": [
-        37,
-        48
-      ],
+      "licoes": [37, 48],
       "estado": "planejado"
     }
   ]

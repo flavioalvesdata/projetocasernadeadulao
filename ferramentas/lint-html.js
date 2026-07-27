@@ -14,6 +14,7 @@ const htmlvalidate = new HtmlValidate({
   extends: ["html-validate:recommended"],
   rules: {
     "no-inline-style": "off",
+    "doctype-style": "off",
     "void-style": "off",
     "no-implicit-button-type": "off",
     "element-permitted-content": "error",

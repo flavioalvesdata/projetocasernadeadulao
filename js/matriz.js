@@ -45,7 +45,9 @@
 
       const artigo = el("article", { class: "matriz__licao" });
       const cabeca = el("header", { class: "matriz__licao-cabeca" });
-      cabeca.appendChild(el("span", { class: "matriz__licao-num", text: String(l.numero) }));
+      cabeca.appendChild(
+        el("span", { class: "matriz__licao-num", text: String(l.numero) })
+      );
       cabeca.appendChild(el("h5", { class: "matriz__licao-titulo", text: l.titulo }));
       cabeca.appendChild(el("span", { class: `matriz__estado ${classe}`, text: estado }));
       artigo.appendChild(cabeca);
@@ -118,10 +120,7 @@
 
     function anunciar(mods) {
       if (!live) return;
-      const total = mods.reduce(
-        (acc, m) => acc + licoesDoModulo(m.numero).length,
-        0
-      );
+      const total = mods.reduce((acc, m) => acc + licoesDoModulo(m.numero).length, 0);
       if (filtroAtual === "todos") {
         live.textContent = `Exibindo ${total} encontros de todos os módulos.`;
       } else {

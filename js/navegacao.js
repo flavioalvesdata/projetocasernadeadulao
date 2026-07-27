@@ -42,9 +42,7 @@
 
   function initNavegacao() {
     const links = Array.from(document.querySelectorAll(".indice__link"));
-    const marcadores = Array.from(
-      document.querySelectorAll(".trilho__marcador")
-    );
+    const marcadores = Array.from(document.querySelectorAll(".trilho__marcador"));
     const barra = document.querySelector(".progresso-topo__barra");
     const progressoIndice = document.querySelector(".indice__progresso");
 
@@ -62,8 +60,7 @@
     function atualizar() {
       ticking = false;
       const y = window.scrollY || window.pageYOffset;
-      const docH =
-        document.documentElement.scrollHeight - window.innerHeight;
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
       const pct = docH > 0 ? Math.min(1, Math.max(0, y / docH)) : 0;
 
       if (barra) {
@@ -142,11 +139,7 @@
         elemento.inert = false;
         elemento.removeAttribute("aria-hidden");
       });
-      if (
-        restaurarFoco &&
-        focoAnterior &&
-        typeof focoAnterior.focus === "function"
-      ) {
+      if (restaurarFoco && focoAnterior && typeof focoAnterior.focus === "function") {
         focoAnterior.focus();
       }
       focoAnterior = null;
@@ -179,9 +172,7 @@
       overlay.addEventListener("click", fecharIndice);
     }
     links.forEach((link) => {
-      link.addEventListener("click", () =>
-        fecharIndice({ restaurarFoco: false })
-      );
+      link.addEventListener("click", () => fecharIndice({ restaurarFoco: false }));
     });
     document.addEventListener("keydown", (evento) => {
       if (!drawer || !drawer.classList.contains("indice--aberto")) return;
