@@ -1,5 +1,7 @@
 node_modules/
+# Artefatos determinísticos: o gerador serializa o JSON com recuo de dois espaços.
 js/dados/
+# Lockfile determinístico: sua serialização pertence exclusivamente ao npm.
 package-lock.json
 playwright-report/
 test-results/

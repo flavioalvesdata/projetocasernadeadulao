@@ -43,9 +43,7 @@
     });
 
     tablist.addEventListener("keydown", (event) => {
-      const atual = tabs.findIndex(
-        (t) => t.getAttribute("aria-selected") === "true"
-      );
+      const atual = tabs.findIndex((t) => t.getAttribute("aria-selected") === "true");
       let proximo = null;
 
       switch (event.key) {

@@ -11,6 +11,7 @@
 - `npm run test:a11y`: Axe; violações moderadas, sérias e críticas falham. Axe não substitui revisão manual de leitura, foco, contraste contextual e tecnologia assistiva.
 - `npm run test:visual`: baseline Chromium em 360×740 e 1280×800, menu e escudo. Fica fora de `validate` para limitar variação de renderização entre sistemas.
 - `npm run generate`: preparação editorial explícita; lê `conteudo/*.json` e atualiza `js/dados/*.js`.
+- `npm run format` e `npm run format:check`: usam a lista centralizada em `format:files`, no `package.json`. Os artefatos `js/dados/*.js` ficam fora do Prettier para não competir com a serialização determinística, com recuo de dois espaços, realizada por `npm run generate`.
 - `npm run check:generated`: verificação somente leitura; gera os dados em diretório temporário e os compara byte a byte com `js/dados/*.js`.
 - `npm run validate`: começa por `check:generated` e depois executa encoding, formato, linters, unitários e E2E. Não gera nem corrige arquivos da árvore de trabalho; dados divergentes causam falha.
 

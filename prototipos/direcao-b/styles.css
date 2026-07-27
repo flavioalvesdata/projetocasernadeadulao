@@ -114,7 +114,11 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(140, 106, 69, 0.18), transparent 55%),
+    radial-gradient(
+      ellipse 80% 60% at 20% 10%,
+      rgba(140, 106, 69, 0.18),
+      transparent 55%
+    ),
     radial-gradient(ellipse 70% 50% at 90% 80%, rgba(36, 54, 86, 0.9), transparent 50%),
     linear-gradient(165deg, var(--navy-esc), var(--navy) 55%, var(--navy-mid));
   z-index: 0;
@@ -122,7 +126,11 @@ body {
 
 .ato--clareza .ato__fundo {
   background:
-    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201, 168, 106, 0.12), transparent 50%),
+    radial-gradient(
+      ellipse 60% 40% at 50% 0%,
+      rgba(201, 168, 106, 0.12),
+      transparent 50%
+    ),
     linear-gradient(180deg, #1e314f, #243656 40%, #2a3d5c);
 }
 
@@ -131,13 +139,16 @@ body {
 }
 
 .ato--papel .ato__fundo {
-  background:
-    linear-gradient(180deg, #ebe4d4, var(--papel) 30%, #f7f3ea);
+  background: linear-gradient(180deg, #ebe4d4, var(--papel) 30%, #f7f3ea);
 }
 
 .ato--pedido .ato__fundo {
   background:
-    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(201, 168, 106, 0.15), transparent 55%),
+    radial-gradient(
+      ellipse 50% 40% at 50% 100%,
+      rgba(201, 168, 106, 0.15),
+      transparent 55%
+    ),
     linear-gradient(180deg, var(--navy), var(--navy-esc));
 }
 
@@ -373,7 +384,9 @@ ul.lista li {
 .revelar {
   opacity: 0;
   transform: translateY(1rem);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
 }
 
 .revelar.is-visivel {

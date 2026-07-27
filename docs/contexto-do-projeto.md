@@ -39,10 +39,10 @@ Características documentadas nas fontes canônicas (`conteudo/`, `index.html`):
 
 ## Relação entre os dois
 
-| Nome | Papel |
-|---|---|
-| Projeto Caserna de Adulão | Contexto institucional, missionário e ministerial |
-| Discipulando a Caserna | Protagonista da apresentação; programa/projeto de discipulado |
+| Nome                      | Papel                                                         |
+| ------------------------- | ------------------------------------------------------------- |
+| Projeto Caserna de Adulão | Contexto institucional, missionário e ministerial             |
+| Discipulando a Caserna    | Protagonista da apresentação; programa/projeto de discipulado |
 
 Não são sinônimos. O discipulado serve ao Projeto; o site não substitui um portal institucional do Projeto.
 
