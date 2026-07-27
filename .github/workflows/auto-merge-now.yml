@@ -1,41 +1,99 @@
-name: Auto Merge Now
+name: Consolidar branches
 
 on:
   push:
+    branches:
+      - main
     paths:
       - '.github/workflows/auto-merge-now.yml'
 
+permissions:
+  contents: write
+
 jobs:
-  merge:
+  consolidate:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout completo da main
+        uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
 
-      - name: Configure Git
+      - name: Configurar Git
         run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Fetch all branches
-        run: git fetch origin
+      - name: Buscar todas as branches remotas
+        run: git fetch origin '+refs/heads/*:refs/remotes/origin/*' --prune
 
-      - name: Checkout main
-        run: git checkout main
-
-      - name: Merge feature branch into main
+      - name: Mesclar todas as branches na main
+        shell: bash
         run: |
-          git merge "flavioalves/codex/2026-07-27/19-14-46/executar-melhorias-tecnicas-do-relatorio-a" --no-edit -m "Merge: Executar melhorias técnicas do relatório"
+          set -euo pipefail
 
-      - name: Push to main
-        run: git push origin main
+          mapfile -t branches < <(
+            git for-each-ref --format='%(refname:strip=3)' refs/remotes/origin \
+              | grep -v '^HEAD$' \
+              | grep -v '^main$' \
+              | sort -u
+          )
 
-      - name: Delete feature branch
-        run: git push origin --delete "flavioalves/codex/2026-07-27/19-14-46/executar-melhorias-tecnicas-do-relatorio-a"
+          printf '%s\n' "${branches[@]}" > /tmp/branches-to-delete.txt
 
-      - name: Verify branches
+          if [ "${#branches[@]}" -eq 0 ]; then
+            echo "Nenhuma branch adicional encontrada."
+            exit 0
+          fi
+
+          for branch in "${branches[@]}"; do
+            echo "Mesclando origin/${branch}..."
+            git merge --no-edit "origin/${branch}" -m "Merge branch '${branch}' into main"
+          done
+
+          git push origin main
+
+      - name: Excluir branches remotas incorporadas
+        shell: bash
         run: |
-          echo "Branches remaining:"
-          git branch -a
+          set -euo pipefail
+
+          if [ ! -s /tmp/branches-to-delete.txt ]; then
+            echo "Nenhuma branch adicional para excluir."
+            exit 0
+          fi
+
+          while IFS= read -r branch; do
+            [ -n "$branch" ] || continue
+            echo "Excluindo ${branch}..."
+            git push origin --delete "$branch"
+          done < /tmp/branches-to-delete.txt
+
+      - name: Remover auxiliares temporários
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git rm -f --ignore-unmatch \
+            merge-branches.sh \
+            execute-merge.sh \
+            final-merge.sh \
+            .github/workflows/merge-branches.yml \
+            .github/workflows/auto-merge-now.yml
+
+          if git diff --cached --quiet; then
+            echo "Nenhum arquivo auxiliar para remover."
+            exit 0
+          fi
+
+          git commit -m "chore: remove auxiliares temporários de consolidação"
+          git push origin main
+
+      - name: Confirmar estado final
+        run: |
+          git fetch origin --prune
+          echo "Branches remotas restantes:"
+          git for-each-ref --format='%(refname:short)' refs/remotes/origin
