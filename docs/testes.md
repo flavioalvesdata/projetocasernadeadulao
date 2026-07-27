@@ -14,6 +14,8 @@
 - `npm run check:generated`: verificação somente leitura; gera os dados em diretório temporário e os compara byte a byte com `js/dados/*.js`.
 - `npm run validate`: começa por `check:generated` e depois executa encoding, formato, linters, unitários e E2E. Não gera nem corrige arquivos da árvore de trabalho; dados divergentes causam falha.
 
+Na pipeline, `npm run check:generated` também é executado explicitamente antes da validação principal. Depois de todas as verificações determinísticas, `git diff --exit-code -- .` exige que a árvore de trabalho continue limpa quanto a arquivos versionados. Assim, qualquer artefato ou correção de formatação produzida inadvertidamente por um comando da CI causa falha, em vez de ser ignorada ou incorporada automaticamente.
+
 Playwright grava relatório HTML, traces e screenshots em `playwright-report/` e `test-results/`; a CI publica diagnósticos em falha. Viewports manuais adicionais: 768×1024 e 1440×900. Recomenda-se testar Tab/Shift+Tab/Escape, zoom, sem JavaScript, leitores de tela e ausência de overflow.
 
 Falha ao baixar pacotes ou browsers é ambiental; arquivo desatualizado, violação de lint ou asserção é falha do projeto. Registre comando, código de saída e evidência antes de classificar.
