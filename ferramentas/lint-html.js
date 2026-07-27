@@ -16,13 +16,13 @@ const htmlvalidate = new HtmlValidate({
     "no-inline-style": "off",
     "void-style": "off",
     "no-implicit-button-type": "off",
-    "element-permitted-content": "warn",
+    "element-permitted-content": "error",
     "prefer-native-element": "off",
     "text-content": "off",
-    "wcag/h30": "off",
+    "wcag/h30": "error",
     "long-title": "off",
     "no-trailing-whitespace": "off",
-    "aria-label-misuse": "off",
+    "aria-label-misuse": "error",
   },
 });
 

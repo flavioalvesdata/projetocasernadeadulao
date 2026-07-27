@@ -25,9 +25,7 @@ function ler(rel) {
 }
 
 function extrairGlobal(fonte, nome) {
-  const match = fonte.match(
-    new RegExp(`window\\.${nome}\\s*=\\s*([\\s\\S]*);\\s*$`)
-  );
+  const match = fonte.match(new RegExp(`window\\.${nome}\\s*=\\s*([\\s\\S]*);\\s*$`));
   if (!match) throw new Error(`${nome}: formato inválido`);
   return JSON.parse(match[1]);
 }

@@ -37,11 +37,7 @@
       rgba(140, 106, 69, 0.14),
       transparent 55%
     ),
-    radial-gradient(
-      ellipse 70% 50% at 90% 80%,
-      rgba(16, 29, 51, 0.8),
-      transparent 50%
-    ),
+    radial-gradient(ellipse 70% 50% at 90% 80%, rgba(16, 29, 51, 0.8), transparent 50%),
     var(--navy);
   background:
     radial-gradient(
@@ -70,12 +66,11 @@
 }
 
 .ato--papel {
-  background:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--creme) 55%, var(--papel)) 0%,
-      var(--papel) 40%
-    );
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--creme) 55%, var(--papel)) 0%,
+    var(--papel) 40%
+  );
   color: var(--tinta);
 }
 
@@ -215,11 +210,7 @@
   width: 1px;
   height: 2.25rem;
   margin-top: var(--esp-3);
-  background: linear-gradient(
-    to bottom,
-    var(--bronze-cl),
-    transparent
-  );
+  background: linear-gradient(to bottom, var(--bronze-cl), transparent);
   animation: ato-rolar 1.8s var(--easing) infinite;
 }
 

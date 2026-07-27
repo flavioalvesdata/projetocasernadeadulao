@@ -1,0 +1,31 @@
+name: Qualidade técnica
+on: [push, pull_request]
+jobs:
+  qualidade:
+    name: Geração, linters e testes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Instalar motores do Playwright
+        run: npx playwright install --with-deps chromium firefox webkit
+      - name: Validar geração, encoding, formato, lint e testes
+        run: npm run validate
+      - name: Acessibilidade automatizada
+        run: npm run test:a11y
+      - name: Regressão visual Chromium
+        run: npm run test:visual
+      - name: Publicar diagnósticos em caso de falha
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnosticos-playwright
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 14

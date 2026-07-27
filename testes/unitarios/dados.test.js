@@ -14,9 +14,7 @@ function ler(rel) {
 }
 
 function extrair(fonte, nome) {
-  const match = fonte.match(
-    new RegExp(`window\\.${nome}\\s*=\\s*([\\s\\S]*);\\s*$`)
-  );
+  const match = fonte.match(new RegExp(`window\\.${nome}\\s*=\\s*([\\s\\S]*);\\s*$`));
   assert.ok(match, `${nome} inválido`);
   return JSON.parse(match[1]);
 }

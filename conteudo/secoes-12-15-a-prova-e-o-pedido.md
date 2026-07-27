@@ -17,23 +17,23 @@
 
 **Elemento central — números:**
 
-| Valor | Rótulo |
-|---|---|
-| 12 | lições escritas |
-| 2 | edições — Aluno e Instrutor |
-| 5 | formatos por edição |
-| 84 | páginas na Revista do Aluno |
-| 111 | páginas na Edição do Instrutor |
+| Valor | Rótulo                         |
+| ----- | ------------------------------ |
+| 12    | lições escritas                |
+| 2     | edições — Aluno e Instrutor    |
+| 5     | formatos por edição            |
+| 84    | páginas na Revista do Aluno    |
+| 111   | páginas na Edição do Instrutor |
 
 **Bloco — os cinco formatos:**
 
-| Formato | Para quê |
-|---|---|
-| Leitura — PDF | 135 × 205 mm, sequencial, para ler em tela e revisar |
-| Impressão — PDF | A4 paisagem, duas páginas por folha, imposto em caderno |
-| Editável — DOCX | Coluna única, para ajustes finos de texto |
+| Formato          | Para quê                                                    |
+| ---------------- | ----------------------------------------------------------- |
+| Leitura — PDF    | 135 × 205 mm, sequencial, para ler em tela e revisar        |
+| Impressão — PDF  | A4 paisagem, duas páginas por folha, imposto em caderno     |
+| Editável — DOCX  | Coluna única, para ajustes finos de texto                   |
 | Impressão — DOCX | Paridade do caderno em Word, para quem não trabalha com PDF |
-| Web — HTML | Leitura em navegador |
+| Web — HTML       | Leitura em navegador                                        |
 
 **Parágrafos de fechamento:**
 
@@ -58,13 +58,13 @@
 
 **Elemento — decisões técnicas:**
 
-| Decisão | Motivo |
-|---|---|
-| Imposição em caderno | As folhas A4 são impressas em paisagem, duas páginas por face, dobradas ao meio e grampeadas na lombada. Sai uma revista de verdade, não uma pilha de folhas |
-| Tolerância a erro de corte | Faixa de segurança nas bordas, para perdoar a variação de quem dobra e corta à mão |
-| Escalabilidade | O que funciona hoje na impressora doméstica migra para a gráfica sem reprojeto |
-| Capa e miolo separados | Papéis e fluxos diferentes; encontram-se só na montagem final |
-| Alta resolução mantida | As versões de impressão preservam 175 DPI, sem compressão que degrade o texto |
+| Decisão                    | Motivo                                                                                                                                                       |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Imposição em caderno       | As folhas A4 são impressas em paisagem, duas páginas por face, dobradas ao meio e grampeadas na lombada. Sai uma revista de verdade, não uma pilha de folhas |
+| Tolerância a erro de corte | Faixa de segurança nas bordas, para perdoar a variação de quem dobra e corta à mão                                                                           |
+| Escalabilidade             | O que funciona hoje na impressora doméstica migra para a gráfica sem reprojeto                                                                               |
+| Capa e miolo separados     | Papéis e fluxos diferentes; encontram-se só na montagem final                                                                                                |
+| Alta resolução mantida     | As versões de impressão preservam 175 DPI, sem compressão que degrade o texto                                                                                |
 
 **Bloco — revisão editorial:**
 
@@ -91,12 +91,12 @@
 
 **Elemento — as quatro marchas:**
 
-| Módulo | Marcha | Símbolo entregue |
-|---|---|---|
-| 1 | Primeira Marcha — O Recruta que se Rendeu | Cinto da Verdade |
-| 2 | Segunda Marcha — O Combatente que se Fortalece | Couraça da Justiça |
-| 3 | Terceira Marcha — O Guerreiro que Persevera | Calçados do Evangelho da Paz |
-| 4 | Formatura do Soldado de Cristo | Escudo da Fé |
+| Módulo | Marcha                                         | Símbolo entregue             |
+| ------ | ---------------------------------------------- | ---------------------------- |
+| 1      | Primeira Marcha — O Recruta que se Rendeu      | Cinto da Verdade             |
+| 2      | Segunda Marcha — O Combatente que se Fortalece | Couraça da Justiça           |
+| 3      | Terceira Marcha — O Guerreiro que Persevera    | Calçados do Evangelho da Paz |
+| 4      | Formatura do Soldado de Cristo                 | Escudo da Fé                 |
 
 **Bloco — salvaguardas das cerimônias:**
 
@@ -128,11 +128,11 @@
 
 **Elemento central — três pedidos:**
 
-| | O pedido | Observação |
-|---|---|---|
-| 1 | **Apreciação doutrinária e pastoral** do Módulo 1 | Doze lições, nas duas edições. O dossiê de apreciação traz um roteiro de leitura com oito itens e espaço para observações |
-| 2 | **O prefácio do Guia Mestre** | Ver bloco abaixo |
-| 3 | **Liberação para os Módulos 2 a 4** | Trinta e seis lições, que só começam a ser escritas após a homologação do primeiro módulo |
+|     | O pedido                                          | Observação                                                                                                                |
+| --- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| 1   | **Apreciação doutrinária e pastoral** do Módulo 1 | Doze lições, nas duas edições. O dossiê de apreciação traz um roteiro de leitura com oito itens e espaço para observações |
+| 2   | **O prefácio do Guia Mestre**                     | Ver bloco abaixo                                                                                                          |
+| 3   | **Liberação para os Módulos 2 a 4**               | Trinta e seis lições, que só começam a ser escritas após a homologação do primeiro módulo                                 |
 
 **Bloco do convite — elemento visual destacado, o mais importante da seção:**
 

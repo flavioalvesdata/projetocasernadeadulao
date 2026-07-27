@@ -232,12 +232,24 @@
   margin-top: var(--esp-8);
 }
 
-.paleta__chip--navy { background: var(--navy); }
-.paleta__chip--navy-esc { background: var(--navy-esc); }
-.paleta__chip--bronze { background: var(--bronze); }
-.paleta__chip--creme { background: var(--creme); }
-.paleta__chip--regua { background: var(--regua); }
-.paleta__chip--tinta { background: var(--tinta); }
+.paleta__chip--navy {
+  background: var(--navy);
+}
+.paleta__chip--navy-esc {
+  background: var(--navy-esc);
+}
+.paleta__chip--bronze {
+  background: var(--bronze);
+}
+.paleta__chip--creme {
+  background: var(--creme);
+}
+.paleta__chip--regua {
+  background: var(--regua);
+}
+.paleta__chip--tinta {
+  background: var(--tinta);
+}
 
 .marca-escudo__alvo[aria-selected="true"] {
   background: var(--bronze-cl);

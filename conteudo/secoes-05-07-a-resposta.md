@@ -23,12 +23,12 @@
 
 **Elemento central — os quatro movimentos.** Apresentar como progressão, não como grade.
 
-| Movimento | O que Cristo faz | O que forma no discípulo |
-|---|---|---|
-| Cristo Chamando | Alcança o ferido e o reintegra pela graça | Fé e rendição |
-| Cristo Treinando | Firma fundamentos e forma constância | Obediência e disciplina |
-| Cristo Moldando | Trabalha o caráter por dentro, pelo Espírito | Maturidade e domínio próprio |
-| Cristo Enviando | Comissiona e sustenta na missão | Serviço e perseverança |
+| Movimento        | O que Cristo faz                             | O que forma no discípulo     |
+| ---------------- | -------------------------------------------- | ---------------------------- |
+| Cristo Chamando  | Alcança o ferido e o reintegra pela graça    | Fé e rendição                |
+| Cristo Treinando | Firma fundamentos e forma constância         | Obediência e disciplina      |
+| Cristo Moldando  | Trabalha o caráter por dentro, pelo Espírito | Maturidade e domínio próprio |
+| Cristo Enviando  | Comissiona e sustenta na missão              | Serviço e perseverança       |
 
 **Parágrafos de fechamento:**
 
@@ -51,11 +51,11 @@
 
 **Elemento central — quatro cartões:**
 
-| Recusa | O que significa na prática |
-|---|---|
-| **Moralismo** | Nenhuma lição sugere que o esforço compra aceitação. A graça vem antes do desempenho, sempre. Onde o texto exorta, exorta como resposta — nunca como condição. |
+| Recusa                  | O que significa na prática                                                                                                                                                                |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Moralismo**           | Nenhuma lição sugere que o esforço compra aceitação. A graça vem antes do desempenho, sempre. Onde o texto exorta, exorta como resposta — nunca como condição.                            |
 | **Militarização da fé** | A metáfora militar serve ao evangelho, nunca o contrário. Ela ilumina lealdade, ordem e missão. Não fabrica bravata, não humilha, não transforma obediência em performance de virilidade. |
-| **Lógica de troféu** | O discípulo não coleciona medalhas; é revestido por Cristo. Os símbolos entregues ao fim de cada módulo marcam etapas da graça, não conquistas pessoais. Não há ranking nem comparação. |
+| **Lógica de troféu**    | O discípulo não coleciona medalhas; é revestido por Cristo. Os símbolos entregues ao fim de cada módulo marcam etapas da graça, não conquistas pessoais. Não há ranking nem comparação.   |
 | **Exposição do ferido** | O material acolhe feridas reais — vergonha, estigma, desconfiança de autoridade — sem obrigar ninguém a se expor. Toda pergunta de partilha vem com orientação para respeitar o silêncio. |
 
 **Parágrafos de fechamento:**

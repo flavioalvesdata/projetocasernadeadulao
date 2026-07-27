@@ -22,10 +22,7 @@ describe("estrutura HTML v1", () => {
   });
 
   it("skip link aponta para main#conteudo", () => {
-    assert.match(
-      html,
-      /href="#conteudo"[^>]*>\s*Ir para o conteúdo principal/
-    );
+    assert.match(html, /href="#conteudo"[^>]*>\s*Ir para o conteúdo principal/);
     assert.match(html, /<main[^>]*id="conteudo"/);
   });
 
