@@ -8,7 +8,7 @@
     "generate": "npm run generate:data",
     "generate:data": "node ferramentas/gerar-dados.js --dados",
     "generate:fallback": "node ferramentas/gerar-dados.js --fallback",
-    "check:generated": "node ferramentas/check-generated.js",
+    "check:generated": "node ferramentas/verificar-gerados.js",
     "check:encoding": "node ferramentas/check-encoding.js",
     "format": "prettier --write css/**/*.css js/**/*.js ferramentas/**/*.js testes/**/*.js *.md conteudo/**/*.md docs/**/*.md .github/**/*.yml",
     "format:check": "prettier --check css/**/*.css js/**/*.js ferramentas/**/*.js testes/**/*.js *.md conteudo/**/*.md docs/**/*.md",
@@ -21,7 +21,7 @@
     "test:a11y": "playwright test testes/e2e/site.spec.js -g \"a11y\"",
     "test:visual": "playwright test testes/e2e/visual.spec.js --project=chromium",
     "audit": "npm audit --audit-level=high",
-    "validate": "npm run generate && npm run check:generated && npm run check:encoding && npm run format:check && npm run lint:html && npm run lint:css && npm run lint:js && npm run test && npm run test:e2e"
+    "validate": "npm run check:generated && npm run check:encoding && npm run format:check && npm run lint:html && npm run lint:css && npm run lint:js && npm run test && npm run test:e2e"
   },
   "engines": {
     "node": ">=18"
