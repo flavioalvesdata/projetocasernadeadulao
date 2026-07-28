@@ -1,5 +1,9 @@
 name: Qualidade técnica
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "17 7 * * 1"
 
 permissions:
   contents: read
@@ -9,6 +13,61 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  auditoria:
+    name: Auditoria de dependências
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v4.3.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 20.18.0
+          cache: npm
+      - name: Instalar dependências reproduzivelmente
+        id: instalacao
+        continue-on-error: true
+        run: npm ci
+      - name: Informar erro de instalação
+        if: steps.instalacao.outcome == 'failure'
+        run: |
+          echo "::error title=Erro de instalação::npm ci falhou; a auditoria de segurança não foi executada nem aprovada."
+          exit 1
+      - name: Consultar vulnerabilidades no registro npm
+        id: auditoria
+        if: steps.instalacao.outcome == 'success'
+        continue-on-error: true
+        run: npm run --silent audit -- --json > npm-audit.json
+      - name: Classificar falha da auditoria
+        if: steps.instalacao.outcome == 'success' && steps.auditoria.outcome == 'failure'
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+
+          let resultado;
+          try {
+            resultado = JSON.parse(fs.readFileSync('npm-audit.json', 'utf8'));
+          } catch {
+            console.error('::error title=Registro npm indisponível::A consulta não produziu uma resposta válida; a auditoria não foi aprovada.');
+            process.exit(1);
+          }
+
+          const vulnerabilidades = resultado.metadata?.vulnerabilities;
+          if (!vulnerabilidades) {
+            console.error('::error title=Registro npm indisponível::A consulta falhou sem um relatório de vulnerabilidades válido; a auditoria não foi aprovada.');
+            process.exit(1);
+          }
+
+          const bloqueadoras = (vulnerabilidades.high ?? 0) + (vulnerabilidades.critical ?? 0);
+          if (bloqueadoras > 0) {
+            console.error(`::error title=Vulnerabilidade encontrada::npm audit encontrou ${bloqueadoras} vulnerabilidade(s) alta(s) ou crítica(s).`);
+          } else {
+            console.error('::error title=Registro npm indisponível::A auditoria falhou sem vulnerabilidades no nível bloqueador; a consulta não foi aprovada.');
+          }
+          process.exit(1);
+          NODE
+
   qualidade:
     name: Geração, linters e testes
     runs-on: ubuntu-latest
