@@ -40,6 +40,24 @@ Prospecto pastoral + carta institucional + apresentação de projeto + manifesto
 - **Não** editar manualmente `js/dados/*.js` nem blocos `FALLBACK-DADOS` em `index.html`.
 - Após alterar JSON: `npm run generate` e `npm run check:encoding`.
 
+## Invariantes técnicos verificáveis
+
+- `modulos.json` contém exatamente 4 módulos, identificados sem duplicidade pelos
+  números 1–4, cada um com um intervalo consecutivo de 12 lições.
+- `matriz-curricular.json` contém exatamente 48 lições, identificadas sem
+  duplicidade pelos números 1–48 e associadas ao respectivo módulo.
+- Somente `virtude`, `tema` e `temaRef` dos módulos 3 e 4 permanecem `null`.
+  Validadores e geradores devem rejeitar seu preenchimento automático; uma mudança
+  nesses campos exige decisão humana e atualização explícita das fontes e regras.
+- A geração de `js/dados/*.js` é determinística, reproduz integralmente os JSON e
+  nunca altera `conteudo/`. Divergências nos gerados devem falhar com orientação
+  para executar `npm run generate`, sem correção implícita.
+- Linhas Markdown iniciadas por `>` são conteúdo literal. Ferramentas não podem
+  reescrevê-las, normalizá-las ou interpretá-las como regra de negócio.
+
+Esses itens descrevem forma, cardinalidade e preservação de dados. Não transformar
+em validação técnica decisões pastorais ou institucionais pendentes.
+
 ## Qualidade e a11y
 
 Antes de declarar tarefa concluída: `npm run validate` (ou, no mínimo, generate + checks relevantes + inspeção do que mudou).

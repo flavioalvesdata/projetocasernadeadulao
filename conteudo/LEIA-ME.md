@@ -29,6 +29,17 @@ visível e sem texto substituto.
 Todo texto marcado como citação (`>`) nos arquivos `.md` é **literal**. Não parafrasear,
 não resumir, não "melhorar". Faltando algo, registrar em `TODO.md`.
 
+## Contrato técnico verificável
+
+Os números são os identificadores dos 4 módulos e das 48 lições e não podem se
+repetir. Cada módulo cobre 12 lições consecutivas. A validação também protege as
+lacunas editoriais já registradas: apenas `virtude`, `tema` e `temaRef` dos módulos
+3 e 4 são `null`, e nenhuma ferramenta pode preenchê-las automaticamente.
+
+Essas verificações tratam somente de estrutura, cardinalidade, identidade e
+preservação literal. Estado de produção e qualquer alteração das lacunas continuam
+dependendo das fontes canônicas e de decisão humana, não de inferência do código.
+
 ## Fluxo dos dados derivados
 
 Após editar `conteudo/*.json`, execute `npm run generate` como etapa explícita de
@@ -37,3 +48,7 @@ somente gera uma cópia temporária e a compara com os arquivos versionados, sem
 sobrescrevê-los. `npm run validate` começa por essa verificação e também não corrige
 a árvore de trabalho: uma divergência deve falhar até que a geração seja executada
 deliberadamente.
+
+Geradores e verificadores devem usar saídas temporárias durante os testes, manter
+`conteudo/*.json` e as citações `>` byte a byte intactos e emitir erro acionável com
+código de saída não zero diante de JSON inválido ou artefato editado manualmente.

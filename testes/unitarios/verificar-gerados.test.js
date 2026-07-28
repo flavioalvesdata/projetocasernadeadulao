@@ -42,3 +42,29 @@ test("verificador detecta fonte alterada sem sobrescrever o gerado versionado", 
     fs.rmSync(temporario, { recursive: true, force: true });
   }
 });
+
+test("verificador rejeita edição manual do gerado com mensagem acionável", () => {
+  const temporario = fs.mkdtempSync(path.join(os.tmpdir(), "caserna-gerado-editado-"));
+  try {
+    for (const diretorio of ["conteudo", "js/dados", "ferramentas"]) {
+      fs.cpSync(path.join(raiz, diretorio), path.join(temporario, diretorio), {
+        recursive: true,
+      });
+    }
+    const gerado = path.join(temporario, "js", "dados", "matriz.js");
+    fs.appendFileSync(gerado, "// edição manual indevida\n", "utf8");
+    const resultado = spawnSync(
+      process.execPath,
+      [path.join(temporario, "ferramentas", "verificar-gerados.js")],
+      { cwd: temporario, encoding: "utf8" }
+    );
+
+    assert.notEqual(resultado.status, 0);
+    assert.match(
+      `${resultado.stdout}\n${resultado.stderr}`,
+      /js\/dados\/matriz\.js está desatualizado; execute npm run generate/
+    );
+  } finally {
+    fs.rmSync(temporario, { recursive: true, force: true });
+  }
+});

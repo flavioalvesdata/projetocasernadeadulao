@@ -5,7 +5,8 @@
 
 const fs = require("fs");
 const path = require("path");
-const { execFileSync } = require("child_process");
+const os = require("node:os");
+const { gerarDados } = require("./gerar-dados.js");
 
 const raiz = path.join(__dirname, "..");
 const MOJIBAKE = /Ã.|Â.|â€|ðŸ|�/;
@@ -42,15 +43,14 @@ alvos.forEach((rel) => {
   }
 });
 
+const temporario = fs.mkdtempSync(path.join(os.tmpdir(), "caserna-encoding-"));
 try {
-  execFileSync(process.execPath, [path.join(raiz, "ferramentas", "gerar-dados.js")], {
-    cwd: raiz,
-    stdio: "pipe",
-    encoding: "utf8",
-  });
+  gerarDados({ raiz, diretorioSaida: temporario, silencioso: true });
 } catch (err) {
   console.error("FALHA generate:", err.stderr || err.message);
   process.exit(1);
+} finally {
+  fs.rmSync(temporario, { recursive: true, force: true });
 }
 
 const modulosJson = JSON.parse(ler("conteudo/modulos.json"));
