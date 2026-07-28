@@ -26,11 +26,11 @@ Conteúdo pastoral 8–15, anatomia, encontro, edições, pedido, arte oficial, 
 
 ## 7. Requisitos técnicos
 
-Node.js 18 ou superior e npm compatível com o lockfile. O navegador moderno é necessário para interação; o texto abre sem instalação.
+Node.js 20.18.0 ou superior e npm compatível com o lockfile. O navegador moderno é necessário para interação; o texto abre sem instalação.
 
 ## 8. Versão de Node
 
-A CI usa Node 20; `engines.node` aceita `>=18`.
+A CI usa Node 20.18.0; `engines.node` aceita `>=20.18.0`. Essa versão mínima disponibiliza os filtros e limiares da cobertura nativa do executor `node:test`, sem dependência adicional.
 
 ## 9. Instalação
 

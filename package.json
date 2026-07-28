@@ -17,6 +17,7 @@
     "lint:css": "stylelint css/**/*.css",
     "lint:js": "eslint --max-warnings=0 js/**/*.js ferramentas/**/*.js testes/**/*.js",
     "test": "node --test testes/unitarios/*.test.js",
+    "test:coverage": "node --test --experimental-test-coverage --test-coverage-include='ferramentas/gerar-dados.js' --test-coverage-include='ferramentas/servidor-estatico.js' --test-coverage-include='js/abas.js' --test-coverage-include='js/navegacao.js' --test-coverage-include='js/revelar.js' --test-coverage-include='js/marca.js' --test-coverage-include='js/main.js' --test-coverage-exclude='js/dados/**' --test-coverage-exclude='testes/**' --test-coverage-exclude='**/*.config.js' --test-coverage-exclude='**/fixtures/**' --test-coverage-lines=68 --test-coverage-functions=78 --test-coverage-branches=69 testes/unitarios/*.test.js",
     "test:e2e": "playwright test testes/e2e/site.spec.js",
     "test:e2e:install": "playwright install chromium firefox webkit",
     "test:a11y": "playwright test testes/e2e/site.spec.js --grep \"@a11y\"",
@@ -25,7 +26,7 @@
     "validate": "npm run check:generated && npm run check:encoding && npm run format:check && npm run lint:html && npm run lint:css && npm run lint:js && npm run test && npm run test:e2e"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20.18.0"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.12.1",
