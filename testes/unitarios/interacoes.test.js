@@ -88,7 +88,10 @@ describe("interações compartilhadas", () => {
   });
 
   it("ignora raízes sem estrutura de abas", () => {
-    const contexto = { window: {}, document: {} };
+    const contexto = {
+      window: {},
+      document: { querySelector: () => null },
+    };
     executarScript("abas.js", contexto);
     assert.equal(contexto.window.Caserna.initAbas(null), null);
     assert.equal(
@@ -98,6 +101,53 @@ describe("interações compartilhadas", () => {
       }),
       null
     );
+    assert.equal(contexto.window.Caserna.initAbasPorSeletor("[data-ausente]"), null);
+  });
+
+  it("inicializa abas por seletor sem duplicar a resolução da raiz", () => {
+    const tablist = criarElemento();
+    const tab = criarElemento({ "aria-selected": "true" });
+    const root = {
+      querySelector: () => tablist,
+      querySelectorAll: () => [tab],
+    };
+    const contexto = {
+      window: {},
+      document: {
+        querySelector: (seletor) => (seletor === "[data-exemplo]" ? root : null),
+        getElementById: () => null,
+      },
+    };
+
+    executarScript("abas.js", contexto);
+    const api = contexto.window.Caserna.initAbasPorSeletor("[data-exemplo]");
+
+    assert.equal(api.tabs[0], tab);
+    assert.equal(tab.atributos["aria-selected"], "true");
+  });
+
+  it("mantém os módulos reservados como adaptadores do utilitário comum", () => {
+    const chamadas = [];
+    const contexto = {
+      window: {
+        Caserna: {
+          initAbasPorSeletor: (seletor) => {
+            chamadas.push(seletor);
+            return seletor;
+          },
+        },
+      },
+      document: {},
+    };
+
+    executarScript("anatomia.js", contexto);
+    executarScript("edicoes.js", contexto);
+    executarScript("encontro.js", contexto);
+
+    assert.equal(contexto.window.Caserna.initAnatomia(), "[data-anatomia]");
+    assert.equal(contexto.window.Caserna.initEdicoes(), "[data-edicoes]");
+    assert.equal(contexto.window.Caserna.initEncontro(), "[data-encontro]");
+    assert.deepEqual(chamadas, ["[data-anatomia]", "[data-edicoes]", "[data-encontro]"]);
   });
 
   it("inicializa a saudação e os módulos disponíveis", () => {
