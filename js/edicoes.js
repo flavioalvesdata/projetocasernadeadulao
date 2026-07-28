@@ -1,11 +1,11 @@
 /**
- * Comparador de edições (Ato 5) — abas Aluno / Instrutor.
+ * Módulo reservado: comparador de edições.
+ * Não é inicializado pelo documento atual e não deve pressupor conteúdo pastoral inexistente.
  */
 (function () {
   function initEdicoes() {
-    const root = document.querySelector("[data-edicoes]");
-    if (!root || !window.Caserna || !window.Caserna.initAbas) return;
-    window.Caserna.initAbas(root);
+    if (!window.Caserna || !window.Caserna.initAbasPorSeletor) return null;
+    return window.Caserna.initAbasPorSeletor("[data-edicoes]");
   }
 
   window.Caserna = window.Caserna || {};

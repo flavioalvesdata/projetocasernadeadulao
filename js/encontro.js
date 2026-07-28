@@ -1,11 +1,11 @@
 /**
- * Linha do tempo do encontro (Ato 6).
+ * Módulo reservado: linha do tempo do encontro.
+ * Não é inicializado pelo documento atual e não deve pressupor conteúdo pastoral inexistente.
  */
 (function () {
   function initEncontro() {
-    const root = document.querySelector("[data-encontro]");
-    if (!root || !window.Caserna || !window.Caserna.initAbas) return;
-    window.Caserna.initAbas(root);
+    if (!window.Caserna || !window.Caserna.initAbasPorSeletor) return null;
+    return window.Caserna.initAbasPorSeletor("[data-encontro]");
   }
 
   window.Caserna = window.Caserna || {};

@@ -89,4 +89,13 @@ describe("estrutura HTML v1", () => {
     assert.match(html, /data-saudacao/);
     assert.match(html, /Pastor Glaydston,/);
   });
+
+  it("não carrega módulos reservados no documento atual", () => {
+    for (const modulo of ["anatomia", "edicoes", "encontro"]) {
+      assert.doesNotMatch(
+        html,
+        new RegExp(`<script[^>]+src=["'][^"']*js/${modulo}\\.js`)
+      );
+    }
+  });
 });

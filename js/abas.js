@@ -78,6 +78,16 @@
     return { selecionar, tabs };
   }
 
+  /**
+   * Inicializa abas na primeira raiz encontrada para o seletor informado.
+   */
+  function initAbasPorSeletor(seletor, opcoes) {
+    const root = document.querySelector(seletor);
+    if (!root) return null;
+    return initAbas(root, opcoes);
+  }
+
   window.Caserna = window.Caserna || {};
   window.Caserna.initAbas = initAbas;
+  window.Caserna.initAbasPorSeletor = initAbasPorSeletor;
 })();
