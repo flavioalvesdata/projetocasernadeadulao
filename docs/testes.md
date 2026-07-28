@@ -26,6 +26,8 @@ Para auditar a seleção sem executar os navegadores, use `npm run test:e2e -- -
 
 Na pipeline, `npm run check:generated` também é executado explicitamente antes da validação principal. A regressão visual é executada depois de `validate`, mas o recorte `test:a11y` não é repetido. Depois de todas as verificações determinísticas, `git diff --exit-code -- .` exige que a árvore de trabalho continue limpa quanto a arquivos versionados. Assim, qualquer artefato ou correção de formatação produzida inadvertidamente por um comando da CI causa falha, em vez de ser ignorada ou incorporada automaticamente.
 
+A workflow agrupa execuções pela combinação do próprio nome com a referência Git. Quando um novo `push` ou uma atualização de `pull_request` inicia uma execução no mesmo grupo, a execução anterior ainda em andamento é cancelada automaticamente. O job de qualidade possui timeout de 30 minutos, margem destinada à instalação das dependências e dos três motores do Playwright, à validação completa e à regressão visual; ao atingir esse limite, o GitHub Actions encerra o job para evitar consumo indefinido de recursos.
+
 Playwright grava relatório HTML, traces e screenshots em `playwright-report/` e `test-results/`; a CI publica diagnósticos em falha. Viewports manuais adicionais: 768×1024 e 1440×900. Recomenda-se testar Tab/Shift+Tab/Escape, zoom, sem JavaScript, leitores de tela e ausência de overflow.
 
 Falha ao baixar pacotes ou browsers é ambiental; arquivo desatualizado, violação de lint ou asserção é falha do projeto. Registre comando, código de saída e evidência antes de classificar.
