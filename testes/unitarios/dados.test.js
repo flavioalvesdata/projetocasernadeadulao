@@ -64,6 +64,52 @@ describe("dados gerados", () => {
     assert.equal(matriz.licoes.length, 48);
   });
 
+  it("tem 4 módulos e identificadores únicos para módulos e lições", () => {
+    const modulos = extrair(
+      fs.readFileSync(path.join(temporario, "modulos.js"), "utf8"),
+      "DADOS_MODULOS"
+    );
+    const matriz = extrair(
+      fs.readFileSync(path.join(temporario, "matriz.js"), "utf8"),
+      "DADOS_MATRIZ"
+    );
+    assert.equal(modulos.modulos.length, 4);
+    assert.equal(new Set(modulos.modulos.map(({ numero }) => numero)).size, 4);
+    assert.equal(new Set(matriz.licoes.map(({ numero }) => numero)).size, 48);
+  });
+
+  it("preserva os null autorizados sem preenchimento automático", () => {
+    const modulos = extrair(
+      fs.readFileSync(path.join(temporario, "modulos.js"), "utf8"),
+      "DADOS_MODULOS"
+    );
+    for (const numero of [3, 4]) {
+      const modulo = modulos.modulos.find((item) => item.numero === numero);
+      for (const campo of ["virtude", "tema", "temaRef"]) {
+        assert.equal(modulo[campo], null, `módulo ${numero}, campo ${campo}`);
+      }
+    }
+  });
+
+  it("produz bytes idênticos em gerações sucessivas", () => {
+    const segundaSaida = fs.mkdtempSync(
+      path.join(os.tmpdir(), "caserna-teste-determinismo-")
+    );
+    try {
+      gerarDados({ raiz, diretorioSaida: segundaSaida, silencioso: true });
+      for (const arquivo of ["modulos.js", "matriz.js"]) {
+        assert.ok(
+          fs
+            .readFileSync(path.join(temporario, arquivo))
+            .equals(fs.readFileSync(path.join(segundaSaida, arquivo))),
+          `${arquivo} deve ser determinístico`
+        );
+      }
+    } finally {
+      fs.rmSync(segundaSaida, { recursive: true, force: true });
+    }
+  });
+
   it("gera scripts de dados sem exigir fallback no HTML deste PR", () => {
     assert.ok(fs.existsSync(path.join(raiz, "js/dados/modulos.js")));
     assert.ok(fs.existsSync(path.join(raiz, "js/dados/matriz.js")));

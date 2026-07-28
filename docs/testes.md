@@ -19,6 +19,32 @@ A organização adotada mantém a acessibilidade na suíte E2E geral. Portanto, 
 
 ## Cobertura dos testes unitários
 
+### Invariantes editoriais automatizados
+
+A suíte usa cópias em diretórios criados por `mkdtemp`, removidas ao final de cada
+caso. Portanto, cenários negativos nunca substituem permanentemente
+`conteudo/*.json`. Os testes cobrem invariantes objetivos, sem avaliar ou inferir
+conteúdo pastoral:
+
+- presença de exatamente **4 módulos** e **48 lições**;
+- unicidade dos números que identificam módulos e lições, intervalos consecutivos
+  de 12 lições e associação estrutural entre cada lição e seu módulo;
+- preservação de `null` exclusivamente em `virtude`, `tema` e `temaRef` dos módulos
+  3 e 4, além da rejeição de preenchimento inferido desses campos;
+- serialização determinística e equivalência integral entre cada JSON e o JavaScript
+  derivado em duas gerações independentes;
+- falha de JSON malformado e de estruturas incompatíveis, com código de saída não
+  zero e mensagem que identifica arquivo e motivo;
+- preservação byte a byte das fontes JSON e de citações Markdown iniciadas por `>`;
+- detecção de fonte divergente ou edição manual em `js/dados/*.js`, com orientação
+  para executar `npm run generate`, sem sobrescrever o artefato durante a checagem.
+
+O contrato de campos `null` registra lacunas já declaradas, não decide seus valores.
+Quando houver decisão humana legítima, fontes, documentação, validador e testes
+devem ser atualizados juntos. Estado de produção, aprovação, conteúdo, publicação e
+demais decisões institucionais pendentes não são convertidos em novas regras pelos
+testes.
+
 `npm run test:coverage` usa `node:test` com `--experimental-test-coverage`; não há biblioteca de cobertura adicional. O comando rápido `npm test` permanece sem instrumentação para favorecer o ciclo local. Node 20.18.0 é o mínimo porque essa versão oferece, em conjunto, filtros de inclusão/exclusão e limiares nativos.
 
 O escopo é uma lista positiva dos módulos de aplicação carregados por `index.html` e passíveis de exercício unitário (`abas.js`, `navegacao.js`, `revelar.js`, `marca.js` e `main.js`), além das ferramentas importáveis de geração/validação de dados e servidor estático. As interações de abas e inicialização têm testes diretos; menu móvel e escudo também permanecem cobertos funcionalmente pela suíte E2E nos três motores. Um arquivo incluído somente aparece no relatório nativo quando é carregado pelo processo de testes, de modo que novos testes devem importar o módulo correspondente antes de elevar limites.

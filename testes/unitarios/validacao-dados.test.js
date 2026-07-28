@@ -113,4 +113,25 @@ describe("invariantes curriculares", () => {
     },
     /boolean/
   );
+  invalido(
+    "rejeita preenchimento automático de null autorizado",
+    (m) => {
+      m.modulos[2].virtude = "valor inferido";
+    },
+    /deve permanecer null; preenchimento exige decisão humana/
+  );
+  invalido(
+    "rejeita null fora das lacunas autorizadas",
+    (m) => {
+      m.modulos[0].marcha = null;
+    },
+    /null não autorizado|sem campo/
+  );
+  invalido(
+    "rejeita item de lição que não seja objeto",
+    (_m, l) => {
+      l.licoes[0] = [];
+    },
+    /deve ser objeto/
+  );
 });

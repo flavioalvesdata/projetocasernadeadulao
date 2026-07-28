@@ -37,6 +37,33 @@ function stringObrigatoria(valor, local) {
     throw new Error(`${local}: string obrigatória vazia ou inválida`);
 }
 
+const CAMPOS_NULOS_AUTORIZADOS = new Map([
+  [3, new Set(["virtude", "tema", "temaRef"])],
+  [4, new Set(["virtude", "tema", "temaRef"])],
+]);
+
+/**
+ * Protege lacunas editoriais registradas sem atribuir significado pastoral a elas.
+ * Os valores somente podem mudar após uma decisão humana atualizar este contrato.
+ */
+function validarCamposNulos(modulo) {
+  const autorizados = CAMPOS_NULOS_AUTORIZADOS.get(modulo.numero) || new Set();
+  for (const [campo, valor] of Object.entries(modulo)) {
+    if (valor === null && !autorizados.has(campo)) {
+      throw new Error(
+        `modulos.json: módulo ${modulo.numero}, campo "${campo}" — null não autorizado`
+      );
+    }
+  }
+  for (const campo of autorizados) {
+    if (modulo[campo] !== null) {
+      throw new Error(
+        `modulos.json: módulo ${modulo.numero}, campo "${campo}" deve permanecer null; preenchimento exige decisão humana`
+      );
+    }
+  }
+}
+
 function validarModulos(dados) {
   if (!dados || typeof dados !== "object") {
     throw new Error("modulos.json: raiz inválida");
@@ -47,6 +74,9 @@ function validarModulos(dados) {
   const numeros = new Set();
   const estados = new Set(["produzido", "planejado"]);
   dados.modulos.forEach((mod, i) => {
+    if (!mod || typeof mod !== "object" || Array.isArray(mod)) {
+      throw new Error(`modulos.json: módulo ${i + 1} deve ser objeto`);
+    }
     ["numero", "nome", "subtitulo", "enfase", "peca", "estado", "licoes"].forEach(
       (campo) => {
         if (mod[campo] == null) {
@@ -59,6 +89,7 @@ function validarModulos(dados) {
     if (numeros.has(mod.numero))
       throw new Error(`modulos.json: número de módulo duplicado ${mod.numero}`);
     numeros.add(mod.numero);
+    validarCamposNulos(mod);
     ["nome", "subtitulo", "enfase", "peca"].forEach((campo) =>
       stringObrigatoria(mod[campo], `modulos.json: módulo ${mod.numero}, campo ${campo}`)
     );
@@ -100,6 +131,9 @@ function validarMatriz(dados, modulos) {
   const numeros = new Set();
   const titulos = new Set();
   dados.licoes.forEach((l, i) => {
+    if (!l || typeof l !== "object" || Array.isArray(l)) {
+      throw new Error(`matriz-curricular.json: lição índice ${i} deve ser objeto`);
+    }
     ["numero", "modulo", "titulo", "textoBase", "objetivo"].forEach((campo) => {
       if (l[campo] == null) {
         throw new Error(`matriz-curricular.json: lição índice ${i} sem "${campo}"`);
@@ -139,6 +173,13 @@ function validarMatriz(dados, modulos) {
       throw new Error(
         `matriz-curricular.json: lição ${l.numero} — produzida deve ser boolean`
       );
+    }
+    for (const [campo, valor] of Object.entries(l)) {
+      if (valor === null) {
+        throw new Error(
+          `matriz-curricular.json: lição ${l.numero}, campo "${campo}" — null não autorizado`
+        );
+      }
     }
   });
   if (modulos) {
