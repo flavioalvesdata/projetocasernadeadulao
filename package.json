@@ -12,7 +12,7 @@
     "check:encoding": "node ferramentas/check-encoding.js",
     "format": "npm run format:files -- --write",
     "format:check": "npm run format:files -- --check",
-    "format:files": "prettier index.html 'conteudo/**/*.json' 'assets/**/*.json' '.github/**/*.yml' '*.md' 'conteudo/**/*.md' 'docs/**/*.md' '*.js' 'js/**/*.js' 'ferramentas/**/*.js' 'testes/**/*.js' '**/*.css' package.json .prettierrc.json .stylelintrc.json",
+    "format:files": "prettier index.html 'conteudo/**/*.json' 'assets/**/*.json' '.github/**/*.yml' '*.md' 'conteudo/**/*.md' 'docs/**/*.md' '*.js' 'js/**/*.js' 'ferramentas/**/*.js' 'testes/**/*.js' '**/*.css' package.json .prettierrc.json .stylelintrc.cjs",
     "lint:html": "node ferramentas/lint-html.js",
     "lint:css": "stylelint css/**/*.css",
     "lint:js": "eslint --max-warnings=0 js/**/*.js ferramentas/**/*.js testes/**/*.js",

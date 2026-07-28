@@ -1,6 +1,7 @@
 /* Componentes: índice, trilho, progresso, rodapé, cartões, selos. */
 
 /* ——— Progresso no topo (mobile) ——— */
+
 .progresso-topo {
   position: fixed;
   top: 0;
@@ -28,13 +29,14 @@
   }
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .progresso-topo {
     display: none;
   }
 }
 
 /* ——— Toggle do índice (mobile) ——— */
+
 .indice-toggle {
   position: fixed;
   top: var(--esp-4);
@@ -53,7 +55,7 @@
   border: 1px solid color-mix(in srgb, var(--bronze) 50%, transparent);
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .indice-toggle {
     display: none;
   }
@@ -71,13 +73,14 @@ body.indice-aberto .indice-overlay {
   display: block;
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .indice-overlay {
     display: none !important;
   }
 }
 
 /* ——— Índice lateral ——— */
+
 .indice {
   position: fixed;
   top: 0;
@@ -97,7 +100,7 @@ body.indice-aberto .indice-overlay {
   transform: translateX(0);
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .indice {
     top: var(--esp-6);
     right: var(--esp-4);
@@ -123,7 +126,7 @@ body.indice-aberto .indice-overlay {
   color: var(--bronze-cl);
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .indice__rotulo {
     color: var(--bronze);
   }
@@ -161,7 +164,7 @@ body.indice-aberto .indice-overlay {
   color: color-mix(in srgb, var(--bronze-cl) 80%, white);
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .indice__grupo-titulo {
     color: var(--bronze);
   }
@@ -188,7 +191,7 @@ body.indice-aberto .indice-overlay {
   padding-left: var(--esp-3);
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .indice__link {
     color: color-mix(in srgb, var(--tinta) 70%, transparent);
   }
@@ -200,7 +203,7 @@ body.indice-aberto .indice-overlay {
   border-left-color: var(--bronze-cl);
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .indice__link--ativo,
   .indice__link[aria-current="location"] {
     color: var(--navy);
@@ -209,11 +212,12 @@ body.indice-aberto .indice-overlay {
 }
 
 /* ——— Trilho da marcha (desktop) ——— */
+
 .trilho {
   display: none;
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .trilho {
     display: flex;
     flex-direction: column;
@@ -281,6 +285,7 @@ body.indice-aberto .indice-overlay {
 }
 
 /* ——— Tipografia de seção ——— */
+
 .sobrelinha {
   margin-bottom: var(--esp-3);
   font-family: var(--fonte-display);
@@ -397,6 +402,7 @@ body.indice-aberto .indice-overlay {
 }
 
 /* ——— Comparação (seção 3) ——— */
+
 .comparacao {
   margin-block: var(--esp-8);
   width: 100%;
@@ -443,7 +449,7 @@ body.indice-aberto .indice-overlay {
   color: color-mix(in srgb, var(--regua) 70%, transparent);
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .comparacao__cabecalhos {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -499,6 +505,7 @@ body.indice-aberto .indice-overlay {
 }
 
 /* ——— Paralelo (seção 4) ——— */
+
 .paralelo {
   display: grid;
   gap: var(--esp-4);
@@ -523,7 +530,7 @@ body.indice-aberto .indice-overlay {
   color: var(--bronze);
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .paralelo__par {
     grid-template-columns: 1fr 1fr;
     gap: var(--esp-6);
@@ -531,6 +538,7 @@ body.indice-aberto .indice-overlay {
 }
 
 /* ——— Quatro movimentos (seção 5) ——— */
+
 .eixo {
   display: grid;
   gap: var(--esp-5);
@@ -564,7 +572,7 @@ body.indice-aberto .indice-overlay {
   color: color-mix(in srgb, var(--creme) 75%, transparent);
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .eixo {
     grid-template-columns: repeat(4, 1fr);
     gap: var(--esp-6);
@@ -583,6 +591,7 @@ body.indice-aberto .indice-overlay {
 }
 
 /* ——— Recusas (seção 6) ——— */
+
 .recusas {
   display: grid;
   gap: var(--esp-5);
@@ -609,20 +618,21 @@ body.indice-aberto .indice-overlay {
   max-width: none;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .recusas {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 /* ——— Escudo / marca (seção 7) ——— */
+
 .marca-escudo {
   display: grid;
   gap: var(--esp-8);
   margin-block: var(--esp-8);
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .marca-escudo {
     grid-template-columns: minmax(12rem, 18rem) 1fr;
     align-items: start;
@@ -790,6 +800,7 @@ body.indice-aberto .indice-overlay {
 }
 
 /* ——— Rodapé ——— */
+
 .rodape {
   padding: var(--esp-12) var(--gutter-mobile) var(--esp-16);
   background: var(--navy-esc);
@@ -813,8 +824,9 @@ body.indice-aberto .indice-overlay {
 }
 
 /* ——— Revelação ——— */
+
 [data-revelar] {
-  opacity: 0;
+  opacity: 0%;
   transform: translateY(0.6rem);
   transition:
     opacity var(--duracao) var(--easing),
@@ -822,13 +834,13 @@ body.indice-aberto .indice-overlay {
 }
 
 [data-revelar].is-revelado {
-  opacity: 1;
+  opacity: 100%;
   transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
   [data-revelar] {
-    opacity: 1;
+    opacity: 100%;
     transform: none;
     transition: none;
   }

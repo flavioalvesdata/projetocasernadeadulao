@@ -16,7 +16,7 @@
   margin-inline: auto;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .container,
   .container--largo {
     width: min(100% - 2 * var(--gutter-tablet), var(--container));
@@ -27,7 +27,7 @@
   }
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .container,
   .container--largo {
     width: min(100% - 2 * var(--gutter-desktop), var(--container));
@@ -39,6 +39,7 @@
 }
 
 /* Cadência: 1 navy · 2 papel · 3 navy · 4 papel · 5 navy · 6 creme · 7 navy profundo */
+
 .secao {
   position: relative;
   padding-block: var(--esp-16);
@@ -89,7 +90,7 @@
   line-height: 1;
   color: var(--bronze);
   letter-spacing: 0.04em;
-  opacity: 0.85;
+  opacity: 85%;
 }
 
 .movimento__titulo {
@@ -105,7 +106,7 @@
   color: var(--bronze-cl);
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .secao {
     padding-block: var(--esp-20);
   }

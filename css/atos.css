@@ -16,14 +16,14 @@
   min-height: 100dvh;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .ato {
     padding-left: calc(var(--gutter-tablet) + var(--rail-left));
     padding-right: var(--gutter-tablet);
   }
 }
 
-@media (min-width: 1280px) {
+@media (width >= 1280px) {
   .ato {
     padding-left: calc(var(--gutter-desktop) + var(--rail-left));
     padding-right: var(--gutter-desktop);
@@ -32,12 +32,8 @@
 
 .ato--escuro {
   background:
-    radial-gradient(
-      ellipse 80% 60% at 15% 20%,
-      rgba(140, 106, 69, 0.14),
-      transparent 55%
-    ),
-    radial-gradient(ellipse 70% 50% at 90% 80%, rgba(16, 29, 51, 0.8), transparent 50%),
+    radial-gradient(ellipse 80% 60% at 15% 20%, rgb(140 106 69 / 14%), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 90% 80%, rgb(16 29 51 / 80%), transparent 50%),
     var(--navy);
   background:
     radial-gradient(
@@ -144,7 +140,7 @@
   margin-top: var(--esp-5);
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .ato__texto--justificado {
     text-align: justify;
     text-justify: inter-word;
@@ -191,7 +187,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--bronze-cl);
-  background: rgba(16, 29, 51, 0.45);
+  background: rgb(16 29 51 / 45%);
 }
 
 .ato__rolar {
@@ -201,7 +197,7 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(245, 241, 231, 0.78);
+  color: rgb(245 241 231 / 78%);
 }
 
 .ato__rolar::after {
@@ -219,12 +215,13 @@
   100% {
     transform: scaleY(0.55);
     transform-origin: top;
-    opacity: 0.45;
+    opacity: 45%;
   }
+
   50% {
     transform: scaleY(1);
     transform-origin: top;
-    opacity: 1;
+    opacity: 100%;
   }
 }
 
@@ -255,11 +252,6 @@
   color: color-mix(in srgb, var(--creme) 70%, transparent);
 }
 
-.ato--papel .ato__secao-titulo,
-.ato--claro .ato__secao-titulo {
-  color: var(--bronze);
-}
-
 .ato__secao-titulo {
   font-family: var(--fonte-display);
   font-size: var(--texto-sm);
@@ -270,4 +262,9 @@
   margin-top: var(--esp-12);
   margin-bottom: var(--esp-4);
   hyphens: none;
+}
+
+.ato--papel .ato__secao-titulo,
+.ato--claro .ato__secao-titulo {
+  color: var(--bronze);
 }
