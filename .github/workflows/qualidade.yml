@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v4.3.0
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
-          node-version: 20
+          node-version: 20.18.0
           cache: npm
       - run: npm ci
       - name: Instalar motores do Playwright
@@ -26,6 +26,8 @@ jobs:
         run: npm run check:generated
       - name: Validar geração, encoding, formato, lint e testes
         run: npm run validate
+      - name: Medir cobertura dos testes unitários
+        run: npm run test:coverage
       - name: Regressão visual Chromium
         run: npm run test:visual
       - name: Verificar artefatos ou formatação não versionados
