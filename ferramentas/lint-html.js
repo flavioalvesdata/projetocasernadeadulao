@@ -13,16 +13,18 @@ const html = fs.readFileSync(path.join(raiz, "index.html"), "utf8");
 const htmlvalidate = new HtmlValidate({
   extends: ["html-validate:recommended"],
   rules: {
-    "no-inline-style": "off",
-    "doctype-style": "off",
-    "void-style": "off",
-    "no-implicit-button-type": "off",
+    "no-inline-style": "error",
+    // O Prettier normaliza o doctype em minúsculas; validamos explicitamente o mesmo padrão.
+    "doctype-style": ["error", { style: "lowercase" }],
+    // O HTML editorial segue a serialização autocontida produzida pelo Prettier.
+    "void-style": ["error", { style: "selfclosing" }],
+    "no-implicit-button-type": "error",
     "element-permitted-content": "error",
-    "prefer-native-element": "off",
-    "text-content": "off",
+    "prefer-native-element": "error",
+    "text-content": "error",
     "wcag/h30": "error",
-    "long-title": "off",
-    "no-trailing-whitespace": "off",
+    "long-title": "error",
+    "no-trailing-whitespace": "error",
     "aria-label-misuse": "error",
   },
 });

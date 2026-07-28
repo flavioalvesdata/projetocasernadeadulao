@@ -1,7 +1,7 @@
 /* Reset mínimo, tipografia base e foco — legível sem utilitários. */
 
 @font-face {
-  font-family: "Montserrat";
+  font-family: Montserrat;
   src: url("../assets/fonts/montserrat-latin-700.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  font-family: "Montserrat";
+  font-family: Montserrat;
   src: url("../assets/fonts/montserrat-latin-800.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
@@ -137,6 +137,7 @@ p {
 }
 
 /* Skip link: só aparece no foco de teclado */
+
 .skip-link {
   position: absolute;
   width: 1px;
